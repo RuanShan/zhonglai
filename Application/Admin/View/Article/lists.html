@@ -98,6 +98,7 @@
 										<thead>
 											<tr>
 												<th width="100" class="center">ID</th>
+												<th width="160" class="center">发布时间</th>
 												<th class="center">文章标题</th>
 												<th width="100" class="center">编辑</th>
 											</tr>
@@ -106,6 +107,7 @@
                     	<volist name="list" id="vo" empty="暂时没有数据">
 											<tr>
 												<td class="center">{$vo.id}</td>
+												<td class="center">{$vo.post_time}</td>
 												<td class="center">{$vo.title}</td>
 												<td class="center">
 												<div class="visible-md visible-lg hidden-sm hidden-xs">

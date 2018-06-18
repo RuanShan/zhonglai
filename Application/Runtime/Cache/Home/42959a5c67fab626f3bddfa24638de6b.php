@@ -1,7 +1,10 @@
-<?php if (!defined('THINK_PATH')) exit();?><html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
+<html lang="zh-CN">
 <head>
-	<title>山东中莱建设集团有限公司</title>
 	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>山东中莱建设集团有限公司</title>
 	<link href="/Public/Home/PC/css/bootstrap/bootstrap.css" rel="stylesheet" type="text/css" />
 	<link href="/Public/Home/PC/css/swiper.css" rel="stylesheet" type="text/css" />
 	<link href="/Public/Home/PC/css/liMarquee.css" rel="stylesheet" type="text/css" />
@@ -32,8 +35,8 @@
 	<div class="daohang">
 		<div class="daohang-zhong">
 			<ul class="clearfix">
-				<li><a href="">首页</a></li>
-				<li><a href="">关于我们</a></li>
+				<li><a href="/">首页</a></li>
+				<li><a href="<?php echo U('Index/article',array('column_id'=>1,'id'=>1));?>">关于我们</a></li>
 				<li><a href="">产业中心</a></li>
 				<li><a href="">资讯中心</a></li>
 				<li><a href="">合资合作</a></li>

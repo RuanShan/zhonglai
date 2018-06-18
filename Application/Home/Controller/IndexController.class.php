@@ -79,14 +79,7 @@ class IndexController extends CommonController {
 		//配置
 		$config_data = $Config->where('id=1')->find();
 		$this->assign('config_data',$config_data);
-		//弹窗
-		$popup_data = $Article->where('column_id=23')->find();
-		if( !empty($popup_data)){
-			$safe_content = stripslashes(htmlspecialchars_decode($popup_data['content']));
-			//删除多余的<p>
-	  	$popup_data['content'] = strip_tags($safe_content,"<img><a>");
-		}
-		$this->assign('popup_data',$popup_data);
+
 
 		//热门专业
 		$major_list = $Article->where('column_id=11')->order('id DESC')->limit(12)->select();
@@ -153,14 +146,6 @@ class IndexController extends CommonController {
 
 		$this->assign('config_data',$config_data);
 
-		$popup_data = $Article->where('column_id=23')->find();
-		if( !empty($popup_data)){
-			$safe_content = stripslashes(htmlspecialchars_decode($popup_data['content']));
-			//删除多余的<p>
-	  	$popup_data['content'] = strip_tags($safe_content,"<img><a>");
-			$this->assign('popup_data',$popup_data);
-		}
-
 		$column_data = $Column->where('id='.I('column_id'))->find();
 		$this->assign('column_data',$column_data);
 
@@ -193,14 +178,6 @@ class IndexController extends CommonController {
 		//配置
 		$config_data = $Config->where('id=1')->find();
 
-		$popup_data = $Article->where('column_id=23')->find();
-		if( !empty($popup_data)){
-			$safe_content = stripslashes(htmlspecialchars_decode($popup_data['content']));
-			//删除多余的<p>
-	  	$popup_data['content'] = strip_tags($safe_content,"<img><a>");
-			$this->assign('popup_data',$popup_data);
-		}
-
 		$column_data = $Column->where('id='.I('column_id'))->find();
 
 		$Article->where('id='.I('id'))->setInc('click');
@@ -213,10 +190,6 @@ class IndexController extends CommonController {
 			$config_data['description'] = $data['description'];
 		}
 		$data['content'] = stripslashes(htmlspecialchars_decode($data['content']));
-		$data['direction'] = stripslashes(htmlspecialchars_decode($data['direction']));
-		$data['course'] = stripslashes(htmlspecialchars_decode($data['course']));
-		$data['obtain'] = stripslashes(htmlspecialchars_decode($data['obtain']));
-		$data['enterprise'] = stripslashes(htmlspecialchars_decode($data['enterprise']));
 
 		$this->assign('config_data',$config_data);
 
@@ -226,7 +199,7 @@ class IndexController extends CommonController {
 
 		if($this->isMobile()){
 			if(I('column_id')==1||I('column_id')==3||I('column_id')==4||I('column_id')==5||I('column_id')==6||I('column_id')==7||I('column_id')==9){
-				$this->display('MOB/Index/about_mode_article');
+				$this->display('MOB/Index/article');
 			}else if(I('column_id')==8){
 				//热门专业
 				$major_list = $Article->where('column_id=11')->order('id DESC')->select();
@@ -274,39 +247,18 @@ class IndexController extends CommonController {
 			}
 		}else{
 			if(I('column_id')==1||I('column_id')==2||I('column_id')==3||I('column_id')==4||I('column_id')==5||I('column_id')==6||I('column_id')==7||I('column_id')==9){
-				$this->display('PC/Index/about_mode_article');
-			}else if(I('column_id')==8){
-				//热门专业
-				$major_list = $Article->where('column_id=11')->order('id DESC')->select();
-				$this->assign('major_list',$major_list);
+				//关于我们
+				$column_map['column_id'] = array('eq',I('column_id'));
 
-				//我们的优势
-				$superiority_list = $Article->where('column_id=18')->order('id DESC')->select();
-				$this->assign('superiority_list',$superiority_list);
+				$list = $Article->order('post_time DESC')->where($column_map)->limit($Page->firstRow.','.$Page->listRows)->select();
+				$this->assign('list',$list);
 
-				$this->display('PC/Index/junior_college_article');
-			}else if(I('column_id')==10){
-				//加拿大留学
-				if(I('id')==10){
-					$this->display('PC/Index/overseas_article1');
-				}else if(I('id')==11){
-					$this->display('PC/Index/overseas_article3');
-				}else if(I('id')==12){
-					$this->display('PC/Index/overseas_article2');
-				}else{
-					$this->display('PC/Index/overseas_article');
-				}
+				$this->display('PC/Index/article');
 			}else if(I('column_id')==11){
 				//热门专业
 				$major_list = $Article->where('column_id=11')->order('id DESC')->select();
 				$this->assign('major_list',$major_list);
 				$this->display('PC/Index/major_article');
-			}else if(I('column_id')==12){
-				$this->display('PC/Index/plan_article');
-			}else if(I('column_id')==13){
-				$this->display('PC/Index/reason_article');
-			}else if(I('column_id')==20){
-				$this->display('PC/Index/learn_in_japan');
 			}else{
 				$column_list = $Column->where(array('id'=>array('in','14,15,16,21,22')))->select();
 				$this->assign('column_list',$column_list);
