@@ -23,10 +23,10 @@
     <div class="other_content neijj">
 				<div class="neijj-zhong">
 					<div class="neijj-left">
-						<h4>产业中心</h4>
+						<h4>{$column_parent_name}</h4>
 						<ul>
 							<volist name="column_list" id="vo">
-								<li class="<eq name="vo.id" value="$Think.get.id">over</eq>"><a href="{:U('Index/column',array('column_id'=>$vo['id']))}">
+								<li class="<eq name="vo.id" value="$Think.get.column_id">over</eq>"><a href="{:U('Index/column',array('column_id'=>$vo['id']))}">
 									{$vo.name}</a></li>
   						</volist>
 
@@ -34,8 +34,8 @@
 					</div>
 					<div class="neijj-right">
 						<img src="__PUBLIC__/Home/PC/images/zhonglai/jj_01.jpg" class="shou-gy">
-						<h4>公司简介</h4>
-						<span>ENTERPRISE INTRODUCTION</span>
+						<h4>{$column_data.name}</h4>
+						<span class="entitle">ENTERPRISE INTRODUCTION</span>
 						<div class="shou-mian">
 							<img src="__PUBLIC__/Home/PC/images/zhonglai/jj_02.jpg" class="shou-jj">
 							<span>首页&gt;关于我们&gt;公司简介</span>
@@ -44,10 +44,12 @@
 						<div style="clear:both"></div>
 						<hr>
 						<div class="neirong">
-							<ul>
+							<ul class="article-image-list clearfix">
 								<volist name="list" id="vo">
-									<li class="<eq name="vo.id" value="$Think.get.id">over</eq>"><a href="{:U('Index/article',array('column_id'=>1,'id'=>$vo['id']))}">
-										{$vo.title}</a></li>
+									<li class=""><a href="{:U('Index/article',array('column_id'=>$vo['column_id'],'id'=>$vo['id']))}">
+										<img src="__ROOT__/Uploads/{$vo.thumb}" height="200">
+										<p> {$vo.title}</p>
+									</a></li>
 								</volist>
 							</ul>
 						</div>

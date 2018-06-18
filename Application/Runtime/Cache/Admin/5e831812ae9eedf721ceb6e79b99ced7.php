@@ -663,16 +663,16 @@
 											</label>
 											<div class="col-sm-2">
                       	<div class="input-group">
-                          <input type="text" data-date-format="yyyy-mm-dd" name="post_time" data-date-viewmode="years" value="<?php echo date('Y-m-d'); ?>" class="form-control date-picker">
+                          <input type="text" data-date-format="yyyy-mm-dd" name="post_time" data-date-viewmode="years" value="<?php echo ($data["post_time"]); ?>" class="form-control date-picker">
                           <span class="input-group-addon"> <i class="fa fa-calendar"></i> </span>
                         </div>
 											</div>
 										</div>
-                    <?php if(($column_data["id"]) == "11"): ?><!-- 加载编辑器的容器 --> 
-                    <!-- 配置文件 --> 
-                    <script type="text/javascript" src="/Public/ueditor/ueditor.config.js"></script> 
-                    <!-- 编辑器源码文件 --> 
-                    <script type="text/javascript" src="/Public/ueditor/ueditor.all.js"></script> 
+                    <?php if(($column_data["id"]) == "11"): ?><!-- 加载编辑器的容器 -->
+                    <!-- 配置文件 -->
+                    <script type="text/javascript" src="/Public/ueditor/ueditor.config.js"></script>
+                    <!-- 编辑器源码文件 -->
+                    <script type="text/javascript" src="/Public/ueditor/ueditor.all.js"></script>
                     <div class="form-group">
 											<label class="col-sm-2 control-label">
 												培养方向
@@ -681,13 +681,13 @@
                         <script id="ueditor1" name="direction" type="text/plain">
 														<?php echo ($data["direction"]); ?>
 												</script>
-                        <!-- 实例化编辑器 --> 
+                        <!-- 实例化编辑器 -->
                     		<script type="text/javascript">
 													var ue = UE.getEditor('ueditor1',{
 														'initialFrameHeight':400,
 														'zIndex':999
 													});
-                      	</script> 
+                      	</script>
 											</div>
 										</div>
                     <div class="form-group">
@@ -698,13 +698,13 @@
                         <script id="ueditor2" name="course" type="text/plain">
 														<?php echo ($data["course"]); ?>
 												</script>
-                        <!-- 实例化编辑器 --> 
+                        <!-- 实例化编辑器 -->
                     		<script type="text/javascript">
 													var ue = UE.getEditor('ueditor2',{
 														'initialFrameHeight':400,
 														'zIndex':999
 													});
-                      	</script> 
+                      	</script>
 											</div>
 										</div>
                     <div class="form-group">
@@ -715,13 +715,13 @@
                         <script id="ueditor3" name="obtain" type="text/plain">
 														<?php echo ($data["obtain"]); ?>
 												</script>
-                        <!-- 实例化编辑器 --> 
+                        <!-- 实例化编辑器 -->
                     		<script type="text/javascript">
 													var ue = UE.getEditor('ueditor3',{
 														'initialFrameHeight':400,
 														'zIndex':999
 													});
-                      	</script> 
+                      	</script>
 											</div>
 										</div>
                     <div class="form-group">
@@ -732,13 +732,13 @@
                         <script id="ueditor4" name="enterprise" type="text/plain">
 														<?php echo ($data["enterprise"]); ?>
 												</script>
-                        <!-- 实例化编辑器 --> 
+                        <!-- 实例化编辑器 -->
                     		<script type="text/javascript">
 													var ue = UE.getEditor('ueditor4',{
 														'initialFrameHeight':400,
 														'zIndex':999
 													});
-                      	</script> 
+                      	</script>
 											</div>
 										</div>
                     <?php else: ?>
@@ -750,18 +750,18 @@
                         <script id="ueditor" name="content" type="text/plain">
 														<?php echo ($data["content"]); ?>
 												</script>
-                    		<!-- 加载编辑器的容器 --> 
-                        <!-- 配置文件 --> 
-                        <script type="text/javascript" src="/Public/ueditor/ueditor.config.js"></script> 
-                        <!-- 编辑器源码文件 --> 
-                        <script type="text/javascript" src="/Public/ueditor/ueditor.all.js"></script> 
-                        <!-- 实例化编辑器 --> 
+                    		<!-- 加载编辑器的容器 -->
+                        <!-- 配置文件 -->
+                        <script type="text/javascript" src="/Public/ueditor/ueditor.config.js"></script>
+                        <!-- 编辑器源码文件 -->
+                        <script type="text/javascript" src="/Public/ueditor/ueditor.all.js"></script>
+                        <!-- 实例化编辑器 -->
                     		<script type="text/javascript">
 													var ue = UE.getEditor('ueditor',{
 														'initialFrameHeight':400,
 														'zIndex':999
 													});
-                      	</script> 
+                      	</script>
 											</div>
 										</div><?php endif; ?>
                     <div class="form-group">

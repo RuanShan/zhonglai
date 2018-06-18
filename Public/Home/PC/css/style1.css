@@ -215,7 +215,7 @@ a{
 }
 a:hover{
 text-decoration: none;
-color: red!important;
+color: #e50112!important;
 }
 .nei-jianjie {
 	overflow: hidden;
@@ -341,15 +341,15 @@ color: red!important;
 }
 .shi-dian1:hover{
 	text-decoration: none;
-	background: red;
+	background: #e50112;
 	color: #fff!important;
-	border: 1px solid red;
+	border: 1px solid #e50112;
 }
 .shi-dian2:hover{
 	text-decoration: none;
-	background: red;
+	background: #e50112;
 	color: #fff!important;
-	border: 1px solid red;
+	border: 1px solid #e50112;
 }
 .foot{
 	height: 162px;
@@ -387,7 +387,7 @@ color: red!important;
 	height: 26px;
 	line-height: 26px;
 	float: right;
-	color: red;
+	color: #e50112;
 	position: relative;
 	top: 76px;
 	right: 50px;
@@ -408,7 +408,7 @@ color: red!important;
 	display: block;
 	width: 140px;
 	padding:0px 10px;
-	color: red;
+	color: #e50112;
 	text-decoration: none;
 }
 .tan a:hover{
@@ -447,7 +447,6 @@ color: red!important;
 }
 .neijj{
 	width: 100%;
-	height: 1010px;
 	background: #eeeef0;
 	overflow: hidden;
 }
@@ -460,14 +459,13 @@ color: red!important;
 	margin-top:20px;
 }
 .neijj-left{
-	width: 200px;
-	border-right: 1px solid #ddd;
+	width: 20%;
 	height: 1010px;
 	float: left;
 }
 .neijj-left h4{
 	font-weight: bold;
-	color: red;
+	color: #e50112;
 }
 .neijj-left li{
 	    list-style: none;
@@ -478,6 +476,7 @@ color: red!important;
     border-bottom: 1px solid #ddd;
     transition:all 1s;
 }
+
 .neijj-left li a{
 	color: #333;
 	display: block;
@@ -491,13 +490,22 @@ color: red!important;
 	text-decoration: none;
 	font-size: 16px;
 }
+.neijj-left li.over{
+	background: #e50112;
+}
+.neijj-left li.over a{
+	color: #fff;
+}
+
 .neijj-left li:hover{
-	background: red;
+	background: #e50112;
 }
 .neijj-right{
-	width:800px;
+	width:80%;
 	float: right;
 	padding-left:50px;
+	border-left: 1px solid #ddd;
+	min-height: 600px;
 }
 .neijj-right h4{
 
@@ -506,7 +514,7 @@ color: red!important;
 	padding: 0px;
 	margin-bottom: 0px;
 }
-.neijj-right span{
+.neijj-right span.entitle{
 	width: 146px;
 	float: right;
 	font-size: 10px;
@@ -516,17 +524,23 @@ color: red!important;
 .neirong{
 	width: 100%;
 
-
 }
 .neirong img{
 	width: 100%;
-	height: 200px;
+	/*height: 200px;
 	margin:20px 0;
+	*/
 }
 .neirong  p{
 	line-height: 24px;
 	letter-spacing: 1;
 }
+.neirong .article-image-list{
+	list-style-type: none;
+}
+.neirong .article-image-list li{ float:left; width: 33.3333%; }
+.neirong .article-image-list img{ padding: 0 5px; margin: 10px 0;}
+.neirong .article-image-list p{ text-align: center; }
 .shou-gy{
 	display: none;
     float: left;

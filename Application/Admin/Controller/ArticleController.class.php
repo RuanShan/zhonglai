@@ -8,54 +8,51 @@ class ArticleController extends CommonController {
 	public function lists($column_id){
 		$Article = M('Article');
 		$Column = M('Column');
-		
+
 		$column_data = $Column->where('id='.$column_id)->find();
-		
+
 		$this->assign('column_data',$column_data);
-		
+
 		$count      = $Article->where('column_id='.$column_id)->count();
 		$Page       = new \Think\Page($count,25);
 		$show       = $Page->show();
-		
+
 		$list = $Article->order('id DESC')->where('column_id='.$column_id)->limit($Page->firstRow.','.$Page->listRows)->select();
 		$this->assign('list',$list);
 		$this->assign('page',$show);
-		
+
 		$this->display();
 	}
 	public function form($type,$column_id=0,$id=0){
 		$Column = M('Column');
 		$column_data = $Column->where('id='.$column_id)->find();
 		$column_big_data = $Column->where('id='.$column_data['pid'])->find();
-		
+
 		if($column_big_data['pid']){
 			$column_big_big_data = $Column->where('id='.$column_big_data['pid'])->find();
 		}
-		
+
 		$this->assign('column_big_big_data',$column_big_big_data);
-		
+
 		$this->assign('column_data',$column_data);
-		
+
 		if($type=='edit'){
 			$Article = M('Article');
 			$data = $Article->where('id='.$id)->find();
 			$data['content'] = stripslashes(htmlspecialchars_decode($data['content']));
-			$data['direction'] = stripslashes(htmlspecialchars_decode($data['direction']));
-			$data['course'] = stripslashes(htmlspecialchars_decode($data['course']));
-			$data['obtain'] = stripslashes(htmlspecialchars_decode($data['obtain']));
-			$data['enterprise'] = stripslashes(htmlspecialchars_decode($data['enterprise']));
-			
+		  $data['post_time'] = date( 'Y-m-d', strtotime( $data['post_time'] ) );
+
 			$this->assign('data',$data);
 		}
 		$this->display();
 	}
 	public function post($type){
 		$Article = M('Article');
-		
+
 		if(!I('title')){
 			$this->error('文章标题不为空！');
 		}
-		
+
 		$data = array(
 			'column_id'    => I('column_id'),
 			'title'        => I('title'),
@@ -70,19 +67,19 @@ class ArticleController extends CommonController {
 			'obtain'       => I('obtain'),
 			'enterprise'   => I('enterprise'),
 		);
-		
+
 		foreach($_FILES as $key=>$val){
 			if($_FILES[$key]['name']!=''){
 				$upload = new \Think\Upload();// 实例化上传类
 				$upload->maxSize   =     3145728 ;// 设置附件上传大小
 				$upload->exts      =     array('jpg', 'gif', 'png', 'jpeg');// 设置附件上传类型
 				$upload->rootPath  =      './Uploads/'; // 设置附件上传根目录
-				
-				/*$image = new \Think\Image(); 
+
+				/*$image = new \Think\Image();
 				$image->open($_FILES[$key]['tmp_name']);
 				$image->thumb(600, 500)->save($_FILES[$key]['tmp_name']);*/
-				
-				// 上传单个文件 
+
+				// 上传单个文件
 				$info   =   $upload->uploadOne($_FILES[$key]);
 				if(!$info) {// 上传错误提示错误信息
 					$this->error($upload->getError());
@@ -95,9 +92,9 @@ class ArticleController extends CommonController {
 				}
 			}
 		}
-		
+
 		if($type=='add'){
-			
+
 			$result = $Article->add($data);
 			if($result){
 				$this->success('添加成功！');
@@ -109,7 +106,7 @@ class ArticleController extends CommonController {
 				$thumb = $Article->where('id='.I('id'))->getField('thumb');
 				@unlink('./Uploads/'.$thumb);
 			}
-			
+
 			$data['id'] = I('id');
 			$result = $Article->save($data);
 			if($result){

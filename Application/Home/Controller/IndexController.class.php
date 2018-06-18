@@ -152,6 +152,13 @@ class IndexController extends CommonController {
 		$column_list = $Column->where(array('pid'=>array('eq',$column_data['pid'])))->select();
 		$this->assign('column_list',$column_list);
 
+		$column_parent = $Column->where('id='.$column_data['pid'])->find();
+		$this->assign('column_parent',$column_parent);
+		$column_parent_name = "";
+		if( !empty($column_parent)){
+			$column_parent_name = $column_parent['name'];
+		}
+		$this->assign('column_parent_name',$column_parent_name);
 
 		$column_map['column_id'] = array('eq',I('column_id'));
 
