@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$config_data.name}</title>
+<meta name="keywords" content="{$config_data.keywords}" />
+<meta name="description" content="{$config_data.description}" />
+<link href="__PUBLIC__/Home/PC/css/liMarquee.css" rel="stylesheet" type="text/css" />
+<link href="__PUBLIC__/Home/PC/css/css.css" rel="stylesheet" type="text/css" />
+<script src="__PUBLIC__/Home/PC/js/jquery-1.9.1.min.js"></script>
+<script src="__PUBLIC__/Home/PC/js/jquery.liMarquee.js"></script>
+</head>
+
+<body>
+	<include file="PC/Public/head" />
+  <div class="bodyer">
+  	<div class="other_banner" style="background:url(__ROOT__/Uploads/{$column_data.pc_pic}) no-repeat center;"></div>
+    <div class="other_content">
+    	<div class="other_content_left" style="height:358px; padding-bottom:0px;">
+      	<div class="other_content_left_title" style="text-align:left; padding-left:26px;">新闻分类</div>
+        <ul>
+        	<volist name="column_list" id="vo">
+        	<li class="<eq name="vo.id" value="$Think.get.column_id">over</eq>"><a href="{:U('Index/column',array('column_id'=>$vo['id']))}"><div class="other_content_left_title_word" style="font-weight:normal;" >{$vo.name}</div></a></li>
+          </volist>
+        </ul>
+      </div>
+      <div class="other_content_right">
+        <div class="other_content_right_title_bg" style="margin:0px;">
+        	{$column_data.name}
+        </div>
+        <ul class="news_list_list">
+        	<volist name="list" id="vo">
+        	<li>
+          	<a href="{:U('Index/article',array('column_id'=>$vo['column_id'],'id'=>$vo['id']))}">
+              <div class="news_list_list_title">{$vo.title}</div>
+              <div class="news_list_list_content">
+                {$vo.descriptions}
+              </div>
+              <div class="news_list_list_other">
+              	<div class="news_list_list_count">点击次数：{$vo.click}</div>
+                <div class="news_list_list_time">发布时间:{$vo.post_time}</div>
+              </div>
+            </a>
+          </li>
+          </volist>
+        </ul>
+        <div class="pages">
+        	{$page}
+        </div>
+        <div class="other_content_right_btn">
+        	<a href="#"><img src="__PUBLIC__/Home/PC/images/other_content_right_btn_22.jpg" width="211" height="52" /></a>
+          <a href="#"><img src="__PUBLIC__/Home/PC/images/other_content_right_btn_24.jpg" width="211" height="52" /></a>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+  <include file="PC/Public/foot" />
+</body>
+</html>

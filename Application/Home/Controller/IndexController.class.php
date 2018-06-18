@@ -149,14 +149,14 @@ class IndexController extends CommonController {
 		$column_data = $Column->where('id='.I('column_id'))->find();
 		$this->assign('column_data',$column_data);
 
-		$column_list = $Column->where(array('id'=>array('in','14,15,16,21,22')))->select();
+		$column_list = $Column->where(array('pid'=>array('eq',$column_data['pid'])))->select();
 		$this->assign('column_list',$column_list);
 
 
 		$column_map['column_id'] = array('eq',I('column_id'));
 
 		$count      = $Article->where($column_map)->count();
-		$Page       = new \Think\Page($count,4);
+		$Page       = new \Think\Page($count,24);
 		$show       = $Page->show();
 
 		$list = $Article->order('id DESC')->where($column_map)->limit($Page->firstRow.','.$Page->listRows)->select();
@@ -253,12 +253,12 @@ class IndexController extends CommonController {
 				$list = $Article->order('post_time DESC')->where($column_map)->limit($Page->firstRow.','.$Page->listRows)->select();
 				$this->assign('list',$list);
 				$this->display('PC/Index/article');
-			}else if(I('column_id')==2){
+			}else if(I('column_id')>=8 && I('column_id')<=16){
 				//产业中心
-				$column_map['column_id'] = array('eq',I('column_id'));
-				$list = $Article->order('post_time DESC')->where($column_map)->limit($Page->firstRow.','.$Page->listRows)->select();
-				$this->assign('list',$list);
-				$this->display('PC/Index/article_list');
+				$column_map['pid'] = array('eq',2);
+				$column_list = $Column->where($column_map)->select();
+				$this->assign('column_list',$column_list);
+				$this->display('PC/Index/column');
 			}else{
 				$column_list = $Column->where(array('id'=>array('in','14,15,16,21,22')))->select();
 				$this->assign('column_list',$column_list);
