@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$config_data.name}</title>
+<meta name="keywords" content="{$config_data.keywords}" />
+<meta name="description" content="{$config_data.description}" />
+<link href="__PUBLIC__/Home/PC/css/liMarquee.css" rel="stylesheet" type="text/css" />
+<link href="__PUBLIC__/Home/PC/css/css.css" rel="stylesheet" type="text/css" />
+<script src="__PUBLIC__/Home/PC/js/jquery-1.9.1.min.js"></script>
+<script src="__PUBLIC__/Home/PC/js/jquery.liMarquee.js"></script>
+</head>
+
+<body>
+	<include file="PC/Public/head" />
+  <div class="bodyer">
+  	<div class="other_banner" style="background:url(__ROOT__/Uploads/{$column_data.pc_pic}) no-repeat center;"></div>
+    <div class="other_content">
+    	<div class="other_content_left">
+      	<div class="other_content_left_title">专业选择</div>
+        <ul>
+        	<volist name="major_list" id="vo">
+        	<li class="<eq name='vo.id' value='$data.id'>over</eq>">
+						<eq name="vo.disabled" value="0">
+							<a href="{:U('Index/article',array('column_id'=>$vo['column_id'],'id'=>$vo['id']))}"><div class="other_content_left_title_word">{$vo.title}</div></a>
+						<else/>
+  						<a href="#" onclick="alert('抱歉，当前专业今年不招生。');return false;"><div class="other_content_left_title_word">{$vo.title}</div></a>
+						</eq>
+					</li>
+          </volist>
+        </ul>
+      </div>
+      <div class="other_content_right">
+      	<h1>{$data.title}</h1>
+        <div class="other_content_right_title_bg">
+        	培养方向
+        </div>
+        <div class="other_content_right_content">{$data.direction}</div>
+        <div class="other_content_right_title_bg">
+        	主要课程
+        </div>
+        <div class="other_content_right_content">{$data.course}</div>
+        <div class="other_content_right_title_bg">
+        	就业方向
+        </div>
+        <div class="other_content_right_content">{$data.obtain}</div>
+        <div class="other_content_right_btn">
+        	<a href="{$config_data.consult}" target="_blank"><img src="__PUBLIC__/Home/PC/images/other_content_right_btn_22.jpg" width="211" height="52" /></a>
+          <a href="{$config_data.consult}" target="_blank"><img src="__PUBLIC__/Home/PC/images/other_content_right_btn_24.jpg" width="211" height="52" /></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <include file="PC/Public/foot" />
+</body>
+</html>

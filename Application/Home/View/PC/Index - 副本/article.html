@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$data.title} - {$column_data.name} - {$config_data.name}</title>
+<meta name="keywords" content="{$config_data.keywords}" />
+<meta name="description" content="{$config_data.description}" />
+<link href="__PUBLIC__/Home/PC/css/swiper.css" rel="stylesheet" type="text/css" />
+<link href="__PUBLIC__/Home/PC/css/css.css" rel="stylesheet" type="text/css"  />
+<script src="__PUBLIC__/Home/PC/js/jquery-3.1.1.js"></script>
+<script src="__PUBLIC__/Home/PC/js/swiper.jquery.js"></script>
+</head>
+
+<body>
+	<include file="PC/Public/head" />
+  <div class="bodyer">
+  	<div class="other_banner" style="background:url(__ROOT__/Uploads/{$column_data.pc_pic}) no-repeat center;">
+    </div>
+    <div class="min_nav">
+    	<ul>
+      	<li class="over">
+          <a href="#">{$column_data.name}</a>
+          <div class="min_nav_box"></div>
+        </li>
+      </ul>
+    </div>
+    <div class="content">
+    	{$data.content}
+    </div>
+  </div>
+  <include file="PC/Public/foot" />
+</body>
+</html>

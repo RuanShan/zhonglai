@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$config_data.name}</title>
+<meta name="viewport" content="width=640, user-scalable=no">
+<link rel="shortcut icon" href="favicon.ico" >
+<meta name="keywords" content="{$config_data.keywords}" />
+<meta name="description" content="{$config_data.description}" />
+<link href="__PUBLIC__/Home/MOB/css/css.css" rel="stylesheet" type="text/css" />
+<link href="__PUBLIC__/Home/MOB/css/swiper.min.css" rel="stylesheet" type="text/css" />
+<link href="__PUBLIC__/Home/MOB/css/xin.css" rel="stylesheet" type="text/css">
+<script src="__PUBLIC__/Home/MOB/js/swiper.min.js"></script>
+<script src="__PUBLIC__/Home/MOB/js/jquery-3.2.1.js"></script>
+<script src="__PUBLIC__/Home/MOB/js/jquery.carouFredSel-6.0.4-packed.js"></script>
+</head>
+
+<body>
+<include file="MOB/Public/head" />
+<div class="bodyer1">
+  <div class="bianxian"></div>
+  <div class="swiper-container banner swiper-container-horizontal">
+    <div class="swiper-wrapper" style="transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;">
+      <div class="swiper-slide swiper-slide-active" style="background: url(__ROOT__/Uploads/{$column_data.mob_pic}) center center no-repeat; width: 640px;"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+  <div class="bodyer2">
+    <div class="smdka">
+      <h2>{$data.title}</h2>
+      <hr style="margin-top: 20px;">
+      {$data.content}
+    </div>
+  </div>
+</div>
+<include file="MOB/Public/foot" />
+</body>
+</html>

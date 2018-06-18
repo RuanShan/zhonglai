@@ -1,0 +1,42 @@
+	<div class="clear"></div>
+  <div class="footer">
+  	{$config_data.copyright}
+  </div>
+	<div style="text-align:center;">
+		<a href="http://www.626china.org/Index.htm" style="color: #727171;text-decoration: none;">关爱生命 远离毒品</a>
+	</div>
+
+<notempty name="popup_data">
+	<div id="popup-ad" style="display:none;">
+		{$popup_data.content}
+	</div>
+	<script>
+	function showPopupAd(){
+		layer.open({
+			type: 1,
+			title: false,
+			closeBtn: 1,
+			area: ['600px','400px'],
+			//skin: 'layui-layer-nobg', //没有背景色
+			shade: false,
+			shadeClose: true,
+			content: $('#popup-ad')
+		});
+	}
+	$(document).ready(function(){
+		setTimeout("showPopupAd()", 10000);
+	})
+	</script>
+</notempty>
+<!-- JiaThis Button BEGIN -->
+<script type="text/javascript" >
+var jiathis_config={
+	summary:"",
+	shortUrl:true,
+	hideMore:false
+}
+</script>
+<script src="__PUBLIC__/Home/PC/js/layer.js"></script>
+<!-- JiaThis Button END -->
+<script type="text/javascript" src="//s.union.360.cn/160879.js" async defer></script>
+<script type="text/javascript"> var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://"); document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F3dfc1a099b404da99b6fe8fd6f7d9e58' type='text/javascript'%3E%3C/script%3E")) </script>

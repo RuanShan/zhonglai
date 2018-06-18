@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$config_data.name}</title>
+<meta name="keywords" content="{$config_data.keywords}" />
+<meta name="description" content="{$config_data.description}" />
+<link href="__PUBLIC__/Home/PC/css/swiper.css" rel="stylesheet" type="text/css" />
+<link href="__PUBLIC__/Home/PC/css/css.css" rel="stylesheet" type="text/css"  />
+<script src="__PUBLIC__/Home/PC/js/jquery-3.1.1.js"></script>
+<script src="__PUBLIC__/Home/PC/js/swiper.jquery.js"></script>
+</head>
+
+<body>
+	<include file="PC/Public/head" />
+  <div class="bodyer">
+  	<div class="banner swiper-container">
+    	<div class="swiper-wrapper">
+      	<volist name="slide_list" id="vo">
+      	<div class="swiper-slide" style="background:url(__ROOT__/Uploads/{$vo.pic}) no-repeat center;"></div>
+        </volist>
+      </div>
+      <div class="banner_page">
+      	<div class="swiper-pagination"></div>
+      </div>
+    </div>
+    <script> 
+		var mySwiper = new Swiper('.banner', {
+			autoplay: 5000,//可选选项，自动滑动
+			pagination: '.swiper-pagination',
+			paginationClickable: true,
+			direction: 'vertical'
+		})
+		</script>
+    <div class="about">
+    	<div class="index_title">
+      	关于我们
+        <div class="index_box"></div>
+      </div>
+      <div class="about_content">
+      	大连腾马科技发展有限公司成立于2005年，注册资金2000万元，是一家专业从事净化（洁净室 cleaning room）工程的技术咨询、工程设<br />
+        计、施工安装、检测调试及运行维护的高科技企业。<br />
+        公司拥有管理及技术人员50余人，专业的施工人员300余人。公司多年来专注于空气净化领域，致力于室内微环境的控<br />
+        制。设计和承建的净化工程涉及到精密电子...等行业，具有较强、较专业的净化工程的设计、施工能力。
+      </div>
+      <a href="{:U('Index/article',array('column_id'=>4,'id'=>1))}" class="more">more</a>
+    </div>
+    <div class="news">
+    	<div class="index_title">
+      	新闻中心
+        <div class="index_box"></div>
+      </div>
+      <ul class="index_news_list">
+      	<volist name="news_list" id="vo" offset="0" length='3'>
+        <eq name="i" value="1">
+      	<li class="first">
+        	<a href="{:U('Index/article',array('column_id'=>$vo['column_id'],'id'=>$vo['id']))}">
+          	<img src="__ROOT__/Uploads/{$vo.thumb}" width="332" height="195" />
+            <div class="news_words">
+            	{$vo.descriptions}
+            </div>
+            <div class="news_mores">
+            	<div class="news_mores_left">{$vo.post_time|substr=0,10}</div>
+              <div class="news_mores_right">more ></div>
+            </div>
+          </a>
+        </li>
+        <else/>
+        <li>
+        	<a href="{:U('Index/article',array('column_id'=>$vo['column_id'],'id'=>$vo['id']))}">
+          	<img src="__ROOT__/Uploads/{$vo.thumb}" width="332" height="195" />
+            <div class="news_words">
+            	{$vo.descriptions}
+            </div>
+            <div class="news_mores">
+            	<div class="news_mores_left">{$vo.post_time}</div>
+              <div class="news_mores_right">more ></div>
+            </div>
+          </a>
+        </li>
+        </eq>
+        </volist>
+      </ul>
+    </div>
+    <div class="links">
+    	<div class="index_title">
+      	工程案例
+        <div class="index_box"></div>
+      </div>
+      <div class="links_list swiper-container">
+      	<div class="swiper-wrapper">
+        	<volist name="case_list" id="vo" offset="0" length='20'>
+      		<div class="swiper-slide"><a href="{:U('Index/article',array('column_id'=>$vo['column_id'],'id'=>$vo['id']))}"><img src="__ROOT__/Uploads/{$vo.thumb}" width="222" height="188" /></a></div>
+          </volist>
+        </div>
+      </div>
+      <div class="swiper-button-prev"></div>
+    	<div class="swiper-button-next"></div>
+      <script> 
+			var mySwiper = new Swiper('.links_list', {
+				autoplay: 5000,//可选选项，自动滑动
+				slidesPerView : 5,
+				prevButton:'.swiper-button-prev',
+				nextButton:'.swiper-button-next',
+			})
+			</script>
+    </div>
+  </div>
+  <include file="PC/Public/foot" />
+</body>
+</html>

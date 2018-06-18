@@ -1,0 +1,47 @@
+	<div class="clear"></div>
+  <div class="footer">
+  	{$config_data.copyright}
+  </div>
+  <div class="floating">
+  	<div class="floating_1"><a href="tencent://message/?uin={$config_data.qq_1}&在线咨询&Menu=yes" target="blank"><img src="__PUBLIC__/Home/PC/images/floating_05.jpg" width="145" height="29" /></a></div>
+    <div class="floating_1"><a href="tencent://message/?uin={$config_data.qq_2}&&在线咨询&Menu=yes" target="blank"><img src="__PUBLIC__/Home/PC/images/floating_05.jpg" width="145" height="29" /></a></div>
+    <div class="floating_2"><a target="blank" href="{$config_data.consult}"><img src="__PUBLIC__/Home/PC/images/floating_17.jpg" width="150" height="36" /></a></div>
+    <div class="floating_3"><a href="http://www.jiathis.com/share" class="jiathis jiathis_txt" target="_blank"><img src="__PUBLIC__/Home/PC/images/floating_23.jpg" width="150" height="36" /></a></div>
+    <hr />
+    <div class="floating_4"><img src="__PUBLIC__/Home/PC/images/floating_29.jpg" width="137" height="135" /></div>
+    <div class="floating_5">扫描二维码</div>
+  </div>
+<notempty name="popup_data">
+	<div id="popup-ad" style="display:none;">
+		{$popup_data.content}
+	</div>
+	<script>
+	function showPopupAd(){
+		layer.open({
+			type: 1,
+			title: false,
+			closeBtn: 1,
+			area: ['600px','400px'],
+			//skin: 'layui-layer-nobg', //没有背景色
+			shade: false,
+			shadeClose: true,
+			content: $('#popup-ad')
+		});
+	}
+	$(document).ready(function(){
+		setTimeout("showPopupAd()", 10000);
+	})
+	</script>
+</notempty>
+<!-- JiaThis Button BEGIN -->
+<script type="text/javascript" >
+var jiathis_config={
+	summary:"",
+	shortUrl:true,
+	hideMore:false
+}
+</script>
+<script src="__PUBLIC__/Home/PC/js/layer.js"></script>
+<script type="text/javascript" src="http://v3.jiathis.com/code_mini/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+<script type="text/javascript" src="//s.union.360.cn/160879.js" async defer></script>

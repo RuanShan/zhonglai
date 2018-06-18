@@ -1,0 +1,88 @@
+				<!-- start: SIDEBAR -->
+				<div class="main-navigation navbar-collapse collapse">
+					<!-- start: MAIN NAVIGATION MENU -->
+          <div class="pc-navigation">
+            <ul class="main-navigation-menu">
+              <li class="<eq name="Think.session.menu.module" value="index">active</eq>">
+                <span class="column_item">
+                <i class="clip-home-3"></i>
+                  <span class="title"> <a href="{:U('Index/index')}">后台首页</a> </span><span class="selected"></span>
+                </span>
+              </li>
+              <li class="<eq name="Think.session.menu.module" value="config">active</eq>">
+                <span class="column_item">
+                <i class="clip-wrench"></i>
+                  <span class="title"> <a href="{:U('Config/index')}">全局设置</a> </span><span class="selected"></span>
+                </span>
+              </li>
+              <li class="<eq name="Think.session.menu.module" value="Slide">active</eq>">
+                <span class="column_item">
+                <i class="clip-pictures"></i>
+                  <span class="title"> <a href="{:U('Slide/index')}">电脑首页幻灯片</a> </span><span class="selected"></span>
+                
+                </span>
+              </li>
+              <li class="<eq name="Think.session.menu.module" value="MobSlide">active</eq>">
+                <span class="column_item">
+                <i class="clip-pictures"></i>
+                  <span class="title"> <a href="{:U('MobSlide/index')}">手机首页幻灯片</a> </span><span class="selected"></span>
+                </span>
+              </li>
+              <li>
+                <span class="column_item">
+                </span>
+              </li>
+              <li class="<eq name="Think.session.menu.module" value="MobSlide">active</eq>">
+                <span class="column_item">
+                <i class="clip-list-2"></i>
+                  <span class="title"> <a href="{:U('Column/form',array('type'=>'add','id'=>0))}">添加根目录</a> </span><span class="selected"></span>
+                </span>
+              </li>
+              <volist name="aort_list" id="vo">
+              <li class="<eq name="Think.get.column_id" value="1">active</eq>">
+                <!--<a href="{:U('Article/lists',array('column_id'=>1))}">-->
+                <span class="column_item">
+                  {$vo.depth_str}<i class="clip-list-2"></i>
+                  <span style="cursor:pointer" class="title column_title"> 
+                    <a href="{:U('Article/lists',array('column_id'=>$vo['id']))}">{$vo.name}</a> 
+                  </span>
+                  <span style="float:right;" class="dropup">
+                    <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" data-close-others="true" href="#">
+                      <i class="clip-chevron-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-right">
+                      <li>
+                        <a href="{:U('Column/form',array('type'=>'add','id'=>$vo['id']))}">添加子栏目</a>
+                      </li>
+                      <li>
+                        <a href="{:U('Column/form',array('type'=>'edit','id'=>$vo['id']))}">编辑</a>
+                      </li>
+                    </ul>
+                  </span>
+                </span>
+              </li>
+              </volist>
+              <li>
+                <span class="column_item">
+                </span>
+              </li>
+              <li>
+              	<span class="column_item">
+              		合作伙伴
+                </span>
+              </li>
+              <li>
+              	<span class="column_item">
+              		&nbsp;&nbsp;&nbsp;&nbsp;<a href="{:U('ObtainLinks/index')}">就业合作伙伴</a>
+                </span>
+              </li>
+              <li>
+              	<span class="column_item">
+              		&nbsp;&nbsp;&nbsp;&nbsp;<a href="{:U('EducationLinks/index')}">教育合作伙伴</a>
+                </span>
+              </li>
+            </ul>
+          </div>
+					<!-- end: MAIN NAVIGATION MENU -->
+				</div>
+				<!-- end: SIDEBAR -->

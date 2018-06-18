@@ -1,0 +1,220 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$config_data.name}</title>
+<meta name="viewport" content="width=640, user-scalable=no">
+<link rel="shortcut icon" href="favicon.ico" >
+<meta name="keywords" content="{$config_data.keywords}" />
+<meta name="description" content="{$config_data.description}" />
+<link href="__PUBLIC__/Home/MOB/css/css2.css" rel="stylesheet" type="text/css" />
+<link href="__PUBLIC__/Home/MOB/css/swiper.min.css" rel="stylesheet" type="text/css" />
+<script src="__PUBLIC__/Home/MOB/js/swiper.min.js"></script>
+<script src="__PUBLIC__/Home/MOB/js/jquery-3.2.1.js"></script>
+<script src="__PUBLIC__/Home/MOB/js/jquery.carouFredSel-6.0.4-packed.js"></script>
+</head>
+
+<body>
+		<include file="MOB/Public/head" />
+    <div class="bodyer">
+    	<div class="bianxian"></div>
+        <div class="swiper-container banner">
+            <div class="swiper-wrapper">
+            		<volist name="mob_slide_list" id="vo">
+                <div class="swiper-slide"  style="background:url(__ROOT__/Uploads/{$vo.pic}) no-repeat center;"></div>
+                </volist>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <script language="javascript">
+        var mySwiper = new Swiper('.swiper-container',{
+        	autoplay: 3000,
+        })
+        </script>
+				<div class="page_1">
+        <ul class="f-cb">
+					<li><a href="{:U('Index/article',array('column_id'=>10,'id'=>10))}"><img src="__PUBLIC__/Home/MOB/images/classes_thumb_33.jpg" /></a></li>
+        	<li><a href="{:U('Index/article',array('column_id'=>8,'id'=>8))}"><img src="__PUBLIC__/Home/MOB/images/classes_thumb_29.jpg" /></a></li>
+					<li><a href="{:U('Index/article',array('column_id'=>9,'id'=>9))}"><img src="__PUBLIC__/Home/MOB/images/classes_thumb_31.jpg"  /></a></li>
+					<li><a href="{:U('Index/article',array('column_id'=>20,'id'=>158))}"><img src="__PUBLIC__/Home/MOB/images/classes_thumb_34.jpg"  /></a></li>
+        </ul>
+				</div>
+        <div class="title_1">
+        	<div class="xian"></div>
+        	<img src="__PUBLIC__/Home/MOB/images/title_1_09.jpg" width="608" height="46" />
+        </div>
+        <div class="page_2">
+        	<div class="page_2_1">
+            	<div class="page_2_1_left">
+                  <a href="{:U('Index/article',array('column_id'=>12,'id'=>15))}#chuzhong"><img src="__PUBLIC__/Home/MOB/images/major_student_left_52_01.png" width="235" height="68" /></a>
+                  <a href="{:U('Index/article',array('column_id'=>12,'id'=>15))}#gaozhong"><img src="__PUBLIC__/Home/MOB/images/major_student_left_52_03.png"  width="235" height="68" /></a>
+                </div>
+                <ul class="page_2_1_right">
+                	<li style="border:0px;"><a>●　快速就业</a></li>
+                  <li><a>●　升学本科</a></li>
+                  <li><a>●　出国留学</a></li>
+                </ul>
+            </div>
+            <div class="page_2_2">
+            		<div class="page_2_2_left">
+                  <a href="{:U('Index/article',array('column_id'=>12,'id'=>15))}#nansheng"><img src="__PUBLIC__/Home/MOB/images/major_sex_right_left_64.png" width="235" height="68" /></a>
+                </div>
+                <div class="page_2_2_right"><a>●　适合男生的专业</a></div>
+            </div>
+            <div class="page_2_3">
+            	<div class="page_2_3_left">
+                   <a href="{:U('Index/article',array('column_id'=>12,'id'=>15))}#nvsheng"><img src="__PUBLIC__/Home/MOB/images/major_sex_right_left_69.png" width="235" height="68" /></a>
+                </div>
+                <div class="page_2_3_right"><a>●　适合女生的专业</a></div>
+            </div>
+        </div>
+        <script>
+
+			$('.page_2_1_left').click(function(){
+				$('.page_2_2').removeClass('over');
+				$('.page_2_3').removeClass('over');
+				$('.page_2_1').addClass('over');
+			});
+			$('.page_2_2_left').click(function(){
+				$('.page_2_1').removeClass('over');
+				$('.page_2_3').removeClass('over');
+				$('.page_2_2').addClass('over');
+			});
+			$('.page_2_3_left').click(function(){
+				$('.page_2_1').removeClass('over');
+				$('.page_2_2').removeClass('over');
+				$('.page_2_3').addClass('over');
+			});
+        </script>
+        <div class="page_3">
+        	<div class="xian2"></div>
+            <div class="page_3_1">今年热门专业</div>
+            <ul class="page_3_2">
+            	<volist name="major_list" id="vo">
+            	<li class="left"><a href="{:U('Index/article',array('column_id'=>$vo['column_id'],'id'=>$vo['id']))}">{$vo.title}</a></li>
+              </volist>
+            </ul>
+            <div class="xian3"></div>
+        </div>
+ 		<div class="page_4"><a href="{:U('Index/article',array('column_id'=>13,'id'=>17))}"><img src="__PUBLIC__/Home/MOB/images/page_4.jpg" width="609" height="70" /></a></div>
+        <div class="xian5"></div>
+        <ul class="news">
+        	<li class="tiaoshu">
+            	<div class="news_title">
+                	<div class="news_title_z">校园新闻</div>
+                    <div class="news_title_m"><a href="{:U('Index/column',array('column_id'=>14))}">MORE</a></div>
+                </div>
+                <div class="news_centent">
+                	<div class="news_thumb"><img src="__ROOT__/Uploads/{$news_column.0.thumb}" width="224" height="148" /></div>
+                    <ul class="news_lists">
+                    	<volist name="campus_list" id="vo">
+            					<eq name="i" value="1">
+                    	<li  style="border-top:0px;"><a href="{:U('Index/article',array('column_id'=>$vo['column_id'],'id'=>$vo['id']))}">{$vo.title|mb_substr=0,16,'utf-8'}<div class="news_lists_r">{$vo.post_time|mb_substr=5,5,'utf-8'}</div></a></li>
+                      <else/>
+                      <li><a href="{:U('Index/article',array('column_id'=>$vo['column_id'],'id'=>$vo['id']))}">{$vo.title|mb_substr=0,16,'utf-8'}<div class="news_lists_r">{$vo.post_time|mb_substr=5,5,'utf-8'}</div></a></li>
+                      </eq>
+            					</volist>
+                    </ul>
+                </div>
+            </li>
+            <li class="tiaoshu">
+            	<div class="news_title">
+                	<div class="news_title_z">生活文化</div>
+                    <div class="news_title_m"><a href="{:U('Index/column',array('column_id'=>16))}">MORE</a></div>
+                </div>
+                <div class="news_centent">
+                	<div class="news_thumb"><img src="__ROOT__/Uploads/{$news_column.2.thumb}" width="224" height="148" /></div>
+                    <ul class="news_lists">
+                    	<volist name="culture_list" id="vo">
+            					<eq name="i" value="1">
+                    	<li  style="border-top:0px;"><a href="{:U('Index/article',array('column_id'=>$vo['column_id'],'id'=>$vo['id']))}">{$vo.title|mb_substr=0,16,'utf-8'}<div class="news_lists_r">{$vo.post_time|mb_substr=5,5,'utf-8'}</div></a></li>
+                      <else/>
+                      <li><a href="{:U('Index/article',array('column_id'=>$vo['column_id'],'id'=>$vo['id']))}">{$vo.title|mb_substr=0,16,'utf-8'}<div class="news_lists_r">{$vo.post_time|mb_substr=5,5,'utf-8'}</div></a></li>
+                      </eq>
+            					</volist>
+                    </ul>
+                </div>
+            </li>
+            <li class="tiaoshu">
+            	<div class="news_title">
+                	<div class="news_title_z">就业资讯</div>
+                    <div class="news_title_m"><a href="{:U('Index/column',array('column_id'=>15))}">MORE</a></div>
+                </div>
+                <div class="news_centent">
+                	<div class="news_thumb"><img src="__ROOT__/Uploads/{$news_column.1.thumb}" width="224" height="148" /></div>
+                    <ul class="news_lists">
+                    	<volist name="consult_list" id="vo">
+            					<eq name="i" value="1">
+                    	<li  style="border-top:0px;"><a href="{:U('Index/article',array('column_id'=>$vo['column_id'],'id'=>$vo['id']))}">{$vo.title|mb_substr=0,16,'utf-8'}<div class="news_lists_r">{$vo.post_time|mb_substr=5,5,'utf-8'}</div></a></li>
+                      <else/>
+                      <li><a href="{:U('Index/article',array('column_id'=>$vo['column_id'],'id'=>$vo['id']))}">{$vo.title|mb_substr=0,16,'utf-8'}<div class="news_lists_r">{$vo.post_time|mb_substr=5,5,'utf-8'}</div></a></li>
+                      </eq>
+            					</volist>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+        <div class="page_5">
+        	<a href="{$config_data.consult}"><div class="page_5_1">点击了解</div></a>
+            <div class="page_5_2"><a href="{$config_data.consult}">点击咨询</a></div>
+            <div class="page_5_3">
+            	<div class="page_5_3_nei">0411-87588456<br/>0411-87588567</div>
+            </div>
+        </div>
+        <div class="page_6">
+        	<div class="page6_1">●　{$config_data.address}</div>
+            <div class="xian4"></div>
+        </div>
+        <div class="news_title">
+            <div class="news_title_z">毕业生风</div>
+            <div class="news_title_m"><a href="#">MORE</a></div>
+        </div>
+        <div class="page_7">
+            <div id="carousel">
+            		<volist name="student_list" id="vo">
+                <div><img src="__ROOT__/Uploads/{$vo.thumb}" alt="fruit1" width="105" height="80" /></div>
+                </volist>
+            </div>
+            <div class="xian6"></div>
+        </div>
+        <script type="text/javascript">
+			$(function() {
+
+				var $c = $('#carousel');
+
+				$c.carouFredSel({
+					align: false,
+					items: 6,
+					scroll: {
+						items: 1,
+						duration: 3000,
+						timeoutDuration: 0,
+						easing: 'linear',
+						pauseOnHover: 'immediate'
+					}
+				});
+			});
+		</script>
+        <div class="news_title">
+            <div class="news_title_z">合作伙伴</div>
+            <div class="news_title_m"><a href="#">MORE</a></div>
+        </div>
+        <div class="job_title">就业合作伙伴</div>
+        <ul class="job_centent">
+        	<li><img src="__PUBLIC__/Home/MOB/images/job_centent_06.jpg" width="100" height="60" /></li>
+            <li><img src="__PUBLIC__/Home/MOB/images/job_centent_08.jpg" width="100" height="60" /></li>
+            <li><img src="__PUBLIC__/Home/MOB/images/job_centent_18.jpg" width="100" height="60" /></li>
+            <li><img src="__PUBLIC__/Home/MOB/images/job_centent_06.jpg" width="100" height="60" /></li>
+            <li><img src="__PUBLIC__/Home/MOB/images/job_centent_08.jpg" width="100" height="60" /></li>
+            <li><img src="__PUBLIC__/Home/MOB/images/job_centent_18.jpg" width="100" height="60" /></li>
+            <li><img src="__PUBLIC__/Home/MOB/images/job_centent_06.jpg" width="100" height="60" /></li>
+            <li><img src="__PUBLIC__/Home/MOB/images/job_centent_08.jpg" width="100" height="60" /></li>
+            <li><img src="__PUBLIC__/Home/MOB/images/job_centent_18.jpg" width="100" height="60" /></li>
+            <li><img src="__PUBLIC__/Home/MOB/images/job_centent_18.jpg" width="100" height="60" /></li>
+        </ul>
+        <div class="job_title">教育合作伙伴</div>
+        <div class="page_8">HurockEducation　Development.　Columbia　International School<br/>Seneca　College.　Fanshaw　eCollege.　辽宁装备制造学院</div>
+    </div>
+    <include file="MOB/Public/foot" />
+</body>
+</html>

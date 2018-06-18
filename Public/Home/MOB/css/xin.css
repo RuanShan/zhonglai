@@ -1,0 +1,537 @@
+.bodyer1{
+	width:640px;
+	margin: auto;
+}
+.zhuanye{
+	width: 600px;
+
+	overflow: hidden;
+}
+.bodyer1 h3{
+	color: #0f6ab6;
+
+
+	    margin-top: 30px;
+}
+.bodyer1 pre{
+	color: #999;
+	width: 100%;
+	font-size:20px;
+	font-family: 黑体;
+	line-height: 32px;
+	margin: 20px 0px;
+}
+.zhuanye li{
+	width: 188px;
+	height: 150px;
+	float: left;
+	margin-top:20px;
+}
+.zhuanye img{
+	width: 100%;
+	height: 120px;
+}
+.zhuanye p{
+	width: 100%;
+	height: 30px;
+	background: #0f6ab6;
+	color: #fff;
+	text-align: center;
+	line-height: 28px;
+}
+.zhuanz{
+	margin-left: 20px;
+
+}
+.zhuanr{
+	float: right!important;
+}
+
+
+
+.bodyer2{
+	padding: 20px 20px 80px;
+}
+.youshi li{
+	width: 148px;
+	padding: 20px;
+	height: 280px;
+	background: #f7f7f7;
+	border-radius: 15px;
+	font-size: 12px;
+	float: left;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.youshi li img{
+	width: 100%;
+	height: 100px;
+}
+.youz{
+	margin-left: 20px;
+}
+.your{
+	float: right!important;
+}
+.youshi li h5{
+	margin-top: 10px;
+	color: #0f6ab6;
+}
+.youshi li p{
+	color: #999;
+	line-height: 17px;
+}
+.shihe{
+	width: 100%;
+	overflow: hidden;
+}
+.jiuye td{font-size: 12px;}
+.tou{
+	width: 20%;
+	font-size: 12px;
+	background: #0f6ab6;
+	color: #fff;
+	height: 30px;
+}
+table{ border-collapse:collapse; border:solid 1px #ddd;margin-top: 20px; }
+table td{ border:solid 1px #ddd; padding:10px;}
+.duan{
+	background: #e6f0f6;
+}
+.bodyer2 h3{
+	overflow: hidden;
+
+}
+.smdk img{
+	width: 60px;
+	height: 60px;
+	display: inline-block;
+	vertical-align:middle;
+	margin-top: 30px;
+}
+.smdk h2{
+	display: inline-block;
+	vertical-align:middle;
+	color: #0f6ab6;
+	margin-top: 30px;
+    text-align: center;
+}
+.smdk{
+    margin: 20px 0;
+}
+.smdk pre{
+	text-align: left;
+}
+.smdk h3{
+	text-align: left;
+
+}
+.paih li{
+	width: 46%;
+	margin-top: 20px;
+}
+.paih span{
+	font-size: 46px;
+	font-family: 微软雅黑;
+	font-weight: bold;
+	color: #5d5d5d;
+}
+.paih h4{
+	color: #fff;
+	background: #ddd;
+	height: 36px;
+	line-height: 36px;
+}
+.paih  p{
+	margin: 10px 0;
+	line-height: 26px;
+	color: #666;
+	text-align: left;
+}
+.paihl{
+	float: left!important;
+}
+.paihr{
+	float: right;
+}
+.smdk th{
+	background: #0f6ab6;
+	color: #fff;
+}
+.smdk td{
+	background: #e7f0f8;
+}
+
+.woxiao li{
+	width: 40%;
+	height: 420px;
+	margin-top: 20px;
+
+
+	padding: 3%;
+	    background-repeat: no-repeat;
+}
+.woxiao span{
+	font-size: 26px;
+	font-family: 微软雅黑;
+	font-weight: bold;
+	color: #fff;
+}
+.woxiao h4{
+	color: #fff;
+	background: #ddd;
+	height: 36px;
+	line-height: 36px;
+}
+.woxiao  p{
+	margin: 95px 0;
+	line-height: 22px;
+	color: #666;
+	text-align: left;
+}
+.woxiaol{
+	float: left!important;
+}
+.woxiaor{
+	float: right;
+}
+.woxiaolr{
+	width: 94%!important;
+}
+.sanse{
+	width: 100%；
+}
+.sanse li{
+	margin-top: 20px;
+}
+.sanse h4{
+	display:inline-block;
+	text-align: left;
+	width: 15%;
+	vertical-align: middle;
+	background: #ddd;
+	line-height: 34px;
+	padding:2%;
+	    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+}
+.sanse p{
+	display: inline-block;
+    text-align: left;
+    width: 75%;
+    vertical-align: middle;
+    padding: 2%;
+    height: 102px;
+    background: #989898;
+    color: #fff;
+}
+.major_footer{
+	padding: 36px 0;
+}
+.lianxi p{
+	text-align: left;
+	border-bottom: 1px solid #ddd;
+	width: 420px;
+	float: right;
+	line-height: 32px;
+
+}
+.lianxi{
+	 margin-top: 12px;
+    overflow: hidden;
+
+}
+/* major*/
+.smdka h2{
+	color: #0f6ab6;
+	margin: 30px 0 10px;
+    text-align: center;
+}
+.smdka p.en{
+    color: #aaa;
+    text-align: center;
+	margin: 0 0 30px;
+}
+.smdka .major_name{
+	text-align: left;
+	padding: 9px;
+	margin: 9px 0;
+	color: #ffffff;
+
+	background:url(../images/reason_content_content_word_4_title_36.jpg) no-repeat -60px;
+
+	background-size: contain;
+}
+.smdka h3{
+	margin: 1em 0;
+}
+
+.japan{
+
+  }
+.japan .u-head{
+	margin: 24px 0;
+	font-size: 34px; font-weight: bold;
+	text-align: center;border-bottom: solid 1px #EEEEEE;
+	padding: 0 0 24px 0; color:#2CA6E0;
+}
+.japan .u-content{
+  font-size: 12px;
+	color: #7F7F7F;
+}
+.japan .u-head .hicon{
+	display: inline-block;
+	padding-left: 50px;
+	background-position: left center;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+.japan .u-head .hicon1{
+	background-image:url(../images/japan/hicon1.png);
+}
+.japan .u-head .hicon2{	background-image:url(../images/japan/hicon2.png);}
+.japan .u-head .hicon3{	background-image:url(../images/japan/hicon3.png);}
+.japan .u-content .title{
+  color:#ffffff;text-align:center;padding:15px; background:#2CA6E0;
+}
+.japan .advantage td{
+	padding:0;background-color:#eeeeee;border:none;
+}
+.japan .advantage td.lft{
+	border-right: solid 8px #ffffff;
+	border-bottom: solid 16px #ffffff;
+}
+.japan .advantage td.rgt{
+	border-left: solid 8px #ffffff;
+	border-bottom: solid 16px #ffffff;
+}
+.japan .plans .plan{
+	border: solid 1px transparent;
+	border-radius: 120px;
+	overflow: hidden;
+	margin: 0 0 12px 0;
+	background-color: #eeeeee;
+}
+.japan .plans .plan .lft{
+width:50%;float:left;
+}
+.japan .plans .plan .rgt{
+	width:50%;float:left;
+}
+
+.japan .plans .plan .ptitle{
+	padding: 12px 12px 0 12px;
+}
+.japan .plans .plan .ptitle-sub1{
+	display:inline-block;line-height:40px;font-size: 32px;color:#8EC220;vertical-align:middle;
+}
+.japan .plans .plan .ptitle-sub2{
+	padding:0 12px;line-height:40px;background-color:#8EC220;color:#ffffff;display:inline-block;
+	font-size: 18px;
+	width: 7.5em;
+}
+
+.japan .plans .plan .pcontent{
+	margin: 12px;
+	padding: 12px 0;
+	line-height: 1.6em;
+	border-top: solid 1px #8EC220;
+}
+
+.japan .advantage .ptitle{
+	color: #ffffff;
+	text-align: center;
+	padding: 15px;
+	background: #2CA6E0;
+	font-size: 22px;
+
+}
+
+.japan .advantage .icon-wrap{
+	background-image:url(../images/japan/px1.jpg);
+	background-repeat: repeat-x;
+	/*background-size: contain;*/
+	background-position: center;
+	text-align: center;
+}
+.japan .advantage span.icon{
+	display: inline-block;
+	width: 43px;
+	height: 43px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+.japan .advantage .icon1{	background-image:url(../images/japan/icon1.png);}
+.japan .advantage .icon2{	background-image:url(../images/japan/icon2.png);}
+.japan .advantage .icon3{	background-image:url(../images/japan/icon3.png);}
+.japan .advantage .icon4{	background-image:url(../images/japan/icon4.png);}
+.japan .advantage .icon5{	background-image:url(../images/japan/icon5.png);}
+
+.japan .advantage .pcontent{
+	text-indent: 2em;
+	padding: 18px;
+}
+
+.japan .recruitment table{
+	width: 100%;
+}
+.japan .recruitment table th{
+	background:#2CA6E0;
+	color:#ffffff;
+	padding: 12px;
+}
+.japan .recruitment table td{
+	text-align: center;
+	padding: 12px;
+	background-color: #E9F6FC;
+}
+.japan .u-section{
+	padding: 28px 0;
+}
+
+.canada{
+	margin: 0 auto;
+	padding: 50px 10px 130px;
+}
+.canada .u-menu{
+	width: 100%;
+}
+.canada .u-menu li{
+	width: 33.33333%;
+	float: left;
+	box-sizing:border-box
+}
+.canada .u-menu li img{
+	width: 100%;
+}
+
+.canada .u-head{
+	margin: 24px 0;
+	font-size: 34px; font-weight: bold;
+	text-align: center;border-bottom: solid 1px #EEEEEE;
+	padding: 0 0 24px 0; color:#0F6AB6;
+}
+.canada .u-head .hicon{
+	display: inline-block;
+	padding-left: 50px;
+	background-position: left center;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+.canada .u-head .hicon1{
+	background-image:url(../images/canada/hicon1.png);
+}
+.canada .u-head .hicon2{
+	background-image:url(../images/canada/hicon2.png);
+}
+.canada .u-head .hicon3{
+	background-image:url(../images/canada/hicon3.png);
+}
+.canada .u-head .hicon4{
+	background-image:url(../images/canada/hicon4.png);
+}
+.canada .u-head .hicon5{
+	background-image:url(../images/canada/hicon5.png);
+}
+.canada .u-head .hicon6{
+	background-image:url(../images/canada/hicon6.png);
+}
+.canada .u-head .hicon7{
+	background-image:url(../images/canada/hicon7.png);
+}
+
+.canada .u-head .hicon21{
+	background-image:url(../images/canada/hicon21.png);
+}
+.canada .u-head .hicon22{
+	background-image:url(../images/canada/hicon22.png);
+}
+.canada .u-head .hicon23{
+	background-image:url(../images/canada/hicon23.png);
+}
+.canada .u-head .hicon24{
+	background-image:url(../images/canada/hicon24.png);
+}
+.canada .u-head .hicon25{
+	background-image:url(../images/canada/hicon25.png);
+}
+.canada .u-head .hicon31{
+	background-image:url(../images/canada/hicon31.png);
+}
+.canada .u-head .hicon32{
+	background-image:url(../images/canada/hicon32.png);
+}
+.canada .u-section{
+	padding: 28px 0;
+	font-size: 12px;
+	color: #7f7f7f;
+}
+.canada .advantage {
+	padding:0 8px;float:left;box-sizing:border-box;
+}
+.canada .advantage .u-title{
+	font-size: 18px;
+	background-color:#0F6AB6;color:#ffffff;line-height:38px; text-align:center;
+	border-radius: 0 18px 0 0;
+}
+.canada .advantage .u-content{
+  border-bottom:solid 1px #EEEEEF;border-left:solid 1px #EEEEEF;border-right:solid 1px #EEEEEF;
+	border-radius: 0 0 0 18px;
+	padding:8px;
+	line-height: 24px;
+	font-size: 16px;
+}
+.canada .georgia .greason{
+	float: left;box-sizing:border-box;
+	padding: 8px;
+}
+.canada .georgia .greason .title{
+	background-color: #eeeeee;
+	background-position: top center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	line-height: 80px;
+	    height: 145px;
+	    text-align: center;
+	    font-size: 16px;
+	    color: #ffffff;
+}
+.canada .georgia .greason .title1{	background-image:url(../images/canada/r1.png);}
+.canada .georgia .greason .title2{	background-image:url(../images/canada/r2.png);}
+.canada .georgia .greason .title3{	background-image:url(../images/canada/r3.png);}
+.canada .georgia .greason .title4{	background-image:url(../images/canada/r4.png);}
+.canada .georgia .greason .title5{	background-image:url(../images/canada/r5.png);}
+.canada .georgia .greason .title6{	background-image:url(../images/canada/r6.png);}
+.canada .georgia .greason .gcontent{ 	background-color: #eeeeee; height:80px; padding: 24px 18px;   text-indent:2em; }
+
+.canada  .gthrough{
+}
+.canada  .gthrough .gstep{
+	padding: 0 0 36px 0;
+ text-indent:2em;
+}
+.canada  .gthrough .gtitle{
+  	padding: 0 0 12px 0;
+	 color:#0F6AB6;
+	 font-weight: bold;
+}
+.canada .adv .title{
+	background-color:#0F6AB6;
+	border: solid 1px transparent;
+	border-radius: 0 18px;
+	background-position: bottom center;
+	background-repeat: no-repeat;
+	/*height: 25px;*/
+	padding:10px 0;
+	font-size: 24px;
+	text-align: center;
+	color: #ffffff;
+}
+/*
+.canada .adv .title1{	background-image:url(../images/canada/adv1.png);}
+.canada .adv .title2{	background-image:url(../images/canada/adv2.png);}
+.canada .adv .title3{	background-image:url(../images/canada/adv3.png);}
+.canada .adv .title4{	background-image:url(../images/canada/adv4.png);}
+.canada .adv .title5{	background-image:url(../images/canada/adv5.png);}
+*/

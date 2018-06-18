@@ -1,0 +1,176 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$config_data.name}</title>
+<meta name="viewport" content="width=640, user-scalable=no">
+<link rel="shortcut icon" href="favicon.ico" >
+<meta name="keywords" content="{$config_data.keywords}" />
+<meta name="description" content="{$config_data.description}" />
+<link href="__PUBLIC__/Home/MOB/css/css.css" rel="stylesheet" type="text/css" />
+<link href="__PUBLIC__/Home/MOB/css/swiper.min.css" rel="stylesheet" type="text/css" />
+<link href="__PUBLIC__/Home/MOB/css/xin.css" rel="stylesheet" type="text/css">
+<script src="__PUBLIC__/Home/MOB/js/swiper.min.js"></script>
+<script src="__PUBLIC__/Home/MOB/js/jquery-3.2.1.js"></script>
+<script src="__PUBLIC__/Home/MOB/js/jquery.carouFredSel-6.0.4-packed.js"></script>
+</head>
+
+<body>
+<include file="MOB/Public/head" />
+<div class="bodyer1">
+<div class="bianxian"></div>
+<div class="swiper-container banner swiper-container-horizontal">
+            <div class="swiper-wrapper" style="transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;">
+                <div class="swiper-slide swiper-slide-active" style="background: url(__ROOT__/Uploads/{$column_data.mob_pic}) center center no-repeat; width: 640px;"></div>
+
+ <div class="swiper-pagination"></div>
+</div>
+
+</div>
+
+<div class="bodyer2">
+
+<div class="zhuanye">
+<h3>专业选择 | MAJOR CHOICE</h3><hr style="margin-top:20px;">
+ <ul>
+  <volist name="major_list" id="vo">
+	<eq name="i%3" value="1">
+	<li><img src="__ROOT__/Uploads/{$vo.thumb}"><p>{$vo.title}</p></li>
+  </eq>
+  <eq name="i%3" value="2">
+	<li class="zhuanz"><img src="__ROOT__/Uploads/{$vo.thumb}"><p>{$vo.title}</p></li>
+  </eq>
+  <eq name="i%3" value="0">
+	<li class="zhuanr"><img src="__ROOT__/Uploads/{$vo.thumb}"><p>{$vo.title}</p></li>
+	</eq>
+	</volist>
+ </ul>
+</div>
+
+
+
+<div class="xuexi">
+<h3>学习模式 | LEARNING MODEL</h3><hr style="margin-top:20px;">
+<pre>
+    自考大专是我国高等教育基本制度之一，是我国现阶段高等教育
+的一个重要组成部分，是以学历考试为主的高等教育国家考试制度；
+是个人自学、社会助学、国家考试相结合的高等教育形式待遇与高考
+统招生相同。
+    自学考试的特点是：学费低、教考分离、毕业生质量高、宽进严
+出课程的社会适应性强、单科结业、不限补考次数、各科成绩合格准
+予毕业，颁发毕业证，是一种开放灵活的学习形式，毕业证含金量高。
+    我校是省级重点职业学校，同时也是辽宁装备制造学院大连教学
+区，采取“技校+自考大专”联读模式，学生在学校学习中职课程的
+同时，同步读取自考大专课程。
+</pre>
+</div>
+
+
+
+<div class="jindu">
+<h3>学习进度 | RATE OF LEARNING</h3><hr style="margin-top:20px;">
+<pre>
+    我校为三年学制,学生在校学习两年，期间完成全部中职课
+程大部分大专课程，第六学期开始到企业带薪实习(认知实习、轮岗
+实习顶岗实习）。毕业后可获得三证：《中职学历证书》、《中级职
+业资格证书》《大专学历证书》。
+</pre>
+</div>
+
+
+<div class="youshi">
+<h3>我们的优势 | OUR ADVANTAGE</h3><hr style="margin-top:20px;">
+<ul>
+<volist name="superiority_list" id="vo">
+<eq name="i" value="1">
+<li><img src="__ROOT__/Uploads/{$vo.thumb}"><h5>{$vo.title}</h5><p>{$vo.descriptions}</p></li>
+</eq>
+</volist>
+</ul>
+</div>
+
+
+
+<div class="shihe">
+    <h3>适合人群 | SUITABLE CROWD</h3><hr style="margin-top:20px;">
+    <img src="__PUBLIC__/Home/MOB/images/dazhuan_49.jpg" style="margin-top:20px;">
+</div>
+
+
+<div class="jiuye">
+    <h3>大专+就业定制班 | JUNIOR COLLEGE + JOB TAILOR CLASS</h3><hr style="margin-top:20px;">
+    <table>
+        <tr>
+            <th class="tou">专业</th>
+            <th class="tou">专修课程</th>
+            <th class="tou">就业方向</th>
+        </tr>
+        <tr>
+            <td class="duan">数控加工技术</td>
+            <td class="duan">机械制图、机械加工工艺、公差配合与测量技术、金属材料及热处理、数控设备控制基础、数控编程、数控仿真操作、数控车实践操作等。</td>
+            <td class="duan">汽车零部件生产企业、重工装备企业、成套设备制造公司等装备制造或零部件加工企业。</td>
+        </tr>
+        <tr>
+            <td>加工中心技术</td>
+            <td>机械制图、机械加工工艺、公差配合与测量技术、金属材料及热处理、数控设备控制基础、数控编程、加工中心仿真操作、加工中心实践操作等。</td>
+            <td>汽车零部件生产企业、重工装备企业、成套设备制造公司等装备制造或零部件加工企业。</td>
+        </tr>
+        <tr>
+            <td class="duan">模具制造</td>
+            <td class="duan">机械制图、机械加工工艺、公差配合与测量技术、金属材料及热处理、数控设备控制基础、数控编程、模具材料、模具结构、模具零件、数控设备操作等。</td>
+            <td class="duan">模具制造企业、汽车零部件生产企业、重工装备企业、成套设备制造公司等装备制造或零部件加工企业。</td>
+        </tr>
+        <tr>
+            <td>汽车检测与维修</td>
+            <td>汽车结构、汽车电子电气设备、汽车检测与维修、发动机原理与汽车理论、汽车检测与故障诊断技术、汽车维修技术及设备、汽车发动机电控技术、汽车电器与电路等。</td>
+            <td>汽车生产制造企业、汽车销售4S店、汽车改装厂及汽车维修企业从事汽车检测、维修、营销等技术和管理工作。
+</td>
+        </tr>
+        <tr>
+            <td class="duan">车装配与制造</td>
+            <td class="duan">汽车构造、汽车电器、汽车机械基础、机械识图与CAD、汽车内饰加工工艺等。</td>
+            <td class="duan">汽车生产制造企业、汽车零部件生产企业、汽车改装厂及汽车维修企业从事汽车等各类机动车的生产、组装、维修等技术与管理工作。
+</td>
+        </tr>
+        <tr>
+            <td>电气技术</td>
+            <td>安全用电、电工基础、电器识图、电子技术、可编程序、电机变压器、电子技术、企业供电、电工EDA等。</td>
+            <td>大型生产制造企业从事高、低压电控柜配线、线路维修、电路调试等工作。
+</td>
+        </tr>
+        <tr>
+            <td class="duan">机械装配</td>
+            <td class="duan">机械制图、机械基础、金属材料、极限配合、钳工工艺、机制工艺、工程力学、CAD等。</td>
+            <td class="duan">面向重工装备制造企业、成套设备制造公司等装备制造或零部件加工企业，从事大型设备组装、维修、调试等工作。</td>
+        </tr>
+        <tr>
+            <td>质检与文秘（女生）</td>
+            <td>机械制图、机械基础、CAD、机械制造工艺、金属材料、极限配合、电工学、量具测量、办公自动化、秘书礼仪等。</td>
+            <td>大型机械加工类企业，从事机械零部件产品质量检测工作、图纸保管、工时统计员、人事考勤员，画图员等工作。
+</td>
+        </tr>
+        <tr>
+            <td class="duan">电子商务</td>
+            <td class="duan">电子商务流程、电子商务网站设计与制作、网络营销实务、电子商务数据安全实务、条码编制实务等。</td>
+            <td class="duan">主要面向生产销售型企业、物流企业、运输仓储服务等企业从事网络营销、网站运营、网页前端设计及网站后台设计等管理和支持。
+</td>
+        </tr>
+        <tr>
+            <td>平面美术设计</td>
+            <td>美术基础、设计基础、图形创意、字体设计、版面编排、广告设计、室内效果图绘制、涉及相关软件应用等。</td>
+            <td>主要面向广告公司、企划公司、印刷公司、报社、杂志社、编辑部、网络公司、各媒体机构等从事平面设计宣传。
+</td>
+        </tr>
+        <tr>
+            <td class="duan">学前教育（双语幼师）</td>
+            <td class="duan">语文、数学、英语、计算机应用基础、音乐、钢琴、舞蹈、美术简笔画、自然科学基础知识、学前教育基础知识、幼儿园教育活动与设计、学前儿童发展心理学、学前儿童卫生保健、幼儿园环境与创设、教师口语等。</td>
+            <td class="duan">主要面向幼儿园、培训学校及早教中心等学前教育机构从事教育培训、幼儿教育和幼儿园管理工作。
+</td>
+        </tr>
+    </table>
+</div>
+</div>
+</div>
+<include file="MOB/Public/foot" />
+</body>
+</html>
