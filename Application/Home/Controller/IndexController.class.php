@@ -246,19 +246,18 @@ class IndexController extends CommonController {
 				$this->display('MOB/Index/news_article');
 			}
 		}else{
-			if(I('column_id')==1||I('column_id')==2||I('column_id')==3||I('column_id')==4||I('column_id')==5||I('column_id')==6||I('column_id')==7||I('column_id')==9){
+			if(I('column_id')==1||I('column_id')==3||I('column_id')==4||I('column_id')==5||I('column_id')==6||I('column_id')==7||I('column_id')==9){
 				//关于我们
 				$column_map['column_id'] = array('eq',I('column_id'));
 
 				$list = $Article->order('post_time DESC')->where($column_map)->limit($Page->firstRow.','.$Page->listRows)->select();
 				$this->assign('list',$list);
-
 				$this->display('PC/Index/article');
-			}else if(I('column_id')==11){
+			}else if(I('column_id')==2){
 				//热门专业
-				$major_list = $Article->where('column_id=11')->order('id DESC')->select();
-				$this->assign('major_list',$major_list);
-				$this->display('PC/Index/major_article');
+				$list = $Article->order('post_time DESC')->where($column_map)->limit($Page->firstRow.','.$Page->listRows)->select();
+				$this->assign('list',$list);
+				$this->display('PC/Index/column');
 			}else{
 				$column_list = $Column->where(array('id'=>array('in','14,15,16,21,22')))->select();
 				$this->assign('column_list',$column_list);

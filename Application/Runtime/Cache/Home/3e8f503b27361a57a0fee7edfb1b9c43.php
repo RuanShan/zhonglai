@@ -58,28 +58,25 @@
 					<div class="neijj-left">
 						<h4>关于我们</h4>
 						<ul>
-							<li class="glyphicon-class"><a href="">企业简介</a></li>
-							<li><a href="">领导致辞</a></li>
-							<li><a href="">组织结构</a></li>
-							<li><a href="">企业文化</a></li>
-							<li><a href="">资质荣誉</a></li>
-							<li><a href="">发展历史</a></li>
+							<?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li class="<?php if(($vo["id"]) == $_GET['id']): ?>over<?php endif; ?>"><a href="<?php echo U('Index/article',array('column_id'=>1,'id'=>$vo['id']));?>">
+									<?php echo ($vo["title"]); ?></a></li><?php endforeach; endif; else: echo "" ;endif; ?>
+
 						</ul>
 					</div>
 					<div class="neijj-right">
-						<img src="./images/jj_01.jpg" class="shou-gy">
+						<img src="/Public/Home/PC/images/zhonglai/jj_01.jpg" class="shou-gy">
 						<h4>公司简介</h4>
 						<span>ENTERPRISE INTRODUCTION</span>
 						<div class="shou-mian">
-							<img src="./images/jj_02.jpg" class="shou-jj">
+							<img src="/Public/Home/PC/images/zhonglai/jj_02.jpg" class="shou-jj">
 							<span>首页&gt;关于我们&gt;公司简介</span>
 						</div>
 
 						<div style="clear:both"></div>
 						<hr>
 						<div class="neirong">
-							<img src="./images/jj_03.jpg">
-							<img src="./images/jj_06.jpg">
+							<img src="/Public/Home/PC/images/zhonglai/jj_03.jpg">
+							<img src="/Public/Home/PC/images/zhonglai/jj_06.jpg">
 							<p>山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团</p>
 						</div>
 

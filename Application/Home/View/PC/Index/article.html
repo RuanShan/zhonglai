@@ -25,28 +25,27 @@
 					<div class="neijj-left">
 						<h4>关于我们</h4>
 						<ul>
-							<li class="glyphicon-class"><a href="">企业简介</a></li>
-							<li><a href="">领导致辞</a></li>
-							<li><a href="">组织结构</a></li>
-							<li><a href="">企业文化</a></li>
-							<li><a href="">资质荣誉</a></li>
-							<li><a href="">发展历史</a></li>
+							<volist name="list" id="vo">
+								<li class="<eq name="vo.id" value="$Think.get.id">over</eq>"><a href="{:U('Index/article',array('column_id'=>1,'id'=>$vo['id']))}">
+									{$vo.title}</a></li>
+  						</volist>
+
 						</ul>
 					</div>
 					<div class="neijj-right">
-						<img src="./images/jj_01.jpg" class="shou-gy">
+						<img src="__PUBLIC__/Home/PC/images/zhonglai/jj_01.jpg" class="shou-gy">
 						<h4>公司简介</h4>
 						<span>ENTERPRISE INTRODUCTION</span>
 						<div class="shou-mian">
-							<img src="./images/jj_02.jpg" class="shou-jj">
+							<img src="__PUBLIC__/Home/PC/images/zhonglai/jj_02.jpg" class="shou-jj">
 							<span>首页&gt;关于我们&gt;公司简介</span>
 						</div>
 
 						<div style="clear:both"></div>
 						<hr>
 						<div class="neirong">
-							<img src="./images/jj_03.jpg">
-							<img src="./images/jj_06.jpg">
+							<img src="__PUBLIC__/Home/PC/images/zhonglai/jj_03.jpg">
+							<img src="__PUBLIC__/Home/PC/images/zhonglai/jj_06.jpg">
 							<p>山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团</p>
 						</div>
 
