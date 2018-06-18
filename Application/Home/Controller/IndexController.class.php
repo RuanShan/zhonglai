@@ -254,10 +254,11 @@ class IndexController extends CommonController {
 				$this->assign('list',$list);
 				$this->display('PC/Index/article');
 			}else if(I('column_id')==2){
-				//热门专业
+				//产业中心
+				$column_map['column_id'] = array('eq',I('column_id'));
 				$list = $Article->order('post_time DESC')->where($column_map)->limit($Page->firstRow.','.$Page->listRows)->select();
 				$this->assign('list',$list);
-				$this->display('PC/Index/column');
+				$this->display('PC/Index/article_list');
 			}else{
 				$column_list = $Column->where(array('id'=>array('in','14,15,16,21,22')))->select();
 				$this->assign('column_list',$column_list);
