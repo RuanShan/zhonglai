@@ -1,0 +1,380 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>{$config_data.name}</title>
+	<meta name="keywords" content="{$config_data.keywords}" />
+	<meta name="description" content="{$config_data.description}" />
+	<link href="__PUBLIC__/Home/PC/css/swiper.css" rel="stylesheet" type="text/css" />
+	<link href="__PUBLIC__/Home/PC/css/liMarquee.css" rel="stylesheet" type="text/css" />
+	<link href="__PUBLIC__/Home/PC/css/css.css" rel="stylesheet" type="text/css" />
+	<script src="__PUBLIC__/Home/PC/js/jquery-1.9.1.min.js"></script>
+	<script src="__PUBLIC__/Home/PC/js/swiper.jquery.js"></script>
+	<script src="__PUBLIC__/Home/PC/js/jquery.liMarquee.js"></script>
+
+</head>
+
+<body>
+	<include file="PC/Public/head" />
+	<div class="bodyer">
+		<div class="index_banner swiper-container">
+			<div class="swiper-wrapper">
+				<volist name="slide_list" id="vo">
+					<a class="swiper-slide" href="{$vo.url}"  target="_blank" ><div class="swiper-slide" style="background:url(__ROOT__/Uploads/{$vo.pic}) no-repeat center;"></div></a>
+				</volist>
+			</div>
+		</div>
+		<script>
+			var mySwiper = new Swiper('.index_banner', {
+				autoplay: 5000, //可选选项，自动滑动
+				autoplayDisableOnInteraction: false
+			})
+		</script>
+		<div class="classes">
+			<ul class=" clear" style="">
+				<li><a target="_blank" href="{:U('Index/article',array('column_id'=>10,'id'=>10))}"><img src="__PUBLIC__/Home/PC/images/classes_thumb_33.jpg"  /></a></li>
+				<li class="first"><a target="_blank" href="{:U('Index/article',array('column_id'=>8,'id'=>8))}"><img src="__PUBLIC__/Home/PC/images/classes_thumb_29.jpg" /></a></li>
+				<li><a target="_blank" href="{:U('Index/article',array('column_id'=>9,'id'=>9))}"><img src="__PUBLIC__/Home/PC/images/classes_thumb_31.jpg" /></a></li>
+				<li><a target="_blank" href="{:U('Index/article',array('column_id'=>20,'id'=>31))}"><img src="__PUBLIC__/Home/PC/images/classes_thumb_34.jpg"  /></a></li>
+			</ul>
+		</div>
+		<div class="worry">
+			<a target="_blank" href="{:U('Index/article',array('column_id'=>12,'id'=>15))}"><img src="__PUBLIC__/Home/PC/images/worry_36.jpg" width="1002" height="164" /></a>
+		</div>
+		<div class="clear major" style="height:auto;">
+			<div class="clear " style="width:35%;float:left;">
+				<div class="major_left" style="width:auto;float:none; height: 290px;">
+					<div class="major_left_title column_title">
+						2018热门专业
+					</div>
+					<ul class="clear major_left_list">
+						<volist name="major_list" id="vo">
+							<li>
+								<eq name="vo.disabled" value="0">
+									<a target="_blank" href="{:U('Index/article',array('column_id'=>$vo['column_id'],'id'=>$vo['id']))}">{$vo.title}</a>
+									<else/>
+									<a href="#" onclick="alert('抱歉，当前专业今年不招生。');return false;">{$vo.title}</a>
+								</eq>
+							</li>
+						</volist>
+					</ul>
+				</div>
+				<div class="major_right" style="width:auto; height: 290px; float:none;">
+					<div class="major_right_title column_title">制定适合自己的学习规划</div>
+					<div class="major_student clear">
+						<div class="major_student_left" style="width:50%;">
+							<a target="_blank" href="{:U('Index/article',array('column_id'=>12,'id'=>15))}#chuzhong"><img src="__PUBLIC__/Home/PC/images/major_student_left_52_01.png" width="175" height="48" /></a>
+							<a target="_blank" href="{:U('Index/article',array('column_id'=>12,'id'=>15))}#gaozhong"><img style="margin-top:8px;" src="__PUBLIC__/Home/PC/images/major_student_left_52_03.png" width="175" height="48"   /></a>
+						</div>
+						<ul class="major_student_right" style="width:50%;height:auto;">
+							<li class="first">
+								<a target="_blank" href="{:U('Index/article',array('column_id'=>12,'id'=>15))}#chuzhong">
+									<div class="major_student_right_word">快速就业</div>
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="{:U('Index/article',array('column_id'=>12,'id'=>15))}#gaozhong">
+									<div class="major_student_right_word">升学本科</div>
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="{:U('Index/article',array('column_id'=>12,'id'=>15))}#gaozhong">
+									<div class="major_student_right_word">出国留学</div>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="major_sex_right clear" style="height:48px;">
+						<div class="major_sex_right_left" style="width:50%;">
+							<a target="_blank" href="{:U('Index/article',array('column_id'=>12,'id'=>15))}#nansheng"><img src="__PUBLIC__/Home/PC/images/major_sex_right_left_64.png" width="175" height="48"/></a>
+						</div>
+						<div class="major_sex_right_right" style="width:50%;">
+							<a target="_blank" href="{:U('Index/article',array('column_id'=>12,'id'=>15))}#nansheng">
+								<div class="major_sex_right_word">适合男生的专业</div>
+							</a>
+						</div>
+					</div>
+					<div class="major_sex_right clear" style="height:48px;">
+						<div class="major_sex_right_left" style="width:50%;">
+							<a target="_blank" href="{:U('Index/article',array('column_id'=>12,'id'=>15))}#nvsheng"><img src="__PUBLIC__/Home/PC/images/major_sex_right_left_69.png"  width="175" height="48" /></a>
+						</div>
+						<div class="major_sex_right_right" style="width:50%;">
+							<a target="_blank" href="{:U('Index/article',array('column_id'=>12,'id'=>15))}#nvsheng">
+								<div class="major_sex_right_word">适合女生的专业</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div style="width:65%; float:right; overflow:hidden;">
+				<div style="padding: 0 0 0 24px">
+					<div class="news_list">
+						<div class="all_title2 column_title">
+							<div class="all_title_word">就业咨讯</div>
+							<div class="all_title_more"><a target="_blank" href="{:U('Index/column',array('column_id'=>15))}">MORE</a></div>
+						</div>
+						<div class="news_list_content">
+							<div class="news_list_content_pic" style="width:40%;">
+								<img src="__ROOT__/Uploads/{$news_column.1.thumb}" width="240px"   />
+							</div>
+							<ul class="news_list_content_list" style="width:60%;">
+								<volist name="consult_list" id="vo">
+									<eq name="i" value="1">
+										<li class="first clear">
+											<a target="_blank" href="{:U('Index/article',array('column_id'=>$vo['column_id'],'id'=>$vo['id']))}">
+												<div class="news_list_content_list_title">{$vo.title|mb_substr=0,24,'utf-8'}</div>
+												<div class="news_list_content_list_date">{$vo.post_time|mb_substr=5,5,'utf-8'}</div>
+											</a>
+										</li>
+										<else/>
+										<li class="clear">
+											<a target="_blank" href="{:U('Index/article',array('column_id'=>$vo['column_id'],'id'=>$vo['id']))}">
+												<div class="news_list_content_list_title">{$vo.title|mb_substr=0,24,'utf-8'}</div>
+												<div class="news_list_content_list_date">{$vo.post_time|mb_substr=5,5,'utf-8'}</div>
+											</a>
+										</li>
+									</eq>
+								</volist>
+							</ul>
+						</div>
+					</div>
+
+					<div class="news_list">
+						<div class="all_title2 column_title">
+							<div class="all_title_word">教学科研</div>
+							<div class="all_title_more"><a target="_blank" href="{:U('Index/column',array('column_id'=>21))}">MORE</a></div>
+						</div>
+						<div class="news_list_content">
+							<div class="news_list_content_pic" style="width:40%;">
+								<img src="__ROOT__/Uploads/{$news_column.3.thumb}" width="240px"   />
+							</div>
+							<ul class="news_list_content_list" style="width:60%;">
+								<volist name="education_list" id="vo">
+									<eq name="i" value="1">
+										<li class="first clear">
+											<a target="_blank" href="{:U('Index/article',array('column_id'=>$vo['column_id'],'id'=>$vo['id']))}">
+												<div class="news_list_content_list_title">{$vo.title|mb_substr=0,16,'utf-8'}</div>
+												<div class="news_list_content_list_date">{$vo.post_time|mb_substr=5,5,'utf-8'}</div>
+											</a>
+										</li>
+										<else/>
+										<li class="clear">
+											<a target="_blank" href="{:U('Index/article',array('column_id'=>$vo['column_id'],'id'=>$vo['id']))}">
+												<div class="news_list_content_list_title">{$vo.title|mb_substr=0,16,'utf-8'}</div>
+												<div class="news_list_content_list_date">{$vo.post_time|mb_substr=5,5,'utf-8'}</div>
+											</a>
+										</li>
+									</eq>
+								</volist>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<script>
+				$('.major_student_left img').mouseover(function() {
+					$('.major_student').addClass('over');
+				})
+				$('.major_student_left img').mouseout(function() {
+					$('.major_student').removeClass('over');
+				})
+				$('.major_sex_right_left img').mouseover(function() {
+					$(this).parents('.major_sex_right').addClass('over');
+				})
+				$('.major_sex_right_left img').mouseout(function() {
+					$(this).parents('.major_sex_right').removeClass('over');
+				})
+			</script>
+		</div>
+		<div class="reason">
+			<a target="_blank" href="{:U('Index/article',array('column_id'=>13,'id'=>17))}"><img src="__PUBLIC__/Home/PC/images/reason_pic_72.jpg" width="1002" height="116" /></a>
+		</div>
+		<div class="news">
+			<div class="news_list">
+				<div class="all_title">
+					<div class="all_title_word">校园新闻</div>
+					<div class="all_title_more"><a target="_blank" href="{:U('Index/column',array('column_id'=>14))}">MORE</a></div>
+				</div>
+				<div class="news_list_content">
+					<div class="news_list_content_pic">
+						<img src="__ROOT__/Uploads/{$news_column.0.thumb}" width="201" height="132" />
+					</div>
+					<ul class="news_list_content_list">
+						<volist name="campus_list" id="vo">
+							<eq name="i" value="1">
+								<li class="first">
+									<a target="_blank" href="{:U('Index/article',array('column_id'=>$vo['column_id'],'id'=>$vo['id']))}">
+										<div class="news_list_content_list_title">{$vo.title|mb_substr=0,16,'utf-8'}</div>
+										<div class="news_list_content_list_date">{$vo.post_time|mb_substr=5,5,'utf-8'}</div>
+									</a>
+								</li>
+								<else/>
+								<li>
+									<a target="_blank" href="{:U('Index/article',array('column_id'=>$vo['column_id'],'id'=>$vo['id']))}">
+										<div class="news_list_content_list_title">{$vo.title|mb_substr=0,16,'utf-8'}</div>
+										<div class="news_list_content_list_date">{$vo.post_time|mb_substr=5,5,'utf-8'}</div>
+									</a>
+								</li>
+							</eq>
+						</volist>
+					</ul>
+				</div>
+			</div>
+			<div class="news_list">
+				<div class="all_title">
+					<div class="all_title_word">奖励资助</div>
+					<div class="all_title_more"><a target="_blank" href="{:U('Index/column',array('column_id'=>22))}">MORE</a></div>
+				</div>
+				<div class="news_list_content">
+					<div class="news_list_content_pic">
+						<img src="__ROOT__/Uploads/{$news_column.4.thumb}" width="201" height="132" />
+					</div>
+					<ul class="news_list_content_list">
+						<volist name="prize_list" id="vo">
+							<eq name="i" value="1">
+								<li class="first">
+									<a target="_blank" href="{:U('Index/article',array('column_id'=>$vo['column_id'],'id'=>$vo['id']))}">
+										<div class="news_list_content_list_title">{$vo.title|mb_substr=0,16,'utf-8'}</div>
+										<div class="news_list_content_list_date">{$vo.post_time|mb_substr=5,5,'utf-8'}</div>
+									</a>
+								</li>
+								<else/>
+								<li>
+									<a target="_blank" href="{:U('Index/article',array('column_id'=>$vo['column_id'],'id'=>$vo['id']))}">
+										<div class="news_list_content_list_title">{$vo.title|mb_substr=0,16,'utf-8'}</div>
+										<div class="news_list_content_list_date">{$vo.post_time|mb_substr=5,5,'utf-8'}</div>
+									</a>
+								</li>
+							</eq>
+						</volist>
+					</ul>
+				</div>
+			</div>
+			<div class="news_list">
+				<div class="all_title">
+					<div class="all_title_word">文化生活</div>
+					<div class="all_title_more"><a target="_blank" href="{:U('Index/column',array('column_id'=>16))}">MORE</a></div>
+				</div>
+				<div class="news_list_content">
+					<div class="news_list_content_pic">
+						<img src="__ROOT__/Uploads/{$news_column.2.thumb}" width="201" height="132" />
+					</div>
+					<ul class="news_list_content_list">
+						<volist name="culture_list" id="vo">
+							<eq name="i" value="1">
+								<li class="first">
+									<a target="_blank" href="{:U('Index/article',array('column_id'=>$vo['column_id'],'id'=>$vo['id']))}">
+										<div class="news_list_content_list_title">{$vo.title|mb_substr=0,16,'utf-8'}</div>
+										<div class="news_list_content_list_date">{$vo.post_time|mb_substr=5,5,'utf-8'}</div>
+									</a>
+								</li>
+								<else/>
+								<li>
+									<a target="_blank" href="{:U('Index/article',array('column_id'=>$vo['column_id'],'id'=>$vo['id']))}">
+										<div class="news_list_content_list_title">{$vo.title|mb_substr=0,16,'utf-8'}</div>
+										<div class="news_list_content_list_date">{$vo.post_time|mb_substr=5,5,'utf-8'}</div>
+									</a>
+								</li>
+							</eq>
+						</volist>
+					</ul>
+				</div>
+			</div>
+			<div class="news_list">
+				<div class="news_contact_pic">
+					<div class="news_contact_pic_left"><a target="_blank" href="{$config_data.consult}" target="_blank"><img src="__PUBLIC__/Home/PC/images/news_contact_pic_96.jpg" width="242" height="124" /></a></div>
+					<div class="news_contact_pic_right"><img src="__PUBLIC__/Home/PC/images/news_contact_pic_98.jpg" width="210" height="124" /></div>
+				</div>
+				<div class="news_contact_adress">
+					学校地址：{$config_data.address}
+				</div>
+			</div>
+		</div>
+		<div class="clear"></div>
+		<div class="style">
+			<div class="all_title">
+				<div class="all_title_word">毕业生风采</div>
+				<div class="all_title_more"><a target="_blank" href="#">MORE</a></div>
+			</div>
+			<div class="style_slide str_wrap">
+				<volist name="student_list" id="vo">
+					<span><a target="_blank" href="#"><img src="__ROOT__/Uploads/{$vo.thumb}" width="200" height="151" /></a></span>
+				</volist>
+			</div>
+			<script>
+				$(window).load(function() {
+					$('.style_slide').liMarquee();
+				})
+			</script>
+		</div>
+		<div class="links">
+			<div class="all_title">
+				<div class="all_title_word">合作伙伴</div>
+				<div class="all_title_more"><a target="_blank" href="#">MORE</a></div>
+			</div>
+			<div class="links_box">
+				<div class="links_box_left">
+					<img src="__PUBLIC__/Home/PC/images/wufajieshi_55.jpg" width="100%"  usemap="#linksleft" width="485"/>
+					<!--<img src="__PUBLIC__/Home/PC/images/links_box_left_title_116.jpg" width="585" height="42" />
+          <ul>
+          	<volist name="obtain_links_list" id="vo">
+          	<li><a href="{$vo.url}"><img src="__ROOT__/Uploads/{$vo.pic}" width="117" height="68" /></a></li>
+            </volist>
+          </ul>-->
+
+					<map name="linksleft" id="linksleft">
+					<area	shape="rect"	coords="0,40,95,88"		href ="http://www.dongfeng-nissan.com.cn"
+					target ="_blank"	alt="nissan" />
+					<area	shape="rect" coords="0,88,95,135"		href ="http://www.hhbuses.com/"
+					target ="_blank"		alt="黄海汽车" />
+					<area	shape="rect" coords="95,40,190,88"	href ="http://www.jtekt.com.cn/"
+					target ="_blank"		alt="JTEKT" />
+					<area	shape="rect" coords="95,88,190,135"	href ="http://vw.faw-vw.com/"
+					target ="_blank"		alt="一汽大众" />
+					<area	shape="rect" coords="190,40,285,88"	href ="https://www.jishuedu.com/"
+					target ="_blank"		alt="HCC" />
+					<area	shape="rect" coords="190,88,285,135"	href ="http://www.chery.cn/"
+					target ="_blank"		alt="奇瑞" />
+					<area	shape="rect" coords="285,40,380,88"	href ="https://www.thyssenkrupp.com.cn/"
+					target ="_blank"		alt="蒂森克鲁勃" />
+					<area	shape="rect" coords="285,88,380,135"	href ="http://www.skf.com/"
+					target ="_blank"		alt="SKF" />
+					<area	shape="rect" coords="380,40,475,88"	href ="http://www.dongfeng-nissan.com.cn"
+					target ="_blank"		alt="nissan" />
+					<area	shape="rect" coords="380,88,475,135"	href ="http://www.hhbuses.com/"
+					target ="_blank"		alt="黄海汽车" />
+					</map>
+				</div>
+				<div class="links_box_right">
+					<img src="__PUBLIC__/Home/PC/images/wufajieshi_57.jpg"  usemap="#linksright" width="498" />
+					<map name="linksright" id="linksright">
+						<area	shape="rect"	coords="0,40,248,88"		href ="http://hurock.ca/"
+						target ="_blank"	alt="hurock education development" />
+						<area	shape="rect"	coords="0,40,498,88"		href ="http://www.columbia-ca.co.jp/"
+						target ="_blank"	alt="columbia international school" />
+						<area	shape="rect" coords="0,88,166,135"		href ="http://www.senecacollege.ca/"
+						target ="_blank"		alt="seneca college" />
+						<area	shape="rect" coords="0,88,332,135"		href ="https://www.fanshawec.ca/"
+						target ="_blank"		alt="fanshawe college" />
+						<area	shape="rect" coords="0,88,498,135"		href ="http://zy.ltcem.com/"
+						target ="_blank"		alt="辽宁装备制造学院" />
+
+					</map>
+					<!--<img src="__PUBLIC__/Home/PC/images/links_box_right_title_117.jpg" width="598" height="42" />
+          <ul>
+          	<volist name="education_links_list" id="vo">
+          	<li><a href="{$vo.url}">{$vo.title}</a></li>
+            </volist>
+          </ul>-->
+				</div>
+			</div>
+		</div>
+	</div>
+	<include file="PC/Public/foot" />
+
+
+
+</body>
+
+</html>
