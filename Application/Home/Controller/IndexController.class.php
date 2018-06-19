@@ -172,9 +172,17 @@ class IndexController extends CommonController {
 		$this->assign('page',$show);
 
 		if($this->isMobile()){
-			$this->display('MOB/Index/column');
+			if( I('column_id')== 17 ){
+				$this->display('MOB/Index/column_article_list');
+			}else{
+				$this->display('MOB/Index/column');
+			}
 		}else{
-			$this->display('PC/Index/column');
+			if( I('column_id')== 17 ){
+				$this->display('PC/Index/column_article_list');
+			}else{
+				$this->display('PC/Index/column');
+			}
 		}
 	}
 	public function article(){
