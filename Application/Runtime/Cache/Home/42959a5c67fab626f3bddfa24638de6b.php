@@ -37,10 +37,10 @@
 			<ul class="clearfix">
 				<li><a href="/">首页</a></li>
 				<li><a href="<?php echo U('Index/article',array('column_id'=>1,'id'=>1));?>">关于我们</a></li>
-				<li><a href="">产业中心</a></li>
+				<li><a href="<?php echo U('Index/column',array('column_id'=>8));?>">产业中心</a></li>
 				<li><a href="">资讯中心</a></li>
 				<li><a href="">合资合作</a></li>
-				<li><a href="">党群建设</a></li>
+        <li><a href="<?php echo U('Index/column',array('column_id'=>17));?>">党群建设</a></li>
 				<li><a href="">人才招聘</a></li>
 				<li><a href="">联系我们</a></li>
 			</ul>
@@ -71,9 +71,9 @@
 				<div style="clear:both"></div>
 				<ul>
 			<li class="bg1"><a href="">中莱建筑</a></li>
-			<li class="bg2"><a href="">中莱建筑</a></li>
-			<li class="bg3"><a href="">中莱建筑</a></li>
-			<li class="bg4"><a href="">中莱建筑</a></li>
+			<li class="bg2"><a href="">中莱房地产</a></li>
+			<li class="bg3"><a href="">中莱物业</a></li>
+			<li class="bg4"><a href="">中莱俱乐部</a></li>
 		</ul>
 			</div>
 		</div>

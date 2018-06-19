@@ -39,10 +39,10 @@
 			<ul class="clearfix">
 				<li><a href="/">首页</a></li>
 				<li><a href="<?php echo U('Index/article',array('column_id'=>1,'id'=>1));?>">关于我们</a></li>
-				<li><a href="<?php echo U('Index/article',array('column_id'=>1,'id'=>2));?>">产业中心</a></li>
+				<li><a href="<?php echo U('Index/column',array('column_id'=>8));?>">产业中心</a></li>
 				<li><a href="">资讯中心</a></li>
 				<li><a href="">合资合作</a></li>
-				<li><a href="">党群建设</a></li>
+        <li><a href="<?php echo U('Index/column',array('column_id'=>17));?>">党群建设</a></li>
 				<li><a href="">人才招聘</a></li>
 				<li><a href="">联系我们</a></li>
 			</ul>
@@ -56,7 +56,7 @@
     <div class="other_content neijj">
 				<div class="neijj-zhong">
 					<div class="neijj-left">
-						<h4>关于我们</h4>
+						<h4><?php echo ($column_data["name"]); ?></h4>
 						<ul>
 							<?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li class="<?php if(($vo["id"]) == $_GET['id']): ?>over<?php endif; ?>"><a href="<?php echo U('Index/article',array('column_id'=>1,'id'=>$vo['id']));?>">
 									<?php echo ($vo["title"]); ?></a></li><?php endforeach; endif; else: echo "" ;endif; ?>
@@ -65,8 +65,8 @@
 					</div>
 					<div class="neijj-right">
 						<img src="/Public/Home/PC/images/zhonglai/jj_01.jpg" class="shou-gy">
-						<h4>公司简介</h4>
-						<span>ENTERPRISE INTRODUCTION</span>
+						<h4><?php echo ($data["title"]); ?></h4>
+						<span class="entitle">ENTERPRISE INTRODUCTION</span>
 						<div class="shou-mian">
 							<img src="/Public/Home/PC/images/zhonglai/jj_02.jpg" class="shou-jj">
 							<span>首页&gt;关于我们&gt;公司简介</span>
@@ -75,9 +75,7 @@
 						<div style="clear:both"></div>
 						<hr>
 						<div class="neirong">
-							<img src="/Public/Home/PC/images/zhonglai/jj_03.jpg">
-							<img src="/Public/Home/PC/images/zhonglai/jj_06.jpg">
-							<p>山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团山东中粮集团</p>
+													<?php echo ($data["content"]); ?>
 						</div>
 
 					</div>
