@@ -261,7 +261,7 @@ class IndexController extends CommonController {
 				$this->display('MOB/Index/news_article');
 			}
 		}else{
-			if(I('column_id')==1||I('column_id')==3||I('column_id')==4||I('column_id')==5||I('column_id')==6||I('column_id')==7||I('column_id')==9){
+			if(I('column_id')==1){
 				//关于我们
 				$column_map['column_id'] = array('eq',I('column_id'));
 
@@ -270,10 +270,17 @@ class IndexController extends CommonController {
 				$this->display('PC/Index/article');
 			}else if(I('column_id')>=8 && I('column_id')<=16){
 				//产业中心
-				$column_map['pid'] = array('eq',2);
+				$column_parent = $Column->where('id='.$column_data['pid'])->find();
+				$column_parent_name = "";
+				if( !empty($column_parent)){
+					$column_parent_name = $column_parent['name'];
+				}
+				$this->assign('column_parent_name',$column_parent_name);
+
+				$column_map['pid'] = array('eq',$column_data['pid']);
 				$column_list = $Column->where($column_map)->select();
 				$this->assign('column_list',$column_list);
-				$this->display('PC/Index/column');
+				$this->display('PC/Index/chanye_article');
 			}else{
 				$column_list = $Column->where(array('id'=>array('in','14,15,16,21,22')))->select();
 				$this->assign('column_list',$column_list);
