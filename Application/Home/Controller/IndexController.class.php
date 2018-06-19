@@ -268,7 +268,7 @@ class IndexController extends CommonController {
 				$list = $Article->order('post_time DESC')->where($column_map)->limit($Page->firstRow.','.$Page->listRows)->select();
 				$this->assign('list',$list);
 				$this->display('PC/Index/article');
-			}else if(I('column_id')>=8 && I('column_id')<=16){
+			}else if(I('column_id')>=8 && I('column_id')<=19){
 				//产业中心
 				$column_parent = $Column->where('id='.$column_data['pid'])->find();
 				$column_parent_name = "";
