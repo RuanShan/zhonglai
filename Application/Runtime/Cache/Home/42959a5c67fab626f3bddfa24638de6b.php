@@ -38,8 +38,8 @@
 				<li><a href="/">首页</a></li>
 				<li><a href="<?php echo U('Index/article',array('column_id'=>1,'id'=>1));?>">关于我们</a></li>
 				<li><a href="<?php echo U('Index/column',array('column_id'=>8));?>">产业中心</a></li>
-				<li><a href="">资讯中心</a></li>
-				<li><a href="">合资合作</a></li>
+        <li><a href="<?php echo U('Index/column',array('column_id'=>20));?>">资讯中心</a></li>
+        <li><a href="<?php echo U('Index/column',array('column_id'=>23));?>">合资合作</a></li>
         <li><a href="<?php echo U('Index/column',array('column_id'=>17));?>">党群建设</a></li>
 				<li><a href="">人才招聘</a></li>
 				<li><a href="">联系我们</a></li>

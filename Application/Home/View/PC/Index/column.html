@@ -19,7 +19,7 @@
 <body>
 	<include file="PC/Public/head" />
   <div class="bodyer">
-  	<div class="other_banner" style="background:url(__ROOT__/Uploads/{$column_data.pc_pic}) no-repeat center; background-size: cover; height: 360px;"></div>
+  	<div class="other_banner" style="background:url(__ROOT__/Uploads/{$column_parent.pc_pic}) no-repeat center; background-size: cover; height: 360px;"></div>
     <div class="other_content neijj">
 				<div class="neijj-zhong">
 					<div class="neijj-left">
@@ -52,6 +52,8 @@
 									</a></li>
 								</volist>
 							</ul>
+							<div class="page">{$page}</div>
+
 						</div>
 
 					</div>

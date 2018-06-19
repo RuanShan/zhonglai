@@ -43,6 +43,9 @@ class ArticleController extends CommonController {
 		  $data['post_time'] = date( 'Y-m-d', strtotime( $data['post_time'] ) );
 
 			$this->assign('data',$data);
+		}else{
+			$data['post_time'] = date( 'Y-m-d' );
+			$this->assign('data',$data);
 		}
 		$this->display();
 	}
