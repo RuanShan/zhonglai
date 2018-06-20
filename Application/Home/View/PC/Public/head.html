@@ -18,14 +18,66 @@
 	<div class="daohang">
 		<div class="daohang-zhong">
 			<ul class="clearfix">
-				<li><a href="/">首页</a></li>
-				<li><a href="{:U('Index/article',array('column_id'=>1,'id'=>1))}">关于我们</a></li>
-				<li><a href="{:U('Index/column',array('column_id'=>8))}">产业中心</a></li>
-        <li><a href="{:U('Index/column',array('column_id'=>20))}">资讯中心</a></li>
-        <li><a href="{:U('Index/column',array('column_id'=>23))}">合资合作</a></li>
-        <li><a href="{:U('Index/column',array('column_id'=>17))}">党群建设</a></li>
-				<li><a href="">人才招聘</a></li>
-				<li><a href="">联系我们</a></li>
+				<li class="dian"><a href="/">首页</a></li>
+				<li class="dian"><a href="{:U('Index/article',array('column_id'=>1,'id'=>1))}">关于我们</a>
+          <div class="xian">
+            <a href="{:U('Index/article',array('column_id'=>1,'id'=>1))}">企业简介</a>
+            <a href="{:U('Index/article',array('column_id'=>1,'id'=>30))}">领导致辞</a>
+            <a href="{:U('Index/article',array('column_id'=>1,'id'=>31))}">组织结构</a>
+            <a href="{:U('Index/article',array('column_id'=>1,'id'=>32))}">企业文化</a>
+            <a href="{:U('Index/article',array('column_id'=>1,'id'=>33))}">资质荣誉</a>
+            <a href="{:U('Index/article',array('column_id'=>1,'id'=>34))}">发展历程</a>
+          </div>
+        </li>
+				<li class="dian"><a href="{:U('Index/column',array('column_id'=>8))}">产业中心</a>
+          <div class="xian">
+            <volist name="child_columns" id="vo">
+              <eq name="vo.pid" value="2">
+                <a href="{:U('Index/column',array('column_id'=>$vo['id']))}"> {$vo.name}</a>
+              </eq>
+            </volist>
+          </div>
+
+        </li>
+        <li class="dian"><a >资讯中心</a>
+          <div class="xian">
+            <volist name="child_columns" id="vo">
+              <eq name="vo.pid" value="3">
+                <a href="{:U('Index/column',array('column_id'=>$vo['id']))}"> {$vo.name}</a>
+              </eq>
+            </volist>
+          </div>
+        </li>
+        <li class="dian"><a href="{:U('Index/column',array('column_id'=>23))}">合资合作</a>
+          <div class="xian">
+            <volist name="child_columns" id="vo">
+              <eq name="vo.pid" value="4">
+                <a href="{:U('Index/column',array('column_id'=>$vo['id']))}"> {$vo.name}</a>
+              </eq>
+            </volist>
+          </div>
+
+        </li>
+        <li class="dian"><a href="{:U('Index/column',array('column_id'=>17))}">党群建设</a>
+          <div class="xian">
+            <volist name="child_columns" id="vo">
+              <eq name="vo.pid" value="5">
+                <a href="{:U('Index/column',array('column_id'=>$vo['id']))}"> {$vo.name}</a>
+              </eq>
+            </volist>
+          </div>
+
+        </li>
+				<li class="dian"><a href="">人才招聘</a>
+          <div class="xian">
+            <volist name="child_columns" id="vo">
+              <eq name="vo.pid" value="6">
+                <a href="{:U('Index/column',array('column_id'=>$vo['id']))}"> {$vo.name}</a>
+              </eq>
+            </volist>
+          </div>
+        </li>
+				<li class="dian"><a href="">联系我们</a></li>
 			</ul>
 		</div>
 	</div>

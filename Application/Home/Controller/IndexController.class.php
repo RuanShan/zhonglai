@@ -85,9 +85,9 @@ class IndexController extends CommonController {
 		$major_list = $Article->where('column_id=11')->order('id DESC')->limit(12)->select();
 		$this->assign('major_list',$major_list);
 
-		//新闻栏目
-		$news_column = $Column->where(array('id'=>array('in','14,15,16,21,22')))->select();
-		$this->assign('news_column',$news_column);
+		//子菜单
+		$child_columns = $Column->where(array('pid'=>array('gt', 0)))->select();
+		$this->assign('child_columns',$child_columns);
 
 		//校园新闻
 		$campus_list = $Article->where('column_id=14')->order('id DESC')->limit(5)->select();
@@ -97,21 +97,6 @@ class IndexController extends CommonController {
 		$consult_list = $Article->where('column_id=15')->order('id DESC')->limit(6)->select();
 		$this->assign('consult_list',$consult_list);
 
-		//文化生活
-		$culture_list = $Article->where('column_id=16')->order('id DESC')->limit(5)->select();
-		$this->assign('culture_list',$culture_list);
-
-		//毕业生风
-		$student_list = $Article->where('column_id=17')->order('id DESC')->limit(20)->select();
-		$this->assign('student_list',$student_list);
-
-		//就业合作伙伴
-		$obtain_links_list = $ObtainLinks->order('id DESC')->limit(10)->select();
-		$this->assign('obtain_links_list',$obtain_links_list);
-
-		//教育合作伙伴
-		$education_links_list = $EducationLinks->order('id DESC')->limit(5)->select();
-		$this->assign('education_links_list',$education_links_list);
 
 
 		//教育科研
@@ -146,6 +131,10 @@ class IndexController extends CommonController {
 
 		$this->assign('config_data',$config_data);
 
+		//子菜单
+		$child_columns = $Column->where(array('pid'=>array('gt', 0)))->select();
+		$this->assign('child_columns',$child_columns);
+
 		$column_data = $Column->where('id='.I('column_id'))->find();
 		$this->assign('column_data',$column_data);
 
@@ -178,7 +167,7 @@ class IndexController extends CommonController {
 				$this->display('MOB/Index/column');
 			}
 		}else{
-			if( I('column_id')== 17 || I('column_id')== 20 ){
+		  if( I('column_id')== 17 || I('column_id')== 20 ){
 				$this->display('PC/Index/column_article_list');
 			}else{
 				$this->display('PC/Index/column');
@@ -211,6 +200,10 @@ class IndexController extends CommonController {
 		$this->assign('column_data',$column_data);
 
 		$this->assign('data',$data);
+
+		//子菜单
+		$child_columns = $Column->where(array('pid'=>array('gt', 0)))->select();
+		$this->assign('child_columns',$child_columns);
 
 		if($this->isMobile()){
 			if(I('column_id')==1||I('column_id')==3||I('column_id')==4||I('column_id')==5||I('column_id')==6||I('column_id')==7||I('column_id')==9){
