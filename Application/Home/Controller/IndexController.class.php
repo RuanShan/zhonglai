@@ -89,19 +89,6 @@ class IndexController extends CommonController {
 		$child_columns = $Column->where(array('pid'=>array('gt', 0)))->select();
 		$this->assign('child_columns',$child_columns);
 
-		//校园新闻
-		$campus_list = $Article->where('column_id=14')->order('id DESC')->limit(5)->select();
-		$this->assign('campus_list',$campus_list);
-
-		//就业咨询
-		$consult_list = $Article->where('column_id=15')->order('id DESC')->limit(6)->select();
-		$this->assign('consult_list',$consult_list);
-
-
-
-		//教育科研
-		$education_list = $Article->where('column_id=21')->order('id DESC')->limit(6)->select();
-		$this->assign('education_list',$education_list);
 		//奖励资助
 		$prize_list = $Article->where('column_id=22')->order('id DESC')->limit(5)->select();
 		$this->assign('prize_list',$prize_list);
@@ -254,8 +241,8 @@ class IndexController extends CommonController {
 				$this->display('MOB/Index/news_article');
 			}
 		}else{
-			if(I('column_id')==1){
-				//关于我们
+			if(I('column_id')==1 || I('column_id')==7){
+				//关于我们, 联系我们
 				$column_map['column_id'] = array('eq',I('column_id'));
 
 				$list = $Article->order('post_time DESC')->where($column_map)->limit($Page->firstRow.','.$Page->listRows)->select();

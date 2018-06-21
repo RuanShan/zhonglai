@@ -26,7 +26,7 @@
 						<h4>{$column_data.name}</h4>
 						<ul>
 							<volist name="list" id="vo">
-								<li class="<eq name="vo.id" value="$Think.get.id">over</eq>"><a href="{:U('Index/article',array('column_id'=>1,'id'=>$vo['id']))}">
+								<li class="<eq name="vo.id" value="$Think.get.id">over</eq>"><a href="{:U('Index/article',array('column_id'=>$vo['column_id'],'id'=>$vo['id']))}">
 									{$vo.title}</a></li>
   						</volist>
 
