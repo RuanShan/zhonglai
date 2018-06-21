@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,19 +13,23 @@
 	<script src="__PUBLIC__/Home/PC/js/jquery-1.9.1.min.js"></script>
 	<script src="__PUBLIC__/Home/PC/js/swiper.jquery.js"></script>
 	<script src="__PUBLIC__/Home/PC/js/jquery.liMarquee.js"></script>
+	<script src="__PUBLIC__/Home/PC/js/jquery.SuperSlide.2.1.js"></script>
 
 </head>
+
 <body>
 	<include file="PC/Public/head" />
 	<div class="banner">
 		<div class="index_banner swiper-container">
 			<div class="swiper-wrapper">
 				<volist name="slide_list" id="vo">
-					<a class="swiper-slide" href="{$vo.url}"  target="_blank" ><div class="swiper-slide" style="background:url(__ROOT__/Uploads/{$vo.pic}) no-repeat center;"></div></a>
+					<a class="swiper-slide" href="{$vo.url}" target="_blank">
+						<div class="swiper-slide" style="background:url(__ROOT__/Uploads/{$vo.pic}) no-repeat center;"></div>
+					</a>
 				</volist>
 			</div>
 		</div>
-		<script>
+		<script type="text/javascript">
 			var mySwiper = new Swiper('.index_banner', {
 				autoplay: 5000, //可选选项，自动滑动
 				autoplayDisableOnInteraction: false
@@ -38,34 +43,168 @@
 				<p>更多&gt;</p>
 				<div style="clear:both"></div>
 				<ul>
-			<li class="bg1"><a href="">中莱建筑</a></li>
-			<li class="bg2"><a href="">中莱房地产</a></li>
-			<li class="bg3"><a href="">中莱物业</a></li>
-			<li class="bg4"><a href="">中莱俱乐部</a></li>
-		</ul>
+					<li class="bg1"><a href="">中莱建筑</a></li>
+					<li class="bg2"><a href="">中莱房地产</a></li>
+					<li class="bg3"><a href="">中莱物业</a></li>
+					<li class="bg4"><a href="">中莱俱乐部</a></li>
+				</ul>
 			</div>
 		</div>
 		<div class="nei-wen">
-			<img src="__PUBLIC__/Home/PC/images/zhonglai/shou_25.jpg">
+			<div class="slideBox">
+				<div class="hd" id="hd1">
+					<ul>
+						<li class="">1</li>
+						<li class="on">2</li>
+						<li class="">3</li>
+						<li class="">4</li>
+					</ul>
+				</div>
+
+				<div class="bd">
+					<ul>
+						<li style="display:list-item;"><a href="/" target="_blank"><img src="__PUBLIC__/Home/PC/images/zhonglai/shou_25.jpg"></a></li>
+						<li style="display:none"><a href="/" target="_blank"><img src="__PUBLIC__/Home/PC/images/zhonglai/shou_25.jpg"></a></li>
+						<li style="display: none;"><a href="/" target="_blank"><img src="__PUBLIC__/Home/PC/images/zhonglai/shou_25.jpg"></a></li>
+						<li style="display: none;"><a href="/" target="_blank"><img src="__PUBLIC__/Home/PC/images/zhonglai/shou_25.jpg"></a></li>
+					</ul>
+				</div>
+			</div>
+			<script type="text/javascript">
+				jQuery(".slideBox").slide({
+					mainCell: ".bd ul",
+					autoPlay: true
+				});
+			</script>
 			<div class="nei-xin">
 
-						<a href="">集团新闻</a>
-						<a href="">中莱要闻</a>
-						<a href="">下属动态</a>
-						<a href="" class="nei-duo">更多&gt;</a>
-						<div style="clear:both"></div>
-						<ul class="xxww">
-							<li><a href=""><p>中莱集团建设目标中莱集团建设目标</p></a><span>2018-02-05</span></li>
-							<li><a href=""><p>中莱集团建设目标中莱集团建设目标</p></a><span>2018-02-05</span></li>
-							<li><a href=""><p>中莱集团建设目标中莱集团建设目标</p></a><span>2018-02-05</span></li>
-							<li><a href=""><p>中莱集团建设目标中莱集团建设目标</p></a><span>2018-02-05</span></li>
-							<li><a href=""><p>中莱集团建设目标中莱集团建设目标</p></a><span>2018-02-05</span></li>
-							<li><a href=""><p>中莱集团建设目标中莱集团建设目标</p></a><span>2018-02-05</span></li>
-							<li><a href=""><p>中莱集团建设目标中莱集团建设目标</p></a><span>2018-02-05</span></li>
-							<li><a href=""><p>中莱集团建设目标中莱集团建设目标</p></a><span>2018-02-05</span></li>
-							<li><a href=""><p>中莱集团建设目标中莱集团建设目标</p></a><span>2018-02-05</span></li>
-						</ul>
-
+				<div class="hd">
+					<ul class="clearfix">
+						<li class="on">集团新闻</li>
+						<li class="">中莱要闻</li>
+						<li class="">下属动态</li>
+					</ul>
+					<a href="" class="nei-duo">更多&gt;</a>
+				</div>
+				<div class="bd">
+					<ul class="xxww" style="display:block">
+						<li>
+							<a href="">
+								<p>中莱建设集团坚持目标导向提升企业再发展</p>
+							</a><span>2018-02-05</span></li>
+						<li>
+							<a href="">
+								<p>中莱建设完委召开2017年度领导班子民主</p>
+							</a><span>2018-02-05</span></li>
+						<li>
+							<a href="">
+								<p>党建大考求真务实-中莱建设召开2017年度</p>
+							</a><span>2018-02-05</span></li>
+						<li>
+							<a href="">
+								<p>中莱建设强化经营开发工作精定位核心市场</p>
+							</a><span>2018-02-05</span></li>
+						<li>
+							<a href="">
+								<p>中莱建设全面推广铝模板初见成效</p>
+							</a><span>2018-02-05</span></li>
+						<li>
+							<a href="">
+								<p>中莱建设集团开启人才与企业发展共赢的</p>
+							</a><span>2018-02-05</span></li>
+						<li>
+							<a href="">
+								<p>集团举力学习贯彻十九大的第124期道德</p>
+							</a><span>2018-02-05</span></li>
+						<li>
+							<a href="">
+								<p>中莱建设集团在北京总部召开“四会”</p>
+							</a><span>2018-02-05</span></li>
+						<li>
+							<a href="">
+								<p>中莱建设集团在北京总部召开“四会”</p>
+							</a><span>2018-02-05</span></li>
+					</ul>
+					<ul class="xxww" style="display:none">
+						<li>
+							<a href="">
+								<p>中莱集团建设目标中莱集团建设目标</p>
+							</a><span>2018-02-05</span></li>
+						<li>
+							<a href="">
+								<p>莱集团建设目标中莱集团建设目标</p>
+							</a><span>2018-02-05</span></li>
+						<li>
+							<a href="">
+								<p>中莱集团建设目标中莱集团建设目标</p>
+							</a><span>2018-02-05</span></li>
+						<li>
+							<a href="">
+								<p>中莱集团建设目标中莱集团建设目标</p>
+							</a><span>2018-02-05</span></li>
+						<li>
+							<a href="">
+								<p>中莱集团建设目标中莱集团建设目标</p>
+							</a><span>2018-02-05</span></li>
+						<li>
+							<a href="">
+								<p>中莱集团建设目标中莱集团建设目标</p>
+							</a><span>2018-02-05</span></li>
+						<li>
+							<a href="">
+								<p>中莱集团建设目标中莱集团建设目标</p>
+							</a><span>2018-02-05</span></li>
+						<li>
+							<a href="">
+								<p>中莱集团建设目标中莱集团建设目标</p>
+							</a><span>2018-02-05</span></li>
+						<li>
+							<a href="">
+								<p>中莱集团建设目标中莱集团建设目标</p>
+							</a><span>2018-02-05</span></li>
+					</ul>
+					<ul class="xxww" style="display:none">
+						<li>
+							<a href="">
+								<p>中莱集团建设目标中莱集团建设目标</p>
+							</a><span>2018-02-05</span></li>
+						<li>
+							<a href="">
+								<p>中莱集团建设目标中莱集团建设目标</p>
+							</a><span>2018-02-05</span></li>
+						<li>
+							<a href="">
+								<p>莱集团建设目标中莱集团建设目标</p>
+							</a><span>2018-02-05</span></li>
+						<li>
+							<a href="">
+								<p>中莱集团建设目标中莱集团建设目标</p>
+							</a><span>2018-02-05</span></li>
+						<li>
+							<a href="">
+								<p>中莱集团建设目标中莱集团建设目标</p>
+							</a><span>2018-02-05</span></li>
+						<li>
+							<a href="">
+								<p>中莱集团建设目标中莱集团建设目标</p>
+							</a><span>2018-02-05</span></li>
+						<li>
+							<a href="">
+								<p>中莱集团建设目标中莱集团建设目标</p>
+							</a><span>2018-02-05</span></li>
+						<li>
+							<a href="">
+								<p>中莱集团建设目标中莱集团建设目标</p>
+							</a><span>2018-02-05</span></li>
+						<li>
+							<a href="">
+								<p>中莱集团建设目标中莱集团建设目标</p>
+							</a><span>2018-02-05</span></li>
+					</ul>
+				</div>
+				<script type="text/javascript">
+				  jQuery(".nei-xin").slide( );
+				</script>
 			</div>
 		</div>
 		<div class="nei-jianjie">
@@ -83,12 +222,12 @@
 					<img src="__PUBLIC__/Home/PC/images/zhonglai/shou_31.jpg" class="nei-xian-tu">
 					<div style="clear:both"></div>
 					<ul class="xinwen">
-						<li><a href="">这里是i新闻标题新闻标题</a><a  class="nei-duo">2015-05-05</a></li>
-						<li><a href="">这里是i新闻标题新闻标题</a><a  class="nei-duo">2015-05-05</a></li>
-						<li><a href="">这里是i新闻标题新闻标题</a><a  class="nei-duo">2015-05-05</a></li>
-						<li><a href="">这里是i新闻标题新闻标题</a><a  class="nei-duo">2015-05-05</a></li>
-						<li><a href="">这里是i新闻标题新闻标题</a><a  class="nei-duo">2015-05-05</a></li>
-						<li><a href="">这里是i新闻标题新闻标题</a><a  class="nei-duo">2015-05-05</a></li>
+						<li><a class="nei-title" href="">中莱建设召开“三供一业”分离移交攻坚动</a><a class="nei-duo">2015-05-05</a></li>
+						<li><a class="nei-title" href="">中莱集团召开二级单位纪委书记座谈会</a><a class="nei-duo">2015-05-05</a></li>
+						<li><a class="nei-title" href="">中莱建设10项工程荣获第十五届中国土木</a><a class="nei-duo">2015-05-05</a></li>
+						<li><a class="nei-title" href="">中莱建设强化经营开发工作精定位核心市场</a><a class="nei-duo">2015-05-05</a></li>
+						<li><a class="nei-title" href="">中莱建设召开2017年度股东大会</a><a class="nei-duo">2015-05-05</a></li>
+						<li><a class="nei-title" href="">中莱建设集团开启人才与企业发展共赢的</a><a class="nei-duo">2015-05-05</a></li>
 					</ul>
 				</li>
 				<li>
@@ -97,12 +236,12 @@
 					<img src="__PUBLIC__/Home/PC/images/zhonglai/shou_33.jpg" class="nei-xian-tu">
 					<div style="clear:both"></div>
 					<ul class="xinwen">
-						<li><a href="">这里是i新闻标题新闻标题</a><a  class="nei-duo">2015-05-05</a></li>
-						<li><a href="">这里是i新闻标题新闻标题</a><a  class="nei-duo">2015-05-05</a></li>
-						<li><a href="">这里是i新闻标题新闻标题</a><a  class="nei-duo">2015-05-05</a></li>
-						<li><a href="">这里是i新闻标题新闻标题</a><a  class="nei-duo">2015-05-05</a></li>
-						<li><a href="">这里是i新闻标题新闻标题</a><a  class="nei-duo">2015-05-05</a></li>
-						<li><a href="">这里是i新闻标题新闻标题</a><a  class="nei-duo">2015-05-05</a></li>
+						<li><a class="nei-title" href="">中莱建设集团华北公司组织党支部书记培训</a><a class="nei-duo">2015-05-05</a></li>
+						<li><a class="nei-title" href="">中莱建设集团华中公司举行宣贯十九大</a><a class="nei-duo">2015-05-05</a></li>
+						<li><a class="nei-title" href="">中莱建设西北公司：十九大精神进班组</a><a class="nei-duo">2015-05-05</a></li>
+						<li><a class="nei-title" href="">中莱建设中南公司编印党员领导干部“学习</a><a class="nei-duo">2015-05-05</a></li>
+						<li><a class="nei-title" href="">中莱建设召开第七次党委中心组学习会</a><a class="nei-duo">2015-05-05</a></li>
+						<li><a class="nei-title" href="">中莱建设党委中心组召开学党章专题学习研</a><a class="nei-duo">2015-05-05</a></li>
 					</ul>
 				</li>
 			</ul>
@@ -120,17 +259,17 @@
 					<img src="__PUBLIC__/Home/PC/images/zhonglai/xian_07.jpg" class="shi-xian">
 
 					<div class="shi-top">
-					<a href="" class="xin-left"><img src="__PUBLIC__/Home/PC/images/zhonglai/shou_39.jpg"></a>
-					<a href="" class="xin-right"><img src="__PUBLIC__/Home/PC/images/zhonglai/shou_41.jpg"></a>
-					<a href="" class="xin-left"><img src="__PUBLIC__/Home/PC/images/zhonglai/shou_45.jpg"></a>
-					<a href="" class="xin-right"><img src="__PUBLIC__/Home/PC/images/zhonglai/shou_47.jpg"></a>
+						<a href="" class="xin-left"><img src="__PUBLIC__/Home/PC/images/zhonglai/shou_39.jpg"></a>
+						<a href="" class="xin-right"><img src="__PUBLIC__/Home/PC/images/zhonglai/shou_41.jpg"></a>
+						<a href="" class="xin-left"><img src="__PUBLIC__/Home/PC/images/zhonglai/shou_45.jpg"></a>
+						<a href="" class="xin-right"><img src="__PUBLIC__/Home/PC/images/zhonglai/shou_47.jpg"></a>
 					</div>
 
 				</li>
 				<li class="shi-re">
 					<h4>热点链接</h4>
 					<img src="__PUBLIC__/Home/PC/images/zhonglai/xian_09.jpg" class="re-xian">
-					<div  class="shi-top">
+					<div class="shi-top">
 						<a href="" class="shi-dian1">OA办公</a>
 						<a href="" class="shi-dian2">招标平台</a>
 					</div>
@@ -140,4 +279,5 @@
 	</div>
 	<include file="PC/Public/foot" />
 </body>
+
 </html>

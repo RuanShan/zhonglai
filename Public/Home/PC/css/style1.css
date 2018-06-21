@@ -260,6 +260,14 @@ color: #e50112!important;
 	text-decoration: none;
 	color: #333;
 }
+.xinwen li a.nei-title{
+	width: 210px;
+	display: inline-block;
+	overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;
+}
+
 .nei-shi{
 	width: 1100px;
 	padding: 20px 50px;
@@ -430,12 +438,14 @@ color: #e50112!important;
 .xxww a{
 	float: none;
     display: inline-block;
-    line-height: 15px;
     font-size: 12px;
     color: #333;
     margin-left: 0px;
-        font-weight: 100;
-        font-weight: 500;
+    font-weight: 500;
+		width: 350px;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
 }
 /*首页结束*/
 
@@ -604,8 +614,8 @@ color: #e50112!important;
     color: #bbb;
 }
 .hd{height:30px; line-height:30px;padding:0 10px 0 20px;  position:relative;}
-.hd ul{ float:left; position:absolute; left:20px; top:-1px; height:32px;    padding: 0px;}
-.hd ul li{ float:left;padding-right: 15px;cursor:pointer;font-size: 20px;font-weight: bold;  }
+.hd ul{ float:left; padding: 0;}
+.hd ul li{ float:left;padding-right: 15px;cursor:pointer;font-size: 20px;font-weight: bold;  clear: none;}
 .hd ul li.on{ height:30px; }
 .hd ul li:hover{color: red;}
 .bd li{list-style: none;}
@@ -659,7 +669,7 @@ color: #e50112!important;
 		z-index: 2;
 }
 .xian a{
-    font-size: 14px;    
+    font-size: 14px;
     padding: 4px 0;
     display: block;
     color: #666!important;
