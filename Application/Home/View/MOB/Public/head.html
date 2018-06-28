@@ -1,24 +1,14 @@
-		<div class="header">
-    	<div class="header_body">
-        	<div class="logo"><img src="__PUBLIC__/Home/MOB/images/header-logo_03.jpg" width="409" height="57" /></div>
-            <div class="menu">
-            	<a href="#"><img src="__PUBLIC__/Home/MOB/images/header-menu_05.jpg" width="71" height="57" /></a>
-                <ul class="zicaidan">
-                    <li class="zicaidanli"><img src="__PUBLIC__/Home/MOB/images/fuye_01.jpg" width="281" height="42" /></li>
-                    <li class="zicaidanli"><a href="{:U('Index/article',array('column_id'=>1,'id'=>1))}"><img src="__PUBLIC__/Home/MOB/images/fuye_02.jpg" width="281" height="55" /></a></li>
-                    <li class="zicaidanli"><a href="{:U('Index/article',array('column_id'=>2,'id'=>2))}"><img src="__PUBLIC__/Home/MOB/images/fuye_03.jpg" width="281" height="60" /></a></li>
-                    <li class="zicaidanli"><a href="{:U('Index/article',array('column_id'=>3,'id'=>3))}"><img src="__PUBLIC__/Home/MOB/images/fuye_04.jpg" width="281" height="58" /></a></li>
-                    <li class="zicaidanli"><a href="{:U('Index/article',array('column_id'=>4,'id'=>4))}"><img src="__PUBLIC__/Home/MOB/images/fuye_05.jpg" width="281" height="63" /></a></li>
-                    <li class="zicaidanli"><a href="{:U('Index/article',array('column_id'=>5,'id'=>5))}"><img src="__PUBLIC__/Home/MOB/images/fuye_06.jpg" width="281" height="63" /></a></li>
-                    <li class="zicaidanli"><a href="#"><img src="__PUBLIC__/Home/MOB/images/fuye_07.jpg" width="281" height="62" /></a></li>
-                    <li class="zicaidanli"><a href="{:U('Index/article',array('column_id'=>7,'id'=>7))}"><img src="__PUBLIC__/Home/MOB/images/fuye_08.jpg" width="281" height="62" /></a></li>
-                    <li class="zicaidanli"><a><img src="__PUBLIC__/Home/MOB/images/fuye_09.jpg" width="281" height="60" /></a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-		<script>
-		$('.menu img').click(function(){ 
-			$('.zicaidan').slideToggle();
-		})
-        </script>
+
+	<title>{$config_data.name}</title>
+	<meta name="keywords" content="{$config_data.keywords}" />
+	<meta name="description" content="{$config_data.description}" />
+	<link rel="shortcut icon" href="favicon.ico">
+
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/MOB/css/style.css">
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/MOB/css/bootstrap.css">
+	<link href="__PUBLIC__/Home/MOB/css/swiper.min.css" rel="stylesheet" type="text/css" />
+
+	<script src="__PUBLIC__/Home/MOB/js/jquery-3.2.1.js"></script>
+	<script src="__PUBLIC__/Home/MOB/js/TouchSlide.1.1.js"></script>
+	<script src="__PUBLIC__/Home/MOB/js/bootstrap.min.js"></script>
+	<script src="__PUBLIC__/Home/MOB/js/swiper.jquery.js"></script>

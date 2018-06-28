@@ -19,7 +19,7 @@
 
 <body onload="initMap();">
 <!--百度地图容器-->
-<div style="width:697px;height:550px;border:#ccc solid 1px;" id="dituContent"></div>
+<div style="width:697px;height:550px;border:#ccc solid 1px; box-sizing: border-box;" id="dituContent"></div>
 </body>
 <script type="text/javascript">
     function getParam(name) {
@@ -39,9 +39,16 @@
         if (!window.BMap) {
             return;
         }
+		function changeSize() {   
+		  var showMap = document.getElementById("dituContent");   
+		  showMap.style.width = document.documentElement.clientWidth + "px";   
+		  showMap.style.height = document.documentElement.clientHeight + "px";   
+		}  
         var dituContent = document.getElementById('dituContent');
-        dituContent.style.width = widthParam + 'px';
+        //dituContent.style.width = widthParam + 'px';
+		dituContent.style.width = widthParam + '%';
         dituContent.style.height = heightParam + 'px';
+		changeSize();
 
         createMap();//创建地图
         setMapEvent();//设置地图事件
@@ -57,6 +64,7 @@
         if(parent.editor && parent.document.body.contentEditable=="true") { //在编辑状态下
             setMapListener();//地图改变修改外层的iframe标签src属性
         }
+
     }
 
     //创建地图函数：

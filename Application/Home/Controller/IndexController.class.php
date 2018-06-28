@@ -81,17 +81,25 @@ class IndexController extends CommonController {
 		$this->assign('config_data',$config_data);
 
 
-		//热门专业
-		$major_list = $Article->where('column_id=11')->order('id DESC')->limit(12)->select();
-		$this->assign('major_list',$major_list);
+		//集团新闻
+		$jituan_list = $Article->where('column_id=20')->order('id DESC')->limit(8)->select();
+		$this->assign('jituan_list',$jituan_list);
+
+		//行业动态
+		$hangye_list = $Article->where('column_id=22')->order('id DESC')->limit(8)->select();
+		$this->assign('hangye_list',$hangye_list);
+
+		//下属动态
+		$xiashu_list = $Article->where('column_id=35')->order('id DESC')->limit(8)->select();
+		$this->assign('xiashu_list',$xiashu_list);
+
+		//党群工作
+		$dangqun_list = $Article->where('column_id=17')->order('id DESC')->limit(8)->select();
+		$this->assign('dangqun_list',$dangqun_list);
 
 		//子菜单
 		$child_columns = $Column->where(array('pid'=>array('gt', 0)))->select();
 		$this->assign('child_columns',$child_columns);
-
-		//奖励资助
-		$prize_list = $Article->where('column_id=22')->order('id DESC')->limit(5)->select();
-		$this->assign('prize_list',$prize_list);
 
 
 		if($this->isMobile()){
@@ -118,14 +126,14 @@ class IndexController extends CommonController {
 
 		$this->assign('config_data',$config_data);
 
-		//子菜单
+		//导航子菜单
 		$child_columns = $Column->where(array('pid'=>array('gt', 0)))->select();
 		$this->assign('child_columns',$child_columns);
 
 		$column_data = $Column->where('id='.I('column_id'))->find();
 		$this->assign('column_data',$column_data);
-
-		$column_list = $Column->where(array('pid'=>array('eq',$column_data['pid'])))->select();
+		//栏目子栏目
+		$column_list = $Column->where(array('pid'=>array('eq',$column_data['id'])))->select();
 		$this->assign('column_list',$column_list);
 
 		$column_parent = $Column->where('id='.$column_data['pid'])->find();
@@ -148,13 +156,21 @@ class IndexController extends CommonController {
 		$this->assign('page',$show);
 
 		if($this->isMobile()){
-			if( I('column_id')== 17 || I('column_id')== 20 ){
+			if( I('column_id')== 2 ){
+				//产业中心
+				$this->display('MOB/Index/parent_column');
+			}else if( I('column_id') == 21 ){
+				//公司视频
+				$this->display('MOB/Index/column_video_list');
+
+			}else if( I('column_id')== 17 || I('column_id')== 20 || I('column_id')== 30 || I('column_id')== 22 ){
+				//党群工作,集团新闻,在线招聘, 行业动态
 				$this->display('MOB/Index/column_article_list');
 			}else{
 				$this->display('MOB/Index/column');
 			}
 		}else{
-		  if( I('column_id')== 17 || I('column_id')== 20 ){
+			if( I('column_id')== 17 || I('column_id')== 20 || I('column_id')== 30 ){
 				$this->display('PC/Index/column_article_list');
 			}else{
 				$this->display('PC/Index/column');
@@ -193,41 +209,9 @@ class IndexController extends CommonController {
 		$this->assign('child_columns',$child_columns);
 
 		if($this->isMobile()){
-			if(I('column_id')==1||I('column_id')==3||I('column_id')==4||I('column_id')==5||I('column_id')==6||I('column_id')==7||I('column_id')==9){
+			if(true){
 				$this->display('MOB/Index/article');
-			}else if(I('column_id')==8){
-				//热门专业
-				$major_list = $Article->where('column_id=11')->order('id DESC')->select();
-				$this->assign('major_list',$major_list);
 
-				//我们的优势
-				$superiority_list = $Article->where('column_id=18')->order('id DESC')->select();
-				$this->assign('superiority_list',$superiority_list);
-
-				$this->display('MOB/Index/junior_college_article');
-			}else if(I('column_id')==2){
-				$this->display('MOB/Index/study_article');
-			}else  if(I('column_id')==10){
-				if(I('id')==10){
-					$this->display('MOB/Index/overseas1_article');
-				}else if(I('id')==11){
-					$this->display('MOB/Index/overseas3_article');
-				}else if(I('id')==12){
-					$this->display('MOB/Index/overseas2_article');
-				}
-			}else if(I('column_id')==11){
-				//热门专业
-				$major_list = $Article->where('column_id=11')->order('id DESC')->select();
-				$this->assign('major_list',$major_list);
-				$this->display('MOB/Index/major_article');
-			}else if(I('column_id')==12){
-				$this->display('MOB/Index/plan_article');
-			}else if(I('column_id')==13){
-				$this->display('MOB/Index/reason_article');
-			}else if(I('column_id')==19){
-				$this->display('MOB/Index/qrcode');
-			}else if(I('column_id')==20){
-				$this->display('MOB/Index/learn_in_japan');
 			}else{
 				$column_list = $Column->where(array('id'=>array('in','14,15,16,21,22')))->select();
 				$this->assign('column_list',$column_list);

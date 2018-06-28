@@ -44,12 +44,12 @@
 						<div style="clear:both"></div>
 						<hr>
 						<div class="neirong ">
-							<div class="article_list"> 
+							<div class="article_list">
 							  <ul class="article_list">
 								<volist name="list" id="vo">
 										<li class="clearfix">
 											<a target="_blank" href="{:U('Index/article',array('column_id'=>$vo['column_id'],'id'=>$vo['id']))}">
-												<span class="title pull-left">{$vo.title|mb_substr=0,16,'utf-8'}</span>
+												<span class="title pull-left">{$vo.title}</span>
 												<span class="time pull-right">{$vo.post_time|mb_substr=5,5,'utf-8'}</span>
 											</a>
 										</li>

@@ -1,220 +1,185 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>{$config_data.name}</title>
-<meta name="viewport" content="width=640, user-scalable=no">
-<link rel="shortcut icon" href="favicon.ico" >
-<meta name="keywords" content="{$config_data.keywords}" />
-<meta name="description" content="{$config_data.description}" />
-<link href="__PUBLIC__/Home/MOB/css/css2.css" rel="stylesheet" type="text/css" />
-<link href="__PUBLIC__/Home/MOB/css/swiper.min.css" rel="stylesheet" type="text/css" />
-<script src="__PUBLIC__/Home/MOB/js/swiper.min.js"></script>
-<script src="__PUBLIC__/Home/MOB/js/jquery-3.2.1.js"></script>
-<script src="__PUBLIC__/Home/MOB/js/jquery.carouFredSel-6.0.4-packed.js"></script>
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+		<include file="MOB/Public/head" />
 </head>
 
 <body>
-		<include file="MOB/Public/head" />
-    <div class="bodyer">
-    	<div class="bianxian"></div>
-        <div class="swiper-container banner">
-            <div class="swiper-wrapper">
-            		<volist name="mob_slide_list" id="vo">
-                <div class="swiper-slide"  style="background:url(__ROOT__/Uploads/{$vo.pic}) no-repeat center;"></div>
-                </volist>
-            </div>
-            <div class="swiper-pagination"></div>
-        </div>
-        <script language="javascript">
-        var mySwiper = new Swiper('.swiper-container',{
-        	autoplay: 3000,
-        })
-        </script>
-				<div class="page_1">
-        <ul class="f-cb">
-					<li><a href="{:U('Index/article',array('column_id'=>10,'id'=>10))}"><img src="__PUBLIC__/Home/MOB/images/classes_thumb_33.jpg" /></a></li>
-        	<li><a href="{:U('Index/article',array('column_id'=>8,'id'=>8))}"><img src="__PUBLIC__/Home/MOB/images/classes_thumb_29.jpg" /></a></li>
-					<li><a href="{:U('Index/article',array('column_id'=>9,'id'=>9))}"><img src="__PUBLIC__/Home/MOB/images/classes_thumb_31.jpg"  /></a></li>
-					<li><a href="{:U('Index/article',array('column_id'=>20,'id'=>158))}"><img src="__PUBLIC__/Home/MOB/images/classes_thumb_34.jpg"  /></a></li>
-        </ul>
+	<include file="MOB/Public/nav" />
+	<div class="shouji">
+			<div class="swiper-container">
+				<div class="swiper-wrapper">
+					<volist name="mob_slide_list" id="vo">
+					<div class="swiper-slide" style="background:url(__ROOT__/Uploads/{$vo.pic}) no-repeat center;"></div>
+					</volist>
 				</div>
-        <div class="title_1">
-        	<div class="xian"></div>
-        	<img src="__PUBLIC__/Home/MOB/images/title_1_09.jpg" width="608" height="46" />
-        </div>
-        <div class="page_2">
-        	<div class="page_2_1">
-            	<div class="page_2_1_left">
-                  <a href="{:U('Index/article',array('column_id'=>12,'id'=>15))}#chuzhong"><img src="__PUBLIC__/Home/MOB/images/major_student_left_52_01.png" width="235" height="68" /></a>
-                  <a href="{:U('Index/article',array('column_id'=>12,'id'=>15))}#gaozhong"><img src="__PUBLIC__/Home/MOB/images/major_student_left_52_03.png"  width="235" height="68" /></a>
-                </div>
-                <ul class="page_2_1_right">
-                	<li style="border:0px;"><a>●　快速就业</a></li>
-                  <li><a>●　升学本科</a></li>
-                  <li><a>●　出国留学</a></li>
-                </ul>
-            </div>
-            <div class="page_2_2">
-            		<div class="page_2_2_left">
-                  <a href="{:U('Index/article',array('column_id'=>12,'id'=>15))}#nansheng"><img src="__PUBLIC__/Home/MOB/images/major_sex_right_left_64.png" width="235" height="68" /></a>
-                </div>
-                <div class="page_2_2_right"><a>●　适合男生的专业</a></div>
-            </div>
-            <div class="page_2_3">
-            	<div class="page_2_3_left">
-                   <a href="{:U('Index/article',array('column_id'=>12,'id'=>15))}#nvsheng"><img src="__PUBLIC__/Home/MOB/images/major_sex_right_left_69.png" width="235" height="68" /></a>
-                </div>
-                <div class="page_2_3_right"><a>●　适合女生的专业</a></div>
-            </div>
-        </div>
-        <script>
+				<div class="banner_page">
+					<div class="swiper-pagination"></div>
+				</div>
+			</div>
+			<script>
+			var mySwiper = new Swiper('.swiper-container', {
+				autoplay: 5000,//可选选项，自动滑动
+				pagination: '.swiper-pagination',
+				paginationClickable: true
+			})
+			</script>
 
-			$('.page_2_1_left').click(function(){
-				$('.page_2_2').removeClass('over');
-				$('.page_2_3').removeClass('over');
-				$('.page_2_1').addClass('over');
-			});
-			$('.page_2_2_left').click(function(){
-				$('.page_2_1').removeClass('over');
-				$('.page_2_3').removeClass('over');
-				$('.page_2_2').addClass('over');
-			});
-			$('.page_2_3_left').click(function(){
-				$('.page_2_1').removeClass('over');
-				$('.page_2_2').removeClass('over');
-				$('.page_2_3').addClass('over');
-			});
-        </script>
-        <div class="page_3">
-        	<div class="xian2"></div>
-            <div class="page_3_1">今年热门专业</div>
-            <ul class="page_3_2">
-            	<volist name="major_list" id="vo">
-            	<li class="left"><a href="{:U('Index/article',array('column_id'=>$vo['column_id'],'id'=>$vo['id']))}">{$vo.title}</a></li>
-              </volist>
-            </ul>
-            <div class="xian3"></div>
-        </div>
- 		<div class="page_4"><a href="{:U('Index/article',array('column_id'=>13,'id'=>17))}"><img src="__PUBLIC__/Home/MOB/images/page_4.jpg" width="609" height="70" /></a></div>
-        <div class="xian5"></div>
-        <ul class="news">
-        	<li class="tiaoshu">
-            	<div class="news_title">
-                	<div class="news_title_z">校园新闻</div>
-                    <div class="news_title_m"><a href="{:U('Index/column',array('column_id'=>14))}">MORE</a></div>
-                </div>
-                <div class="news_centent">
-                	<div class="news_thumb"><img src="__ROOT__/Uploads/{$news_column.0.thumb}" width="224" height="148" /></div>
-                    <ul class="news_lists">
-                    	<volist name="campus_list" id="vo">
-            					<eq name="i" value="1">
-                    	<li  style="border-top:0px;"><a href="{:U('Index/article',array('column_id'=>$vo['column_id'],'id'=>$vo['id']))}">{$vo.title|mb_substr=0,16,'utf-8'}<div class="news_lists_r">{$vo.post_time|mb_substr=5,5,'utf-8'}</div></a></li>
-                      <else/>
-                      <li><a href="{:U('Index/article',array('column_id'=>$vo['column_id'],'id'=>$vo['id']))}">{$vo.title|mb_substr=0,16,'utf-8'}<div class="news_lists_r">{$vo.post_time|mb_substr=5,5,'utf-8'}</div></a></li>
-                      </eq>
-            					</volist>
-                    </ul>
-                </div>
-            </li>
-            <li class="tiaoshu">
-            	<div class="news_title">
-                	<div class="news_title_z">生活文化</div>
-                    <div class="news_title_m"><a href="{:U('Index/column',array('column_id'=>16))}">MORE</a></div>
-                </div>
-                <div class="news_centent">
-                	<div class="news_thumb"><img src="__ROOT__/Uploads/{$news_column.2.thumb}" width="224" height="148" /></div>
-                    <ul class="news_lists">
-                    	<volist name="culture_list" id="vo">
-            					<eq name="i" value="1">
-                    	<li  style="border-top:0px;"><a href="{:U('Index/article',array('column_id'=>$vo['column_id'],'id'=>$vo['id']))}">{$vo.title|mb_substr=0,16,'utf-8'}<div class="news_lists_r">{$vo.post_time|mb_substr=5,5,'utf-8'}</div></a></li>
-                      <else/>
-                      <li><a href="{:U('Index/article',array('column_id'=>$vo['column_id'],'id'=>$vo['id']))}">{$vo.title|mb_substr=0,16,'utf-8'}<div class="news_lists_r">{$vo.post_time|mb_substr=5,5,'utf-8'}</div></a></li>
-                      </eq>
-            					</volist>
-                    </ul>
-                </div>
-            </li>
-            <li class="tiaoshu">
-            	<div class="news_title">
-                	<div class="news_title_z">就业资讯</div>
-                    <div class="news_title_m"><a href="{:U('Index/column',array('column_id'=>15))}">MORE</a></div>
-                </div>
-                <div class="news_centent">
-                	<div class="news_thumb"><img src="__ROOT__/Uploads/{$news_column.1.thumb}" width="224" height="148" /></div>
-                    <ul class="news_lists">
-                    	<volist name="consult_list" id="vo">
-            					<eq name="i" value="1">
-                    	<li  style="border-top:0px;"><a href="{:U('Index/article',array('column_id'=>$vo['column_id'],'id'=>$vo['id']))}">{$vo.title|mb_substr=0,16,'utf-8'}<div class="news_lists_r">{$vo.post_time|mb_substr=5,5,'utf-8'}</div></a></li>
-                      <else/>
-                      <li><a href="{:U('Index/article',array('column_id'=>$vo['column_id'],'id'=>$vo['id']))}">{$vo.title|mb_substr=0,16,'utf-8'}<div class="news_lists_r">{$vo.post_time|mb_substr=5,5,'utf-8'}</div></a></li>
-                      </eq>
-            					</volist>
-                    </ul>
-                </div>
-            </li>
-        </ul>
-        <div class="page_5">
-        	<a href="{$config_data.consult}"><div class="page_5_1">点击了解</div></a>
-            <div class="page_5_2"><a href="{$config_data.consult}">点击咨询</a></div>
-            <div class="page_5_3">
-            	<div class="page_5_3_nei">0411-87588456<br/>0411-87588567</div>
-            </div>
-        </div>
-        <div class="page_6">
-        	<div class="page6_1">●　{$config_data.address}</div>
-            <div class="xian4"></div>
-        </div>
-        <div class="news_title">
-            <div class="news_title_z">毕业生风</div>
-            <div class="news_title_m"><a href="#">MORE</a></div>
-        </div>
-        <div class="page_7">
-            <div id="carousel">
-            		<volist name="student_list" id="vo">
-                <div><img src="__ROOT__/Uploads/{$vo.thumb}" alt="fruit1" width="105" height="80" /></div>
-                </volist>
-            </div>
-            <div class="xian6"></div>
-        </div>
-        <script type="text/javascript">
-			$(function() {
+		<div class="sj-yw">
+			<div class="sj-y">
+				<h4>业务领域</h4>
+				<p><a href="{:U('Index/column',array('column_id'=>2))}">更多&gt;</a></p>
+				<div style="clear:both"></div>
+			</div>
+			<ul>
+				<volist name="child_columns" id="vo">
+					<eq name="vo.pid" value="2">
+						<in name="vo.id" value="8,9,10,11">
+							<li class="" style="background-image:url(__ROOT__/Uploads/{$vo.mob_pic});">
+							<a href="{:U('Index/column',array('column_id'=>$vo['id']))}"> {$vo.name}</a>
+							</li>
+						</in>
+					</eq>
+				</volist>
+			</ul>
+		</div>
 
-				var $c = $('#carousel');
 
-				$c.carouFredSel({
-					align: false,
-					items: 6,
-					scroll: {
-						items: 1,
-						duration: 3000,
-						timeoutDuration: 0,
-						easing: 'linear',
-						pauseOnHover: 'immediate'
-					}
-				});
-			});
-		</script>
-        <div class="news_title">
-            <div class="news_title_z">合作伙伴</div>
-            <div class="news_title_m"><a href="#">MORE</a></div>
-        </div>
-        <div class="job_title">就业合作伙伴</div>
-        <ul class="job_centent">
-        	<li><img src="__PUBLIC__/Home/MOB/images/job_centent_06.jpg" width="100" height="60" /></li>
-            <li><img src="__PUBLIC__/Home/MOB/images/job_centent_08.jpg" width="100" height="60" /></li>
-            <li><img src="__PUBLIC__/Home/MOB/images/job_centent_18.jpg" width="100" height="60" /></li>
-            <li><img src="__PUBLIC__/Home/MOB/images/job_centent_06.jpg" width="100" height="60" /></li>
-            <li><img src="__PUBLIC__/Home/MOB/images/job_centent_08.jpg" width="100" height="60" /></li>
-            <li><img src="__PUBLIC__/Home/MOB/images/job_centent_18.jpg" width="100" height="60" /></li>
-            <li><img src="__PUBLIC__/Home/MOB/images/job_centent_06.jpg" width="100" height="60" /></li>
-            <li><img src="__PUBLIC__/Home/MOB/images/job_centent_08.jpg" width="100" height="60" /></li>
-            <li><img src="__PUBLIC__/Home/MOB/images/job_centent_18.jpg" width="100" height="60" /></li>
-            <li><img src="__PUBLIC__/Home/MOB/images/job_centent_18.jpg" width="100" height="60" /></li>
-        </ul>
-        <div class="job_title">教育合作伙伴</div>
-        <div class="page_8">HurockEducation　Development.　Columbia　International School<br/>Seneca　College.　Fanshaw　eCollege.　辽宁装备制造学院</div>
-    </div>
-    <include file="MOB/Public/foot" />
+		<div class="nei-xin" id="nei-xin">
+
+			<div class="hd clearfix">
+				<ul>
+					<li class="on">集团新闻</li>
+					<li class="">下属动态</li>
+				</ul>
+				<a href="" class="nei-duo">更多&gt;</a>
+			</div>
+
+			<div class="bd ">
+				<ul class="xxww" style="display:block">
+					<volist name="jituan_list" id="vo">
+							<li class="clearfix">
+								<a  href="{:U('Index/article',array('column_id'=>$vo['column_id'],'id'=>$vo['id']))}">
+									<span class="title pull-left">{$vo.title}</span>
+									<span class="time pull-right">{$vo.post_time|mb_substr=5,5,'utf-8'}</span>
+								</a>
+							</li>
+					</volist>
+				</ul>
+
+				<ul class="xxww" style="display:none">
+					<volist name="xiashu_list" id="vo">
+							<li class="clearfix">
+								<a  href="{:U('Index/article',array('column_id'=>$vo['column_id'],'id'=>$vo['id']))}">
+									<span class="title pull-left">{$vo.title}</span>
+									<span class="time pull-right">{$vo.post_time|mb_substr=5,5,'utf-8'}</span>
+								</a>
+							</li>
+					</volist>
+				</ul>
+			</div>
+		</div>
+
+
+		<div class="sj-yw1">
+			<div class="sj-y">
+				<h4>公司简介</h4>
+				<p class="sj-p"><a href="{:U('Index/article',array('column_id'=>1,'id'=>1))}">更多&gt;</a></p>
+				<div style="clear:both"></div>
+			</div>
+			<a href="{:U('Index/article',array('column_id'=>1,'id'=>1))}"><img src="__PUBLIC__/Home/MOB/images/shou_29.jpg" class="nei-xian-tu1"></a>
+			<p style="text-indent:2em;padding-top: 0.5em;">山东中莱集团坐落于风景秀丽、美丽富饶的海滨城市——龙口，成立于一九九二年，现已发展成一个集建筑安装、房地产开发与销售、物业管理、装饰装修、塑钢门窗、餐饮洗浴、宾馆服务、建材经营、工程咨询等多种产业为一体的综合性企业集团，走出了一条”一业为主，多业并举，求真务实、稳健经营“的多元化发展道路。</p>
+		</div>
+
+
+		<div class="sj-yw1">
+			<div class="sj-y">
+				<h4>行业动态</h4>
+				<p class="sj-p"><a href="{:U('Index/column',array('column_id'=>22))}">更多&gt;</a></p>
+				<div style="clear:both"></div>
+			</div>
+			<img src="__PUBLIC__/Home/MOB/images/shou_31.jpg" class="nei-xian-tu1">
+			<ul class="xinwen xxww" >
+				<volist name="hangye_list" id="vo">
+						<li class="clearfix">
+							<a  href="{:U('Index/article',array('column_id'=>$vo['column_id'],'id'=>$vo['id']))}">
+								<span class="title pull-left">{$vo.title}</span>
+								<span class="time pull-right nei-duo">{$vo.post_time|mb_substr=5,5,'utf-8'}</span>
+							</a>
+						</li>
+				</volist>
+			</ul>
+
+		</div>
+
+		<div class="sj-yw1">
+			<div class="sj-y">
+				<h4>党群工作</h4>
+				<p class="sj-p"><a href="{:U('Index/column',array('column_id'=>17))}">更多&gt;</a></p>
+				<div style="clear:both"></div>
+			</div>
+			<img src="__PUBLIC__/Home/MOB/images/shou_33.jpg" class="nei-xian-tu1">
+			<ul class="xinwen xxww">
+				<volist name="dangqun_list" id="vo">
+						<li class="clearfix">
+							<a  href="{:U('Index/article',array('column_id'=>$vo['column_id'],'id'=>$vo['id']))}">
+								<span class="title pull-left">{$vo.title}</span>
+								<span class="time pull-right nei-duo">{$vo.post_time|mb_substr=5,5,'utf-8'}</span>
+							</a>
+						</li>
+				</volist>
+			</ul>
+		</div>
+
+
+		<div class="sj-yw1">
+			<div class="sj-y">
+				<h4>视频展播</h4>
+				<p class="sj-p"><a href="{:U('Index/column',array('column_id'=>21))}">更多&gt;</a></p>
+				<div style="clear:both"></div>
+			</div>
+			<VIDEO src="movie.ogg" controls="controls" class="nei-xian-tu1"></VIDEO>
+
+		</div>
+
+
+		<div class="sj-yw1">
+			<div class="sj-y">
+				<h4>专题专栏</h4>
+				<p class="sj-p"><a href="">更多&gt;</a></p>
+				<div style="clear:both"></div>
+			</div>
+
+			<a href="" class="xin-left1"><img src="__PUBLIC__/Home/MOB/images/shou_39.jpg"></a>
+			<a href="" class="xin-right1"><img src="__PUBLIC__/Home/MOB/images/shou_41.jpg"></a>
+			<a href="" class="xin-left1"><img src="__PUBLIC__/Home/MOB/images/shou_45.jpg"></a>
+			<a href="" class="xin-right1"><img src="__PUBLIC__/Home/MOB/images/shou_47.jpg"></a>
+		</div>
+
+		<div class="sj-yw1">
+			<div class="sj-y">
+				<h4>热点连接</h4>
+				<p class="sj-p"><a href="">更多&gt;</a></p>
+				<div style="clear:both"></div>
+			</div>
+			<div class="shi-top">
+				<a href="" class="shi-dian3">OA办公</a>
+				<a href="" class="shi-dian4">招标平台</a>
+			</div>
+
+		</div>
+
+
+	</div>
+	<include file="MOB/Public/foot" />
+	<script id="jsID" type="text/javascript">
+			TouchSlide({slideCell:"#nei-xin"});
+	</script>
+
+
 </body>
+
 </html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <include file="MOB/Public/head" />
+
+</head>
+
+<body>
+  <include file="MOB/Public/nav" />
+
+
+  <div class="shouji clearfix">
+
+    <div class="neijj-right">
+      <img src="__PUBLIC__/Home/MOB/images/jj_01.jpg" class="shou-gy">
+      <h4>{$column_data.name}</h4>
+      <span class="entitle">ENTERPRISE INTRODUCTION</span>
+      <div class="shou-mian">
+        <img src="__PUBLIC__/Home/MOB/images/jj_02.jpg" class="shou-jj">
+        <span>首页&gt;<a href="" >{$column_parent_name} </a>&gt;<a href="{:U('Index/column',array('column_id'=>$column_data['id'] ))}">{$column_data.name} </a></span>
+      </div>
+
+      <div style="clear:both"></div>
+      <hr>
+      <div class="sj-yw3">
+        <ul>
+          <volist name="column_list" id="vo">
+            <li class=""><a href="{:U('Index/column',array('column_id'=>$vo['id']))}">
+							<img src="__ROOT__/Uploads/{$vo.mob_pic}" style="width:100%;">
+							<p> {$vo.name}</p>
+						</a></li>
+          </volist>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <include file="MOB/Public/foot" />
+
+
+</body>
+
+</html>

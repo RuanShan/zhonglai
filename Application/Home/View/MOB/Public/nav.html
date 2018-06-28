@@ -1,0 +1,102 @@
+<div class="meitou">
+	<div class="meitou-zhong">
+		<a href="javascript:void(0)" onclick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'">
+		<img src="__PUBLIC__/Home/MOB/images/anniu.jpg" class="anniu">
+		</a>
+
+		<img src="__PUBLIC__/Home/MOB/images/shou_02.jpg" class="logo">
+		<div class="meitou-right">
+			<div class="meitou-right-top">
+				<a href="">联系我们</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="">网站地图</a>
+			</div>
+			<div class="meitou-right-down">
+				<form action="post">
+					<input type="text" value="请输入关键字" class="so">
+					<input type="image" src="__PUBLIC__/Home/MOB/images/shou_05.png" alt="Submit" class="ti" />
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="daohang" id="light" style="height:auto;">
+	<div class="daohang-zhong">
+		<ul class="nav navbar-nav" data-in="fadeInDown" data-out="fadeOutUp">
+			<li><a href="/">首页</a></li>
+			<li><a class="dropdown-toggle" data-toggle="dropdown">关于我们</a>
+				<ul class="dropdown-menu">
+					<li><a href="{:U('Index/article',array('column_id'=>1,'id'=>1))}">企业简介</a> </li>
+					<li><a href="{:U('Index/article',array('column_id'=>1,'id'=>30))}">领导致辞</a> </li>
+					<li><a href="{:U('Index/article',array('column_id'=>1,'id'=>31))}">组织结构</a> </li>
+					<li><a href="{:U('Index/article',array('column_id'=>1,'id'=>32))}">企业文化</a> </li>
+					<li><a href="{:U('Index/article',array('column_id'=>1,'id'=>33))}">资质荣誉</a> </li>
+					<li><a href="{:U('Index/article',array('column_id'=>1,'id'=>34))}">发展历程</a> </li>
+				</ul>
+			</li>
+			<li  class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" >产业中心</a>
+				<ul class="dropdown-menu">
+				<volist name="child_columns" id="vo">
+					<eq name="vo.pid" value="2">
+						<li> <a href="{:U('Index/column',array('column_id'=>$vo['id']))}"> {$vo.name}</a> </li>
+					</eq>
+				</volist>
+				</ul>
+			</li>
+			<li><a  class="dropdown-toggle" data-toggle="dropdown">资讯中心</a>
+				<ul class="dropdown-menu">
+
+					<li> <a href="{:U('Index/column',array('column_id'=>20))}"> 集团新闻</a> </li>
+					<li> <a href="{:U('Index/column',array('column_id'=>21))}"> 公司视频</a> </li>
+					<li> <a href="{:U('Index/column',array('column_id'=>22))}"> 行业动态</a> </li>
+
+				</ul>
+			</li>
+			<li><a  class="dropdown-toggle" data-toggle="dropdown">合资合作</a>
+				<ul class="dropdown-menu">
+				<volist name="child_columns" id="vo">
+					<eq name="vo.pid" value="4">
+						<li> <a href="{:U('Index/column',array('column_id'=>$vo['id']))}"> {$vo.name}</a> </li>
+					</eq>
+				</volist>
+				</ul>
+			</li>
+			<li><a  class="dropdown-toggle" data-toggle="dropdown">党群建设</a>
+				<ul class="dropdown-menu">
+				<volist name="child_columns" id="vo">
+					<eq name="vo.pid" value="5">
+						<li> <a href="{:U('Index/column',array('column_id'=>$vo['id']))}"> {$vo.name}</a> </li>
+					</eq>
+				</volist>
+				</ul>
+			</li>
+			<li><a  class="dropdown-toggle" data-toggle="dropdown">人才招聘</a>
+				<ul class="dropdown-menu">
+				<volist name="child_columns" id="vo">
+					<eq name="vo.pid" value="6">
+						<li> <a href="{:U('Index/column',array('column_id'=>$vo['id']))}"> {$vo.name}</a> </li>
+					</eq>
+				</volist>
+				</ul>
+			</li>
+			<li><a  class="dropdown-toggle" data-toggle="dropdown">联系我们</a>
+				<ul class="dropdown-menu">
+					<li><a href="{:U('Index/article',array('column_id'=>7,'id'=>7))}">联系我们</a> </li>
+					<li><a href="{:U('Index/article',array('column_id'=>7,'id'=>129))}">在线地图</a> </li>
+
+				</ul>
+			</li>
+			<li>
+				<a href="javascript:void(0)" onclick="document.getElementById('light').style.display='none';">
+					<p class="anniu1">关闭</p>
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>
+
+
+
+		<script>
+		$('.meitou .anniu').click(function(){
+			$('.daohang').slideToggle();
+		})
+    </script>

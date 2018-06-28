@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<include file="MOB/Public/head" />
+
+</head>
+
+<body>
+	<include file="MOB/Public/nav" />
+
+	<div class="shouji">
+
+		<div class="neijj-right">
+			<div class="clearfix">
+			<img src="__PUBLIC__/Home/MOB/images/jj_01.jpg" class="shou-gy">
+			<h4>{$column_data['name']}</h4>
+			<span class="entitle">ENTERPRISE INTRODUCTION</span>
+			<div class="shou-mian">
+				<img src="__PUBLIC__/Home/MOB/images/jj_02.jpg" class="shou-jj">
+				<span><a href="/">首页</a>&gt; {$column_parent['name']}&gt;<a href="{:U('Index/column',array('column_id'=>$column_data['column_id']))}">{$column_data['name']}</a></span>
+			</div>
+		  </div>
+			<div style="clear:both"></div>
+			<hr>
+
+			<ul class="article_list xinwen1">
+				<volist name="list" id="vo">
+						<li class="clearfix">
+							<a  href="{:U('Index/article',array('column_id'=>$vo['column_id'],'id'=>$vo['id']))}">
+								<span class="title pull-left">{$vo.title|mb_substr=0,16,'utf-8'}</span>
+								<span class="time pull-right">{$vo.post_time|mb_substr=5,5,'utf-8'}</span>
+							</a>
+						</li>
+				</volist>
+			</ul>
+		  <div class="page">{$page}</div>
+			
+		</div>
+	</div>
+
+	<include file="MOB/Public/foot" />
+
+</body>
+
+</html>

@@ -1,52 +1,48 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>{$config_data.name}</title>
-<meta name="viewport" content="width=640, user-scalable=no">
-<link rel="shortcut icon" href="favicon.ico" >
-<meta name="keywords" content="{$config_data.keywords}" />
-<meta name="description" content="{$config_data.description}" />
-<link href="__PUBLIC__/Home/MOB/css/css.css" rel="stylesheet" type="text/css" />
-<link href="__PUBLIC__/Home/MOB/css/swiper.min.css" rel="stylesheet" type="text/css" />
-<link href="__PUBLIC__/Home/MOB/css/xin.css" rel="stylesheet" type="text/css">
-<script src="__PUBLIC__/Home/MOB/js/swiper.min.js"></script>
-<script src="__PUBLIC__/Home/MOB/js/jquery-3.2.1.js"></script>
-<script src="__PUBLIC__/Home/MOB/js/jquery.carouFredSel-6.0.4-packed.js"></script>
-</head>
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
+		<include file="MOB/Public/head" />
+
+</head>
 <body>
-<include file="MOB/Public/head" />
-<div class="bodyer1">
-  <div class="bianxian"></div>
-  <div class="swiper-container banner swiper-container-horizontal">
-    <div class="swiper-wrapper" style="transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;">
-      <div class="swiper-slide swiper-slide-active" style="background: url(__ROOT__/Uploads/{$column_data.mob_pic}) center center no-repeat; width: 640px;"></div>
-      <div class="swiper-pagination"></div>
-    </div>
-  </div>
-  <div class="bodyer2">
-  	<ul class="news_list_list">
-        <volist name="list" id="vo">
-        <li>
-          <a href="{:U('Index/article',array('column_id'=>$vo['column_id'],'id'=>$vo['id']))}">
-            <div class="news_list_list_title">{$vo.title}</div>
-            <div class="news_list_list_content">
-              {$vo.descriptions}
-            </div>
-            <div class="news_list_list_other">
-              <div class="news_list_list_count">点击次数：{$vo.click}</div>
-              <div class="news_list_list_time">发布时间:{$vo.post_time}</div>
-            </div>
-          </a>
-        </li>
-        </volist>
-      </ul>
-      <div class="pages">
-        {$page}
-      </div>
-  </div>
-</div>
-<include file="MOB/Public/foot" />
+	<include file="MOB/Public/nav" />
+
+
+	<div class="shouji clearfix">
+
+			<div class="neijj-right">
+				<img src="__ROOT__/Uploads/{$column_parent.mob_pic}" class="shou-gy">
+				<h4>{$column_data.name}</h4>
+				<span class="entitle">ENTERPRISE INTRODUCTION</span>
+				<div class="shou-mian">
+					<img src="__PUBLIC__/Home/MOB/images/jj_02.jpg" class="shou-jj">
+					<span>首页&gt;<a href="" >{$column_parent_name} </a>&gt;<a href="{:U('Index/column',array('column_id'=>$column_data['id'] ))}">{$column_data.name} </a></span>
+				</div>
+
+				<div style="clear:both"></div>
+				<hr>
+				<div class="sj-yw3">
+  				<ul>
+  					<volist name="list" id="vo">
+  						<li class=""><a href="{:U('Index/article',array('column_id'=>$vo['column_id'],'id'=>$vo['id']))}">
+  							<img src="__ROOT__/Uploads/{$vo.thumb}" style="width:100%;">
+  							<p> {$vo.title}</p>
+  						</a></li>
+  					</volist>
+  				</ul>
+        <div class="page">{$page}</div>
+
+				</div>
+			</div>
+
+		</div>
+
+		<include file="MOB/Public/foot" />
+
+
 </body>
 </html>

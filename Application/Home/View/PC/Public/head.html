@@ -41,11 +41,9 @@
         </li>
         <li class="dian"><a >资讯中心</a>
           <div class="xian">
-            <volist name="child_columns" id="vo">
-              <eq name="vo.pid" value="3">
-                <a href="{:U('Index/column',array('column_id'=>$vo['id']))}"> {$vo.name}</a>
-              </eq>
-            </volist>
+            <a href="{:U('Index/column',array('column_id'=>20))}"> 集团新闻</a>
+            <a href="{:U('Index/column',array('column_id'=>21))}"> 公司视频</a>
+            <a href="{:U('Index/column',array('column_id'=>22))}"> 行业动态</a>
           </div>
         </li>
         <li class="dian"><a href="{:U('Index/column',array('column_id'=>23))}">合资合作</a>
