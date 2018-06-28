@@ -825,16 +825,17 @@ color: #e50112!important;
 .sj-yw li{
 	width: 100%;
 	height: 189px;
-
+	position: relative;
 	overflow: hidden;
 
 	background-size: 100% 189px;
 
 	background-repeat:  no-repeat
 }
-
-.sj-yw li a{
-	    position: relative;
+.sj-yw li img{ width: 100%; }
+.sj-yw li p{
+	  position: absolute;
+		bottom: 0;
     width: 100%;
     text-align: center;
     height: 30px;

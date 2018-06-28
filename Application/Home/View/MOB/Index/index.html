@@ -38,8 +38,9 @@
 				<volist name="child_columns" id="vo">
 					<eq name="vo.pid" value="2">
 						<in name="vo.id" value="8,9,10,11">
-							<li class="" style="background-image:url(__ROOT__/Uploads/{$vo.mob_pic});">
-							<a href="{:U('Index/column',array('column_id'=>$vo['id']))}"> {$vo.name}</a>
+							<li class="" >
+						  	<a href="{:U('Index/column',array('column_id'=>$vo['id']))}"><img src="__ROOT__/Uploads/{$vo.mob_pic}" >
+                <p> {$vo.name} </p></a>
 							</li>
 						</in>
 					</eq>
