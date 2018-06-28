@@ -43,10 +43,12 @@
 				<p><a href="{:U('Index/column',array('column_id'=>8))}">更多&gt;</a></p>
 				<div style="clear:both"></div>
 				<ul>
-					<li class="bg1"><a href="{:U('Index/column',array('column_id'=>8))}">中莱建筑</a></li>
-					<li class="bg2"><a href="{:U('Index/column',array('column_id'=>9))}">中莱房地产</a></li>
-					<li class="bg3"><a href="{:U('Index/column',array('column_id'=>10))}">中莱物业</a></li>
-					<li class="bg4"><a href="{:U('Index/column',array('column_id'=>11))}">中莱俱乐部</a></li>
+					<volist name="chanye_columns" id="vo" offset="0" length='4'>
+						<li class="">
+							<img src="__ROOT__/Uploads/{$vo.pc_pic}" alt="{$vo.name}"/>
+							<a href="{:U('Index/column',array('column_id'=>$vo['id'] ))}">{$vo.name}</a>
+						</li>
+					</volist>
 				</ul>
 			</div>
 		</div>
@@ -116,15 +118,13 @@
 		<div class="nei-jianjie">
 			<ul>
 				<li>
-					<h4>企业简介</h4>
-					<img src="__PUBLIC__/Home/PC/images/zhonglai/xian_03.jpg" class="nei-xian">
+					<h4 class="title">企业简介</h4>
 					<img src="__PUBLIC__/Home/PC/images/zhonglai/shou_29.jpg" class="nei-xian-tu">
 					<p>山东中莱集团坐落于风景秀丽、美丽富饶的海滨城市——龙口，成立于一九九二年，现已发展成一个集建筑安装、房地产开发与销售、物业管理、装饰装修、塑钢门窗、餐饮洗浴、宾馆服务、建材经营、工程咨询等多种产业为一体的综合性企业集团，走出了一条”一业为主，多业并举，求真务实、稳健经营“的多元化发展道路。
 					</p>
 				</li>
 				<li>
-					<h4>行业动态<a href="{:U('Index/column',array('column_id'=>22))}" class="nei-duo">更多&gt;</a></h4>
-					<img src="__PUBLIC__/Home/PC/images/zhonglai/xian_03.jpg" class="nei-xian">
+					<h4 class="title">行业动态<a href="{:U('Index/column',array('column_id'=>22))}" class="nei-duo">更多&gt;</a></h4>
 					<img src="__PUBLIC__/Home/PC/images/zhonglai/shou_31.jpg" class="nei-xian-tu">
 					<div style="clear:both"></div>
 					<ul class="xinwen">
@@ -140,8 +140,7 @@
 					</ul>
 				</li>
 				<li>
-					<h4>党群工作<a href="{:U('Index/column',array('column_id'=>17))}" class="nei-duo">更多&gt;</a></h4>
-					<img src="__PUBLIC__/Home/PC/images/zhonglai/xian_03.jpg" class="nei-xian">
+					<h4 class="title">党群工作<a href="{:U('Index/column',array('column_id'=>17))}" class="nei-duo">更多&gt;</a></h4>
 					<img src="__PUBLIC__/Home/PC/images/zhonglai/shou_33.jpg" class="nei-xian-tu">
 					<div style="clear:both"></div>
 					<ul class="xinwen">
@@ -160,14 +159,12 @@
 		<div class="nei-shi">
 			<ul>
 				<li>
-					<h4>视频展播</h4>
-					<img src="__PUBLIC__/Home/PC/images/zhonglai/xian_03.jpg" class="nei-xian">
+					<h4 class="title">视频展播</h4>
 					<img src="__PUBLIC__/Home/PC/images/zhonglai/video.jpg" class="nei-xian-tu" />
 					<!--<VIDEO src="movie.ogg" class="nei-xian-tu" poster="__PUBLIC__/Home/PC/images/zhonglai/video.jpg"></VIDEO> -->
 				</li>
 				<li class="shi-zhuan">
-					<h4>专题专栏</h4>
-					<img src="__PUBLIC__/Home/PC/images/zhonglai/xian_07.jpg" class="shi-xian">
+					<h4 class="title">专题专栏</h4>
 
 					<div class="shi-top">
 						<a href="" class="xin-left"><img src="__PUBLIC__/Home/PC/images/zhonglai/shou_39.jpg"></a>
@@ -178,8 +175,7 @@
 
 				</li>
 				<li class="shi-re">
-					<h4>热点链接</h4>
-					<img src="__PUBLIC__/Home/PC/images/zhonglai/xian_09.jpg" class="re-xian">
+					<h4 class="title">热点链接</h4>
 					<div class="shi-top">
 						<a href="" class="shi-dian1">OA办公</a>
 						<a href="" class="shi-dian2">招标平台</a>

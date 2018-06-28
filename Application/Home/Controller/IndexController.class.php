@@ -101,6 +101,11 @@ class IndexController extends CommonController {
 		$child_columns = $Column->where(array('pid'=>array('gt', 0)))->select();
 		$this->assign('child_columns',$child_columns);
 
+		// 产业中心
+		$chanye_columns = array_filter($child_columns, function($item){
+                 return $item['pid'] == 2;
+    });
+		$this->assign('chanye_columns',$chanye_columns);
 
 		if($this->isMobile()){
 			$MobSlide     = M('MobSlide');
