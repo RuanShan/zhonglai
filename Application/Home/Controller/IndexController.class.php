@@ -132,9 +132,17 @@ class IndexController extends CommonController {
 
 		$column_data = $Column->where('id='.I('column_id'))->find();
 		$this->assign('column_data',$column_data);
+
 		//栏目子栏目
-		$column_list = $Column->where(array('pid'=>array('eq',$column_data['id'])))->select();
-		$this->assign('column_list',$column_list);
+		if( $column_data['pid'] > 0){
+			//当前栏目的所有兄弟栏目, 如：中莱建筑
+			$column_list = $Column->where(array('pid'=>array('eq',$column_data['pid'])))->select();
+			$this->assign('column_list',$column_list);
+		}else{
+			//当前栏目的子栏目， 如：产业中心
+			$column_list = $Column->where(array('pid'=>array('eq',$column_data['id'])))->select();
+			$this->assign('column_list',$column_list);
+		}
 
 		$column_parent = $Column->where('id='.$column_data['pid'])->find();
 		$this->assign('column_parent',$column_parent);

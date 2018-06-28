@@ -40,13 +40,13 @@
 		<div class="nei-zhong">
 			<div class="yewu">
 				<h4>业务领域</h4>
-				<p>更多&gt;</p>
+				<p><a href="{:U('Index/column',array('column_id'=>8))}">更多&gt;</a></p>
 				<div style="clear:both"></div>
 				<ul>
-					<li class="bg1"><a href="">中莱建筑</a></li>
-					<li class="bg2"><a href="">中莱房地产</a></li>
-					<li class="bg3"><a href="">中莱物业</a></li>
-					<li class="bg4"><a href="">中莱俱乐部</a></li>
+					<li class="bg1"><a href="{:U('Index/column',array('column_id'=>8))}">中莱建筑</a></li>
+					<li class="bg2"><a href="{:U('Index/column',array('column_id'=>9))}">中莱房地产</a></li>
+					<li class="bg3"><a href="{:U('Index/column',array('column_id'=>10))}">中莱物业</a></li>
+					<li class="bg4"><a href="{:U('Index/column',array('column_id'=>11))}">中莱俱乐部</a></li>
 				</ul>
 			</div>
 		</div>
@@ -81,125 +81,31 @@
 				<div class="hd">
 					<ul class="clearfix">
 						<li class="on">集团新闻</li>
-						<li class="">中莱要闻</li>
 						<li class="">下属动态</li>
 					</ul>
-					<a href="" class="nei-duo">更多&gt;</a>
+					<a href="" class="nei-duo" style="line-height:30px;">更多&gt;</a>
 				</div>
 				<div class="bd">
 					<ul class="xxww" style="display:block">
-						<li>
-							<a href="">
-								<p>中莱建设集团坚持目标导向提升企业再发展</p>
-							</a><span>2018-02-05</span></li>
-						<li>
-							<a href="">
-								<p>中莱建设完委召开2017年度领导班子民主</p>
-							</a><span>2018-02-05</span></li>
-						<li>
-							<a href="">
-								<p>党建大考求真务实-中莱建设召开2017年度</p>
-							</a><span>2018-02-05</span></li>
-						<li>
-							<a href="">
-								<p>中莱建设强化经营开发工作精定位核心市场</p>
-							</a><span>2018-02-05</span></li>
-						<li>
-							<a href="">
-								<p>中莱建设全面推广铝模板初见成效</p>
-							</a><span>2018-02-05</span></li>
-						<li>
-							<a href="">
-								<p>中莱建设集团开启人才与企业发展共赢的</p>
-							</a><span>2018-02-05</span></li>
-						<li>
-							<a href="">
-								<p>集团举力学习贯彻十九大的第124期道德</p>
-							</a><span>2018-02-05</span></li>
-						<li>
-							<a href="">
-								<p>中莱建设集团在北京总部召开“四会”</p>
-							</a><span>2018-02-05</span></li>
-						<li>
-							<a href="">
-								<p>中莱建设集团在北京总部召开“四会”</p>
-							</a><span>2018-02-05</span></li>
+						<volist name="jituan_list" id="vo" offset="0" length='7'>
+								<li class="clearfix">
+									<a  href="{:U('Index/article',array('column_id'=>$vo['column_id'],'id'=>$vo['id']))}">
+										<span class="title pull-left">{$vo.title}</span>
+										<span class="time pull-right">{$vo.post_time|mb_substr=0,10,'utf-8'}</span>
+									</a>
+								</li>
+						</volist>
+
 					</ul>
 					<ul class="xxww" style="display:none">
-						<li>
-							<a href="">
-								<p>中莱集团建设目标中莱集团建设目标</p>
-							</a><span>2018-02-05</span></li>
-						<li>
-							<a href="">
-								<p>莱集团建设目标中莱集团建设目标</p>
-							</a><span>2018-02-05</span></li>
-						<li>
-							<a href="">
-								<p>中莱集团建设目标中莱集团建设目标</p>
-							</a><span>2018-02-05</span></li>
-						<li>
-							<a href="">
-								<p>中莱集团建设目标中莱集团建设目标</p>
-							</a><span>2018-02-05</span></li>
-						<li>
-							<a href="">
-								<p>中莱集团建设目标中莱集团建设目标</p>
-							</a><span>2018-02-05</span></li>
-						<li>
-							<a href="">
-								<p>中莱集团建设目标中莱集团建设目标</p>
-							</a><span>2018-02-05</span></li>
-						<li>
-							<a href="">
-								<p>中莱集团建设目标中莱集团建设目标</p>
-							</a><span>2018-02-05</span></li>
-						<li>
-							<a href="">
-								<p>中莱集团建设目标中莱集团建设目标</p>
-							</a><span>2018-02-05</span></li>
-						<li>
-							<a href="">
-								<p>中莱集团建设目标中莱集团建设目标</p>
-							</a><span>2018-02-05</span></li>
-					</ul>
-					<ul class="xxww" style="display:none">
-						<li>
-							<a href="">
-								<p>中莱集团建设目标中莱集团建设目标</p>
-							</a><span>2018-02-05</span></li>
-						<li>
-							<a href="">
-								<p>中莱集团建设目标中莱集团建设目标</p>
-							</a><span>2018-02-05</span></li>
-						<li>
-							<a href="">
-								<p>莱集团建设目标中莱集团建设目标</p>
-							</a><span>2018-02-05</span></li>
-						<li>
-							<a href="">
-								<p>中莱集团建设目标中莱集团建设目标</p>
-							</a><span>2018-02-05</span></li>
-						<li>
-							<a href="">
-								<p>中莱集团建设目标中莱集团建设目标</p>
-							</a><span>2018-02-05</span></li>
-						<li>
-							<a href="">
-								<p>中莱集团建设目标中莱集团建设目标</p>
-							</a><span>2018-02-05</span></li>
-						<li>
-							<a href="">
-								<p>中莱集团建设目标中莱集团建设目标</p>
-							</a><span>2018-02-05</span></li>
-						<li>
-							<a href="">
-								<p>中莱集团建设目标中莱集团建设目标</p>
-							</a><span>2018-02-05</span></li>
-						<li>
-							<a href="">
-								<p>中莱集团建设目标中莱集团建设目标</p>
-							</a><span>2018-02-05</span></li>
+						<volist name="xiashu_list" id="vo" offset="0" length='7'>
+								<li class="clearfix">
+									<a  href="{:U('Index/article',array('column_id'=>$vo['column_id'],'id'=>$vo['id']))}">
+										<span class="title pull-left">{$vo.title}</span>
+										<span class="time pull-right">{$vo.post_time|mb_substr=0,10,'utf-8'}</span>
+									</a>
+								</li>
+						</volist>
 					</ul>
 				</div>
 				<script type="text/javascript">
@@ -217,31 +123,36 @@
 					</p>
 				</li>
 				<li>
-					<h4>媒体聚焦<a href="" class="nei-duo">更多&gt;</a></h4>
+					<h4>行业动态<a href="{:U('Index/column',array('column_id'=>22))}" class="nei-duo">更多&gt;</a></h4>
 					<img src="__PUBLIC__/Home/PC/images/zhonglai/xian_03.jpg" class="nei-xian">
 					<img src="__PUBLIC__/Home/PC/images/zhonglai/shou_31.jpg" class="nei-xian-tu">
 					<div style="clear:both"></div>
 					<ul class="xinwen">
-						<li><a class="nei-title" href="">中莱建设召开“三供一业”分离移交攻坚动</a><a class="nei-duo">2015-05-05</a></li>
-						<li><a class="nei-title" href="">中莱集团召开二级单位纪委书记座谈会</a><a class="nei-duo">2015-05-05</a></li>
-						<li><a class="nei-title" href="">中莱建设10项工程荣获第十五届中国土木</a><a class="nei-duo">2015-05-05</a></li>
-						<li><a class="nei-title" href="">中莱建设强化经营开发工作精定位核心市场</a><a class="nei-duo">2015-05-05</a></li>
-						<li><a class="nei-title" href="">中莱建设召开2017年度股东大会</a><a class="nei-duo">2015-05-05</a></li>
-						<li><a class="nei-title" href="">中莱建设集团开启人才与企业发展共赢的</a><a class="nei-duo">2015-05-05</a></li>
+						<volist name="hangye_list" id="vo" offset="0" length='8'>
+								<li class="">
+									<a  class="clearfix" href="{:U('Index/article',array('column_id'=>$vo['column_id'],'id'=>$vo['id']))}">
+										<span class="nei-title pull-left">{$vo.title}</span>
+										<span class="nei-duo pull-right">{$vo.post_time|mb_substr=0,10,'utf-8'}</span>
+									</a>
+								</li>
+						</volist>
+
 					</ul>
 				</li>
 				<li>
-					<h4>党群工作<a href="" class="nei-duo">更多&gt;</a></h4>
+					<h4>党群工作<a href="{:U('Index/column',array('column_id'=>17))}" class="nei-duo">更多&gt;</a></h4>
 					<img src="__PUBLIC__/Home/PC/images/zhonglai/xian_03.jpg" class="nei-xian">
 					<img src="__PUBLIC__/Home/PC/images/zhonglai/shou_33.jpg" class="nei-xian-tu">
 					<div style="clear:both"></div>
 					<ul class="xinwen">
-						<li><a class="nei-title" href="">中莱建设集团华北公司组织党支部书记培训</a><a class="nei-duo">2015-05-05</a></li>
-						<li><a class="nei-title" href="">中莱建设集团华中公司举行宣贯十九大</a><a class="nei-duo">2015-05-05</a></li>
-						<li><a class="nei-title" href="">中莱建设西北公司：十九大精神进班组</a><a class="nei-duo">2015-05-05</a></li>
-						<li><a class="nei-title" href="">中莱建设中南公司编印党员领导干部“学习</a><a class="nei-duo">2015-05-05</a></li>
-						<li><a class="nei-title" href="">中莱建设召开第七次党委中心组学习会</a><a class="nei-duo">2015-05-05</a></li>
-						<li><a class="nei-title" href="">中莱建设党委中心组召开学党章专题学习研</a><a class="nei-duo">2015-05-05</a></li>
+						<volist name="dangqun_list" id="vo" offset="0" length='7'>
+								<li class="">
+									<a  class="clearfix" href="{:U('Index/article',array('column_id'=>$vo['column_id'],'id'=>$vo['id']))}">
+										<span class="nei-title pull-left">{$vo.title}</span>
+										<span class="nei-duo pull-right">{$vo.post_time|mb_substr=0,10,'utf-8'}</span>
+									</a>
+								</li>
+						</volist>
 					</ul>
 				</li>
 			</ul>

@@ -208,6 +208,7 @@ body {
 	float: right!important;
 	font-size: 12px!important;
 	color:#999!important;
+	line-height: 18px;
 }
 .nei-jianjie{
 	width: 1100px;
@@ -256,17 +257,33 @@ color: #e50112!important;
 	padding: 0px;
 	margin: 0px;
 	line-height: 30px;
+	position: relative;
 }
 .xinwen li a{
 	text-decoration: none;
 	color: #333;
 }
-.xinwen li a.nei-title{
+.xinwen li .nei-title{
 	width: 210px;
 	display: inline-block;
 	overflow: hidden;
-text-overflow: ellipsis;
-white-space: nowrap;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.xinwen li a .title {
+    color: #333;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 80px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.xinwen li a .time {
+    float: right;
+    color: #bbb;
 }
 
 .nei-shi{
@@ -436,18 +453,32 @@ white-space: nowrap;
 .foot-tan:hover .tan{
 	opacity: 1;
 }
-.xxww a{
-	float: none;
+
+.xxww .title{
     display: inline-block;
-    font-size: 12px;
-    color: #333;
-    margin-left: 0px;
-    font-weight: 500;
+    font-weight: normal;
 		width: 350px;
 		overflow: hidden;
 		text-overflow: ellipsis;
 		white-space: nowrap;
+		font-size: 14px;
+
 }
+.xxww li {
+	line-height: 34px;
+}
+.xxww li a{
+	margin-left: 0px;
+	width: 100%;
+}
+
+.xxww li span.time{
+	font-size: 12px;
+  color: #999;
+	font-weight: normal;
+
+}
+
 /*首页结束*/
 
 
