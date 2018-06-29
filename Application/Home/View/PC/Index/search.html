@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{$config_data.name}</title>
+<meta name="keywords" content="{$config_data.keywords}" />
+<meta name="description" content="{$config_data.description}" />
+<link href="__PUBLIC__/Home/PC/css/bootstrap/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="__PUBLIC__/Home/PC/css/swiper.css" rel="stylesheet" type="text/css" />
+<link href="__PUBLIC__/Home/PC/css/liMarquee.css" rel="stylesheet" type="text/css" />
+<link href="__PUBLIC__/Home/PC/css/style1.css" rel="stylesheet" type="text/css" />
+
+<script src="__PUBLIC__/Home/PC/js/jquery-1.9.1.min.js"></script>
+<script src="__PUBLIC__/Home/PC/js/jquery.liMarquee.js"></script>
+</head>
+
+<body>
+	<include file="PC/Public/head" />
+  <div class="bodyer">
+    <div class="other_content neijj">
+				<div class="neijj-zhong">
+
+					<div class="">
+						<div class="neirong ">
+							<div class="article_list">
+							  <ul class="article_list">
+								<volist name="list" id="vo">
+										<li class="clearfix">
+											<a target="_blank" href="{:U('Index/article',array('column_id'=>$vo['column_id'],'id'=>$vo['id']))}">
+												<span class="title pull-left">{$vo.title}</span>
+												<span class="time pull-right">{$vo.post_time|mb_substr=5,5,'utf-8'}</span>
+											</a>
+										</li>
+								</volist>
+							</ul>
+						  </div>
+					    <div class="page">{$page}</div>
+
+						</div>
+
+					</div>
+				</div>
+    </div>
+  </div>
+  <include file="PC/Public/foot" />
+</body>
+</html>

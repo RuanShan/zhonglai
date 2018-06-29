@@ -73,8 +73,6 @@ class IndexController extends CommonController {
 		$Config     = M('Config');
 		$Article    = M('Article');
 		$Column     = M('Column');
-		$ObtainLinks    = M('ObtainLinks');
-		$EducationLinks    = M('EducationLinks');
 
 		//配置
 		$config_data = $Config->where('id=1')->find();
@@ -264,7 +262,7 @@ class IndexController extends CommonController {
 				$this->assign('column_parent',$column_parent);
 				$column_parent_name = "";
 				if( !empty($column_parent)){
-					$column_parent_name = $column_parent['name'];				
+					$column_parent_name = $column_parent['name'];
 				}
 				$this->assign('column_parent_name',$column_parent_name);
 
@@ -278,4 +276,42 @@ class IndexController extends CommonController {
 			}
 		}
 	}
+
+	public function search()
+  {
+		$Config  = M('Config');
+		$Column  = M('Column');
+		$Article  = M('Article');
+
+		//配置
+		$config_data = $Config->where('id=1')->find();
+
+		$this->assign('config_data',$config_data);
+
+		//导航子菜单
+		$child_columns = $Column->where(array('pid'=>array('gt', 0)))->select();
+		$this->assign('child_columns',$child_columns);
+
+
+		$keyword  = isset($_GET['keyword'])?$_GET['keyword'] : '';
+
+		$where = [];
+		if($keyword){
+			 $where['title'] = ['like','%'.$keyword.'%'];
+		}
+		$Page       = new \Think\Page($count,24);
+		$show       = $Page->show();
+
+		//$model->query('select * from user where id=%d and status=%d',$id,$status);
+
+    //$sql = "SELECT * FROM think_article WHERE match(name,title) against('%s') offset %d limit %d;"
+	  $list = $Article->where($where)->order('id DESC')->limit($Page->firstRow.','.$Page->listRows)->select();
+
+	  $this->assign('list',$list);
+		$this->assign('page',$show);
+
+		$this->display('PC/Index/search');
+  }
+
+
 }
