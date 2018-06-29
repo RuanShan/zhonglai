@@ -44,7 +44,7 @@
 .daohang{
 	width: 100%;
 	/*padding: 10px 0;*/
-	background: #e50112;
+	background: #fff;
 	overflow: hidden;
 }
 .daohang .daohang-zhong ul{
@@ -65,10 +65,9 @@
 	padding: 0 40px;
 }
 .daohang-zhong li a{
-	color: #fff;
 	text-align: center;
 	text-decoration: none;
-	 transition:color 1s;
+	/*transition:color 1s;*/
 }
 .daohang-zhong li a:hover{
 	color: #000!important;
@@ -742,7 +741,8 @@ color: #e50112!important;
     float: none;
         width: 100%;
     text-align: center;
-        padding: 10px;
+		border-bottom: 1px solid #ccc;
+    padding: 0;
 	}
 	.meitou-right{
 		display: none;
@@ -1136,4 +1136,29 @@ color: #e50112!important;
 .page .rows {
     margin-left: 5px;
     color: #666;
+}
+/* 主菜单 */
+.navbar-nav > li > a{
+	text-align: left;
+  padding: 10px 20px;
+}
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus{
+	background: #fff;
+}
+.navbar-nav .open .dropdown-menu{
+	background-color: #eee;
+	padding: 0;
+}
+.navbar-nav .open .dropdown-menu > li > a{
+	text-align: left;
+	line-height: 28px;
+}
+
+.daohang-zhong li a:hover{
+	/*color: #fff!important;*/
+}
+.daohang-zhong li .jia{
+	float: right;
+	width: 15px;
+	height: 15px;
 }
