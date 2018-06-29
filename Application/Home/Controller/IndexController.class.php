@@ -259,8 +259,14 @@ class IndexController extends CommonController {
 				$this->assign('column_list',$column_list);
 				$this->display('PC/Index/chanye_article');
 			}else{
-				$column_list = $Column->where(array('id'=>array('in','14,15,16,21,22')))->select();
-				$this->assign('column_list',$column_list);
+
+				$column_parent = $Column->where('id='.$column_data['pid'])->find();
+				$this->assign('column_parent',$column_parent);
+				$column_parent_name = "";
+				if( !empty($column_parent)){
+					$column_parent_name = $column_parent['name'];				
+				}
+				$this->assign('column_parent_name',$column_parent_name);
 
 				$prev_data = $Article->where('id<'.I('id').' AND column_id='.$column_data['id'])->order('id DESC')->limit(1)->find();
 				$this->assign('prev_data',$prev_data);

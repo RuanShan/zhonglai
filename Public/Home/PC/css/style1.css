@@ -811,3 +811,28 @@ color: #e50112!important;
     margin-left: 5px;
     color: #666;
 }
+
+/*新闻页*/
+.neijj-zhong .other_content_right_other {
+    height: 66px;
+    line-height: 66px;
+    border-bottom: 1px solid #aba9a9;
+    text-align: center;
+    color: #5d5d5d;
+}
+.neijj-zhong .other_content_right_title {
+    text-align: center;
+    line-height: 50px;
+    font-size: 30px;
+    color: #231815;
+}
+.neijj-zhong .other_content_right_news_content {
+    padding: 43px 0px;
+    font-size: 20px;
+    color: #5d5d5d;
+    border-bottom: 1px solid #9f9d9c;
+}
+.neijj-zhong .other_content_right_news_page .other_content_right_news_page_page {
+    height: 44px;
+    line-height: 44px;
+}
