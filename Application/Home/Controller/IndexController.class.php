@@ -302,7 +302,7 @@ class IndexController extends CommonController {
 
 		$where = array();
 		if($keyword){
-			 $where['title'] = ['like','%'.$keyword.'%'];
+			 $where['title'] = array('like','%'.$keyword.'%');
 		}
 		$count = $Article->where($where)->order('id DESC')->count();
 		$Page       = new \Think\Page($count,24);
