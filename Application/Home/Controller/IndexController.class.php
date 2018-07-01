@@ -300,7 +300,7 @@ class IndexController extends CommonController {
 
 		$keyword  = isset($_GET['keyword'])?$_GET['keyword'] : '';
 
-		$where = [];
+		$where = array();
 		if($keyword){
 			 $where['title'] = ['like','%'.$keyword.'%'];
 		}
