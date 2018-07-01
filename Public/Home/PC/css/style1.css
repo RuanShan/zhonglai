@@ -836,3 +836,110 @@ color: #e50112!important;
     height: 44px;
     line-height: 44px;
 }
+
+/* 搜索，招聘*/
+
+.nrb{
+	width: 100%;
+
+}
+.nrb th{
+	border:1px solid #aaa;
+	text-align: center;
+	background: #d61518;
+	color: #fff;
+	line-height: 36px;
+}
+.nrb td{
+	text-align: center;
+	line-height: 22px;
+	border:1px solid #aaa;
+	padding: 10px 1%;
+}
+.qian{
+	background: #f7f7f7;
+}
+.shen{
+	background: #f1f1f1;
+}
+.one{
+	width: 17%;
+}
+.two{
+	width: 7%;
+}
+.three{
+	width: 12%;
+}
+.four{
+	width: 7%;
+}
+.five{
+	width: 16%
+}
+.six{
+	width: 25%;
+}
+.seven{
+	width: 16%;
+}
+.qiantu img{
+	width: 120px!important;
+    height: 120px;
+    margin: 10px 0;
+    color: #333;
+    text-decoration: none;
+
+}
+.qiantu{
+	 color: #333;
+    text-decoration: none;
+}
+.qiantu:hover{
+	 color: #333;
+    text-decoration: none;
+}
+.sou{
+	width: 1200px;
+	margin: auto;
+}
+#wb{
+	width: 600px;
+	height: 40px;
+	line-height: 40px;
+	padding-left: 10px;
+	color: #888;
+	float: left;
+}
+#an{
+	background: #d61518;
+	border: 0px;
+	color: #fff;
+	height: 40px;
+	line-height: 40px;
+	padding: 0 20px;
+}
+
+.sou ul{
+	width: 800px;
+	margin:50px auto;
+
+}
+.sou li{
+	list-style: none;
+	margin: 10px 0;
+    padding: 0 0 10px 0;
+    border-bottom: 1px solid #eee;
+}
+.sou h4{
+	color: #d61518;
+}
+
+.sou p{
+	margin-bottom:0px;
+}
+.text_ellipsis{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}

@@ -20,23 +20,29 @@
 	<include file="PC/Public/head" />
   <div class="bodyer">
     <div class="other_content neijj">
-				<div class="neijj-zhong">
+				<div class="neijj-zhong" style="margin-top:0;">
 
 					<div class="">
 						<div class="neirong ">
-							<div class="article_list">
-							  <ul class="article_list">
+							<div class="sou">
+								<form method="get" action="{:U('Index/search')}" style="width:800px;    margin: 20px auto 0;">
+									<input type="text" id="wb" name="keyword" value="{$Think.get.keyword}">
+									<input type="submit" id="an" value="搜 索">
+								</form>
+							  <ul class="">
 								<volist name="list" id="vo">
-										<li class="clearfix">
-											<a target="_blank" href="{:U('Index/article',array('column_id'=>$vo['column_id'],'id'=>$vo['id']))}">
-												<span class="title pull-left">{$vo.title}</span>
-												<span class="time pull-right">{$vo.post_time|mb_substr=5,5,'utf-8'}</span>
-											</a>
-										</li>
+									<li class="clearfix">
+	<h4>{$vo.title}</h4>
+	<p class="text_ellipsis">{$vo.content|strip_tags|mb_substr=0,128,'utf-8'}</p>
+	<p>	<a target="_blank" href="{:U('Index/article',array('column_id'=>$vo['column_id'],'id'=>$vo['id']))}">
+		{:U('Index/article',array('column_id'=>$vo['column_id'],'id'=>$vo['id']), true, true)}</a>
+	</p>
+</li>
+
 								</volist>
 							</ul>
 						  </div>
-					    <div class="page">{$page}</div>
+					    <div class="page"  style="width:800px;margin:auto;">{$page}</div>
 
 						</div>
 

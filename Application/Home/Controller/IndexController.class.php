@@ -119,6 +119,7 @@ class IndexController extends CommonController {
 			$this->display('PC/Index/index');
 		}
 	}
+
 	public function column(){
 		$Config  = M('Config');
 		$Column  = M('Column');
@@ -181,8 +182,12 @@ class IndexController extends CommonController {
 				$this->display('MOB/Index/column');
 			}
 		}else{
-			if( I('column_id')== 17 || I('column_id')== 20 || I('column_id')== 30 ){
+			if( I('column_id')== 17 || I('column_id')== 20 || I('column_id')== 22 ){
 				$this->display('PC/Index/column_article_list');
+			}else if( I('column_id') == 30 ){
+				//在线招聘
+				$this->display('PC/Index/column_zhaopin');
+
 			}else{
 				$this->display('PC/Index/column');
 			}
@@ -299,6 +304,7 @@ class IndexController extends CommonController {
 		if($keyword){
 			 $where['title'] = ['like','%'.$keyword.'%'];
 		}
+		$count = $Article->where($where)->order('id DESC')->count();
 		$Page       = new \Think\Page($count,24);
 		$show       = $Page->show();
 
@@ -306,7 +312,9 @@ class IndexController extends CommonController {
 
     //$sql = "SELECT * FROM think_article WHERE match(name,title) against('%s') offset %d limit %d;"
 	  $list = $Article->where($where)->order('id DESC')->limit($Page->firstRow.','.$Page->listRows)->select();
-
+		foreach ($list as &$data) {
+		  $data['content'] = stripslashes(htmlspecialchars_decode($data['content']));
+    }
 	  $this->assign('list',$list);
 		$this->assign('page',$show);
 

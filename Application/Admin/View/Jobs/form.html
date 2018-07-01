@@ -43,52 +43,6 @@
 		<link rel="stylesheet" href="__PUBLIC__/Admin/plugins/summernote/build/summernote.css">
 		<!-- end: CSS REQUIRED FOR THIS PAGE ONLY -->
 		<link rel="shortcut icon" href="favicon.ico" />
-    <!-- start: MAIN JAVASCRIPTS -->
-		<!--[if lt IE 9]>
-		<script src="__PUBLIC__/Admin/plugins/respond.min.js"></script>
-		<script src="__PUBLIC__/Admin/plugins/excanvas.min.js"></script>
-		<script type="text/javascript" src="__PUBLIC__/Admin/js/jquery.1.10.2.js"></script>
-		<![endif]-->
-		<!--[if gte IE 9]><!-->
-		<script src="__PUBLIC__/Admin/js/jquery.2.0.3.js"></script>
-		<!--<![endif]-->
-		<script src="__PUBLIC__/Admin/plugins/jquery-ui/jquery-ui-1.10.2.custom.min.js"></script>
-		<script src="__PUBLIC__/Admin/plugins/bootstrap/js/bootstrap.min.js"></script>
-		<script src="__PUBLIC__/Admin/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js"></script>
-		<script src="__PUBLIC__/Admin/plugins/blockUI/jquery.blockUI.js"></script>
-		<script src="__PUBLIC__/Admin/plugins/iCheck/jquery.icheck.min.js"></script>
-		<script src="__PUBLIC__/Admin/plugins/perfect-scrollbar/src/jquery.mousewheel.js"></script>
-		<script src="__PUBLIC__/Admin/plugins/perfect-scrollbar/src/perfect-scrollbar.js"></script>
-		<script src="__PUBLIC__/Admin/plugins/less/less-1.5.0.min.js"></script>
-		<script src="__PUBLIC__/Admin/plugins/jquery-cookie/jquery.cookie.js"></script>
-		<script src="__PUBLIC__/Admin/plugins/bootstrap-colorpalette/js/bootstrap-colorpalette.js"></script>
-		<script src="__PUBLIC__/Admin/js/main.js"></script>
-		<!-- end: MAIN JAVASCRIPTS -->
-		<!-- start: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
-    <script src="__PUBLIC__/Admin/plugins/jquery-inputlimiter/jquery.inputlimiter.1.3.1.min.js"></script>
-		<script src="__PUBLIC__/Admin/plugins/autosize/jquery.autosize.min.js"></script>
-		<script src="__PUBLIC__/Admin/plugins/select2/select2.min.js"></script>
-		<script src="__PUBLIC__/Admin/plugins/jquery.maskedinput/src/jquery.maskedinput.js"></script>
-		<script src="__PUBLIC__/Admin/plugins/jquery-maskmoney/jquery.maskMoney.js"></script>
-		<script src="__PUBLIC__/Admin/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
-		<script src="__PUBLIC__/Admin/plugins/bootstrap-timepicker/js/bootstrap-timepicker.min.js"></script>
-		<script src="__PUBLIC__/Admin/plugins/bootstrap-daterangepicker/moment.min.js"></script>
-		<script src="__PUBLIC__/Admin/plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
-		<script src="__PUBLIC__/Admin/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.js"></script>
-		<script src="__PUBLIC__/Admin/plugins/bootstrap-colorpicker/js/commits.js"></script>
-		<script src="__PUBLIC__/Admin/plugins/jQuery-Tags-Input/jquery.tagsinput.js"></script>
-		<script src="__PUBLIC__/Admin/plugins/bootstrap-fileupload/bootstrap-fileupload.min.js"></script>
-		<script src="__PUBLIC__/Admin/plugins/summernote/build/summernote.min.js"></script>
-		<script src="__PUBLIC__/Admin/plugins/ckeditor/ckeditor.js"></script>
-		<script src="__PUBLIC__/Admin/plugins/ckeditor/adapters/jquery.js"></script>
-		<script src="__PUBLIC__/Admin/js/form-elements.js"></script>
-		<!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
-		<script>
-			jQuery(document).ready(function() {
-				Main.init();
-				FormElements.init();
-			});
-		</script>
 	</head>
 	<!-- end: HEAD -->
 	<!-- start: BODY -->
@@ -113,11 +67,8 @@
 										后台首页
 									</a>
 								</li>
-                <li class="active">
-									 {$column_data.name}
-								</li>
 								<li class="active">
-									 文章表单
+									 招聘表单
 								</li>
 								<li class="search-box">
 									<form class="sidebar-search">
@@ -143,24 +94,24 @@
 							<div class="panel panel-default">
 								<div class="panel-heading">
 									<i class="fa fa-external-link-square"></i>
-									文章表单
+									招聘表单
 								</div>
 								<div class="panel-body">
 									<form role="form" method="post" action="{:U('Article/post',array('type'=>$_GET['type']))}" class="form-horizontal" enctype="multipart/form-data">
 										<div class="form-group">
 											<label class="col-sm-2 control-label">
-												文章标题
+												招聘岗位名称
 											</label>
 											<div class="col-sm-4">
-												<input placeholder="请输入文章标题" name="title" value="{$data.title}" class="form-control" type="text">
+												<input placeholder="请输入招聘岗位" name="title" value="{$data.title}" class="form-control" type="text">
 											</div>
 										</div>
                     <div class="form-group">
 											<label class="col-sm-2 control-label">
-												英文标题
+												英文招聘岗位名称
 											</label>
 											<div class="col-sm-4">
-												<input placeholder="请输入英文标题" name="title_en" value="{$data.title_en}" class="form-control" type="text">
+												<input placeholder="请输入英文招聘岗位名称" name="title_en" value="{$data.title_en}" class="form-control" type="text">
 											</div>
 										</div>
                     <div class="form-group">
@@ -232,14 +183,12 @@
                         </div>
 											</div>
 										</div>
-                    <eq name="column_data.id" value="30">
-                    <!-- 加载编辑器的容器 -->
 										<div class="form-group">
 											<label class="col-sm-2 control-label">
 												人数
 											</label>
 											<div class="col-sm-4">
-												<input placeholder="请输入人数" name="job_renshu" value="{$data.job_renshu}" class="form-control" type="text">
+												<input placeholder="请输入来源" name="source" value="{$data.job_renshu}" class="form-control" type="text">
 											</div>
 										</div>
 										<div class="form-group">
@@ -247,31 +196,28 @@
 												学历
 											</label>
 											<div class="col-sm-4">
-												<input placeholder="请输入学历" name="job_xueli" value="{$data.job_xueli}" class="form-control" type="text">
+												<input placeholder="请输入来源" name="source" value="{$data.job_xueli}" class="form-control" type="text">
 											</div>
 										</div>
-
+										<div class="form-group">
+											<label class="col-sm-2 control-label">
+												性别
+											</label>
+											<div class="col-sm-4">
+												<input placeholder="请输入来源" name="source" value="{$data.job_xingbie}" class="form-control" type="text">
+											</div>
+										</div>
 										<div class="form-group">
 											<label class="col-sm-2 control-label">
 												专业
 											</label>
 											<div class="col-sm-4">
-												<input placeholder="请输入专业" name="job_zhuanye" value="{$data.job_zhuanye}" class="form-control" type="text">
+												<input placeholder="请输入来源" name="source" value="{$data.job_zhuangye}" class="form-control" type="text">
 											</div>
 										</div>
-										<div class="form-group">
-											<label class="col-sm-2 control-label">
-												岗位职责及要求
-											</label>
-											<div class="col-sm-8">
-												<textarea class="form-control" name="content" maxlength="2500" style="height:10em" placeholder="请输入描述">{$data.content}</textarea>
-
-											</div>
-										</div>
-                    <else/>
                     <div class="form-group">
 											<label class="col-sm-2 control-label">
-												内容
+												岗位职责及要求
 											</label>
 											<div class="col-sm-8">
                         <script id="ueditor" name="content" type="text/plain">
@@ -291,7 +237,6 @@
                       	</script>
 											</div>
 										</div>
-                    </eq>
                     <div class="form-group">
                       <div class="col-sm-2 col-sm-offset-2">
                       	<input type="hidden" name="column_id" value="{$Think.get.column_id}">
@@ -314,6 +259,52 @@
 		</div>
 		<!-- end: MAIN CONTAINER -->
 		<include file="Public/footer" />
+		<!-- start: MAIN JAVASCRIPTS -->
+		<!--[if lt IE 9]>
+		<script src="__PUBLIC__/Admin/plugins/respond.min.js"></script>
+		<script src="__PUBLIC__/Admin/plugins/excanvas.min.js"></script>
+		<script type="text/javascript" src="__PUBLIC__/Admin/js/jquery.1.10.2.js"></script>
+		<![endif]-->
+		<!--[if gte IE 9]><!-->
+		<script src="__PUBLIC__/Admin/js/jquery.2.0.3.js"></script>
+		<!--<![endif]-->
+		<script src="__PUBLIC__/Admin/plugins/jquery-ui/jquery-ui-1.10.2.custom.min.js"></script>
+		<script src="__PUBLIC__/Admin/plugins/bootstrap/js/bootstrap.min.js"></script>
+		<script src="__PUBLIC__/Admin/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js"></script>
+		<script src="__PUBLIC__/Admin/plugins/blockUI/jquery.blockUI.js"></script>
+		<script src="__PUBLIC__/Admin/plugins/iCheck/jquery.icheck.min.js"></script>
+		<script src="__PUBLIC__/Admin/plugins/perfect-scrollbar/src/jquery.mousewheel.js"></script>
+		<script src="__PUBLIC__/Admin/plugins/perfect-scrollbar/src/perfect-scrollbar.js"></script>
+		<script src="__PUBLIC__/Admin/plugins/less/less-1.5.0.min.js"></script>
+		<script src="__PUBLIC__/Admin/plugins/jquery-cookie/jquery.cookie.js"></script>
+		<script src="__PUBLIC__/Admin/plugins/bootstrap-colorpalette/js/bootstrap-colorpalette.js"></script>
+		<script src="__PUBLIC__/Admin/js/main.js"></script>
+		<!-- end: MAIN JAVASCRIPTS -->
+		<!-- start: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
+    <script src="__PUBLIC__/Admin/plugins/jquery-inputlimiter/jquery.inputlimiter.1.3.1.min.js"></script>
+		<script src="__PUBLIC__/Admin/plugins/autosize/jquery.autosize.min.js"></script>
+		<script src="__PUBLIC__/Admin/plugins/select2/select2.min.js"></script>
+		<script src="__PUBLIC__/Admin/plugins/jquery.maskedinput/src/jquery.maskedinput.js"></script>
+		<script src="__PUBLIC__/Admin/plugins/jquery-maskmoney/jquery.maskMoney.js"></script>
+		<script src="__PUBLIC__/Admin/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+		<script src="__PUBLIC__/Admin/plugins/bootstrap-timepicker/js/bootstrap-timepicker.min.js"></script>
+		<script src="__PUBLIC__/Admin/plugins/bootstrap-daterangepicker/moment.min.js"></script>
+		<script src="__PUBLIC__/Admin/plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
+		<script src="__PUBLIC__/Admin/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.js"></script>
+		<script src="__PUBLIC__/Admin/plugins/bootstrap-colorpicker/js/commits.js"></script>
+		<script src="__PUBLIC__/Admin/plugins/jQuery-Tags-Input/jquery.tagsinput.js"></script>
+		<script src="__PUBLIC__/Admin/plugins/bootstrap-fileupload/bootstrap-fileupload.min.js"></script>
+		<script src="__PUBLIC__/Admin/plugins/summernote/build/summernote.min.js"></script>
+		<script src="__PUBLIC__/Admin/plugins/ckeditor/ckeditor.js"></script>
+		<script src="__PUBLIC__/Admin/plugins/ckeditor/adapters/jquery.js"></script>
+		<script src="__PUBLIC__/Admin/js/form-elements.js"></script>
+		<!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
+		<script>
+			jQuery(document).ready(function() {
+				Main.init();
+				FormElements.init();
+			});
+		</script>
 	</body>
 	<!-- end: BODY -->
 </html>

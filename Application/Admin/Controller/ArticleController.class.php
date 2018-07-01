@@ -65,10 +65,10 @@ class ArticleController extends CommonController {
 			'descriptions' => I('descriptions'),
 			'source'       => I('source'),
 			'content'      => I('content'),
-			'direction'    => I('direction'),
-			'course'       => I('course'),
-			'obtain'       => I('obtain'),
-			'enterprise'   => I('enterprise'),
+			'job_xueli'    => I('job_xueli'),
+			'job_renshu'       => I('job_renshu'),
+			'job_xingbie'       => I('job_xingbie'),
+			'job_zhuanye'   => I('job_zhuanye'),
 		);
 
 		foreach($_FILES as $key=>$val){

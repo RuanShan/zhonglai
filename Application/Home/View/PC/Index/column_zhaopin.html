@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{$config_data.name}</title>
+<meta name="keywords" content="{$config_data.keywords}" />
+<meta name="description" content="{$config_data.description}" />
+<link href="__PUBLIC__/Home/PC/css/bootstrap/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="__PUBLIC__/Home/PC/css/swiper.css" rel="stylesheet" type="text/css" />
+<link href="__PUBLIC__/Home/PC/css/liMarquee.css" rel="stylesheet" type="text/css" />
+<link href="__PUBLIC__/Home/PC/css/style1.css" rel="stylesheet" type="text/css" />
+
+<script src="__PUBLIC__/Home/PC/js/jquery-1.9.1.min.js"></script>
+<script src="__PUBLIC__/Home/PC/js/jquery.liMarquee.js"></script>
+</head>
+
+<body>
+	<include file="PC/Public/head" />
+  <div class="bodyer">
+  	<div class="other_banner" style="background:url(__ROOT__/Uploads/{$column_data.pc_pic}) no-repeat center; background-size: cover; height: 360px;"></div>
+    <div class="other_content neijj">
+				<div class="neijj-zhong">
+					<div class="neijj-left">
+						<h4>{$column_parent_name}</h4>
+						<ul>
+							<volist name="column_list" id="vo">
+								<li class="<eq name="vo.id" value="$Think.get.column_id">over</eq>"><a href="{:U('Index/column',array('column_id'=>$vo['id']))}">
+									{$vo.name}</a></li>
+  						</volist>
+
+						</ul>
+					</div>
+					<div class="neijj-right">
+						<img src="__PUBLIC__/Home/PC/images/zhonglai/jj_01.jpg" class="shou-gy">
+						<h4>{$column_data.name}</h4>
+						<span class="entitle">ENTERPRISE INTRODUCTION</span>
+						<div class="shou-mian">
+							<img src="__PUBLIC__/Home/PC/images/zhonglai/jj_02.jpg" class="shou-jj">
+							<span>首页&gt;关于我们&gt;公司简介</span>
+						</div>
+
+						<div style="clear:both"></div>
+						<hr>
+						<div class="neirong ">
+
+							<table class="nrb">
+								<tr>
+									<th class="one">岗位名称</th>
+									<th class="two">人数</th>
+									<th class="three">学历</th>
+									<th class="fivee">专业</th>
+									<th class="six">其他要求</th>
+									<th class="seven">在线申请</th>
+								</tr>
+								<volist name="list" id="vo" key="k">
+											<tr>
+												<td class="qian">{$vo.title}</td>
+												<td class="qian">{$vo.job_renshu}</td>
+												<td class="qian">{$vo.job_xueli}</td>
+												<td class="qian">{$vo.job_zhuanye}</td>
+												<td class="qian">{$vo.content}</td>
+												<eq name="k" value="1">
+												  <td class="qian" rowspan="{$list|count}"><a href="" class="qiantu"><img src="__PUBLIC__/Home/PC/images/zhonglai/an.png"><p>立即申请</p></a></td>
+												</eq>
+											</tr>
+								</volist>
+							</table>
+						  </div>
+					    <div class="page">{$page}</div>
+
+						</div>
+
+					</div>
+				</div>
+    </div>
+  </div>
+  <include file="PC/Public/foot" />
+</body>
+</html>
