@@ -255,6 +255,7 @@ class IndexController extends CommonController {
 				if( !empty($column_parent)){
 					$column_parent_name = $column_parent['name'];
 				}
+				$this->assign('column_parent',$column_parent);
 				$this->assign('column_parent_name',$column_parent_name);
 
 				$column_map['pid'] = array('eq',$column_data['pid']);
