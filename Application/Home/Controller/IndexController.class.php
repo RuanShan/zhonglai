@@ -175,14 +175,14 @@ class IndexController extends CommonController {
 				//公司视频
 				$this->display('MOB/Index/column_video_list');
 
-			}else if( I('column_id')== 17 || I('column_id')== 20 || I('column_id')== 30 || I('column_id')== 22 ){
-				//党群工作,集团新闻,在线招聘, 行业动态
+			}else if( I('column_id')== 17 || I('column_id')== 20 || I('column_id')== 30 || I('column_id')== 22 ||  I('column_id')== 33|| I('column_id')== 34){
+				//党群工作,集团新闻,在线招聘, 行业动态, 绩效考核, 人才理念, 常见问题, 发展培训
 				$this->display('MOB/Index/column_article_list');
 			}else{
 				$this->display('MOB/Index/column');
 			}
 		}else{
-			if( I('column_id')== 17 || I('column_id')== 20 || I('column_id')== 22 ){
+			if( I('column_id')== 17 || I('column_id')== 20 || I('column_id')== 30 || I('column_id')== 22 || I('column_id')== 33|| I('column_id')== 34 ){
 				$this->display('PC/Index/column_article_list');
 			}else if( I('column_id') == 30 ){
 				//在线招聘

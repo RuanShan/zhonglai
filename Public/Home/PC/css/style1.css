@@ -46,7 +46,7 @@ body {
 }
 .daohang{
 	width: 100%;
-	background: #e50112;
+	background: #b30101;
 	overflow: hidden;
 }
 .daohang .daohang-zhong ul{
@@ -218,7 +218,7 @@ a{
 }
 a:hover{
 text-decoration: none;
-color: #e50112!important;
+color: #b30101!important;
 }
 .nei-jianjie {
 	overflow: hidden;
@@ -364,19 +364,19 @@ color: #e50112!important;
 }
 .shi-dian1:hover{
 	text-decoration: none;
-	background: #e50112;
+	background: #b30101;
 	color: #fff!important;
-	border: 1px solid #e50112;
+	border: 1px solid #b30101;
 }
 .shi-dian2:hover{
 	text-decoration: none;
-	background: #e50112;
+	background: #b30101;
 	color: #fff!important;
-	border: 1px solid #e50112;
+	border: 1px solid #b30101;
 }
 .foot{
 	height: 162px;
-	background: #e50112;
+	background: #b30101;
 	width: 100%;
 }
 .foot-zhong{
@@ -410,7 +410,7 @@ color: #e50112!important;
 	height: 26px;
 	line-height: 26px;
 	float: right;
-	color: #e50112;
+	color: #b30101;
 	position: relative;
 	top: 76px;
 	right: 50px;
@@ -431,7 +431,7 @@ color: #e50112!important;
 	display: block;
 	width: 140px;
 	padding:0px 10px;
-	color: #e50112;
+	color: #b30101;
 	text-decoration: none;
 }
 .tan a:hover{
@@ -503,7 +503,7 @@ color: #e50112!important;
 }
 .neijj-left h4{
 	font-weight: bold;
-	color: #e50112;
+	color: #b30101;
 }
 .neijj-left li{
 	    list-style: none;
@@ -529,14 +529,14 @@ color: #e50112!important;
 	font-size: 16px;
 }
 .neijj-left li.over{
-	background: #e50112;
+	background: #b30101;
 }
 .neijj-left li.over a{
 	color: #fff;
 }
 
 .neijj-left li:hover{
-	background: #e50112;
+	background: #b30101;
 }
 .neijj-right{
 	width:80%;
@@ -664,7 +664,7 @@ color: #e50112!important;
 .dian{
 	    height: 36px;
     line-height: 36px;
-    background: #e50112;
+    background: #b30101;
 }
 .dian:hover{
 	background:#be1212;
