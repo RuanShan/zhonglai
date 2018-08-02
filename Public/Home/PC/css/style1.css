@@ -943,3 +943,94 @@ color: #b30101!important;
 	text-overflow: ellipsis;
 	white-space: nowrap;
 }
+
+/*招聘*/
+.widget-job-2{ margin-bottom: 70px;}
+.widget-job-2 ._jt { background-color: #f7f7f7; height: 46px; line-height: 46px; margin-top: 10px; overflow: hidden; *zoom: 1;
+cursor: pointer; }
+.widget-job-2 ._jt .ic{ position: absolute; left: 7px;color: #b30101; }
+.widget-job-2 ._jt strong { float: left; position: relative; width: 30%;  color: #666666; font-weight: normal; padding-left: 30px;}
+.widget-job-2 ._jt span { float: right;  padding-right: 60px;}
+.widget-job-2 ._jc { display: none; position: relative; }
+.widget-job-2 ._jc ._btn{position: absolute; right: 40px; top: 50%; margin-top: -18px; display: inline-block; width: 126px; height: 32px; line-height: 32px; color: #fff; text-align: center; background: #a50804; border-radius: 5px;}
+.widget-job-2 ._jc ._btn.collect{  right: 190px; top: 50%; }
+.widget-job-2 ._jc ._btn:hover{ color: #fff!important; }
+.widget-job-2 ._jcon { padding: 40px; border: 1px solid #b30101; }
+.widget-job-2 ._jt_act{ background-color: #b30101;}
+.widget-job-2 ._jt_act .ic{ color: #fff;}
+.widget-job-2 ._jt_act strong{ color: #fff; font-size: 16px;}
+.widget-job-2 ._jt_act span{ color: #fff; font-size: 16px;}
+
+
+/*荣誉*/
+.rongyu{
+}
+.rongyu td{ padding: 0.6em; }
+.rongyu td img{ width: 100%; }
+/* 产业信息描述*/
+.column_description{
+	text-indent: 2em;
+	font-size: 16px;
+	padding: 1em 0 2em;
+	margin-bottom: 1em;
+	border-bottom: dashed 1px #eee;
+}
+
+/*公众号二维码*/
+.neirong img.qrcode{
+	width: 30%;
+}
+
+/*网站地图*/
+.page-content{
+	width: 100%;
+	background: #eeeef0;
+	overflow: hidden;
+}
+.sitemap-wrap{
+	width: 1200px;
+	background: #fff;
+	padding: 20px 20px;
+	margin: auto;
+}
+
+.sitemap-wrap .title-wrap{
+	border-bottom: solid 1px #ccc;
+	margin-bottom: 1em;
+}
+.sitemap-wrap .title{
+	float: left;
+	background: none;
+	font-size: 18px;
+	font-weight: bold;
+
+}
+.sitemap-wrap .entitle{
+	width: 146px;
+	float: right;
+	font-size: 10px;
+	color: #b30101;
+	margin-top: 15px;
+}
+
+.sitemap dt{
+	font-weight: bold;
+  color: #b30101;
+  font-size: 18px;
+	border-bottom: dashed 1px #eee;
+  padding: 0.5em 0;
+	margin: 0.5em 0;
+}
+.sitemap ul {
+	margin: 0 0 1em 0;
+}
+.sitemap ul li{
+	float: left;
+	color: #333;
+  width: 200px;
+	font-size: 16px;
+	padding: 8px 8px 8px 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}

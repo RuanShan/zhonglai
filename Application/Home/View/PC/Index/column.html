@@ -39,6 +39,11 @@
 						<div style="clear:both"></div>
 						<hr>
 						<div class="neirong">
+							<if condition="$column_parent_name eq '产业中心'">
+							<div class="clearfix">
+							  <div class="column_description">{$column_data.descriptions}</div>
+						  </div>
+						  </if>
 							<ul class="article-image-list clearfix">
 								<volist name="list" id="vo">
 									<li class=""><a href="{:U('Index/article',array('column_id'=>$vo['column_id'],'id'=>$vo['id']))}">

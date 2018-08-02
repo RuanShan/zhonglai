@@ -1162,3 +1162,28 @@ color: #e50112!important;
 	width: 15px;
 	height: 15px;
 }
+
+
+
+/*招聘*/
+.widget-job-2{ margin-bottom: 70px;}
+.widget-job-2 ._jt { background-color: #f7f7f7; height: 46px; line-height: 46px; margin-top: 10px; overflow: hidden; *zoom: 1;
+cursor: pointer; }
+.widget-job-2 ._jt .ic{ position: absolute; left: 7px;color: #b30101; }
+.widget-job-2 ._jt strong { float: left; position: relative; width: 30%;  color: #666666; font-weight: normal; padding-left: 30px;}
+.widget-job-2 ._jt span { float: right;  padding-right: 60px;}
+.widget-job-2 ._jc { display: none; position: relative; }
+.widget-job-2 ._jc ._btn{ display: inline-block; width: 126px; height: 32px; line-height: 32px; color: #fff; text-align: center; background: #a50804; border-radius: 5px;}
+.widget-job-2 ._jc ._btn.collect{ }
+.widget-job-2 ._jc ._btn:hover{ color: #fff!important; }
+.widget-job-2 ._jcon {  padding: 20px; border: 1px solid #b30101; }
+.widget-job-2 ._jt_act{ background-color: #b30101;}
+.widget-job-2 ._jt_act .ic{ color: #fff;}
+.widget-job-2 ._jt_act strong{ color: #fff; font-size: 16px;}
+.widget-job-2 ._jt_act span{ color: #fff; font-size: 16px;}
+
+
+/*公众号二维码*/
+.qrcode{
+	width: 80%;
+}

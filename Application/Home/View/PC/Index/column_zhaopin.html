@@ -40,37 +40,33 @@
 						<hr>
 						<div class="neirong ">
 
-							<table class="nrb">
-								<tr>
-									<th class="one">岗位名称</th>
-									<th class="two">人数</th>
-									<th class="three">学历</th>
-									<th class="fivee">专业</th>
-									<th class="six">其他要求</th>
-									<th class="seven">在线申请</th>
-								</tr>
+							<div class="widget-job-2">
 								<volist name="list" id="vo" key="k">
-											<tr>
-												<td class="qian">{$vo.title}</td>
-												<td class="qian">{$vo.job_renshu}</td>
-												<td class="qian">{$vo.job_xueli}</td>
-												<td class="qian">{$vo.job_zhuanye}</td>
-												<td class="qian">{$vo.content}</td>
-												<eq name="k" value="1">
-												  <td class="qian" rowspan="{$list|count}"><a href="" class="qiantu"><img src="__PUBLIC__/Home/PC/images/zhonglai/an.png"><p>立即申请</p></a></td>
-												</eq>
-											</tr>
-								</volist>
-							</table>
-						  </div>
-					    <div class="page">{$page}</div>
+
+								<div id="jt{$vo.id}" class="_jt ">
+									<strong> {$vo.title}</strong>
+									<span><!--2018/07/13--></span>
+								</div>
+								<div class="_jc">
+									<div class="_jcon">
+										<p>
+										</p><p style="white-space: normal;"><span style="font-family: 宋体, SimSun; font-size: 18px;">需求人数：{$vo.job_renshu}；</span></p><p style="white-space: normal;"><span style="font-family: 宋体, SimSun; font-size: 18px;">专业：{$vo.job_zhuanye}</span></p><p style="white-space: normal;"><span style="font-family: 宋体, SimSun; font-size: 18px;">具体要求：{$vo.content}</span></p>
+										<p></p>
+										<a href="__PUBLIC__/Home/doc/jobform.doc"  class="_btn">应聘职位</a>
+										<a data-id="jt{$vo.id}" href="javascript:void(0)" class="_btn collect" onclick="_addFavoriteJob( {$vo.id})">收藏职位</a>
+									</div>
+								</div>
+							  </volist>
+
+							</div>
+						</div>
+					  <div class="page">{$page}</div>
 
 						</div>
 
 					</div>
 				</div>
     </div>
-  </div>
   <include file="PC/Public/foot" />
 </body>
 </html>

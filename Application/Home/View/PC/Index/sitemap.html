@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{$config_data.name}</title>
+<meta name="keywords" content="{$config_data.keywords}" />
+<meta name="description" content="{$config_data.description}" />
+<include file="PC/Public/assets" />
+
+</head>
+
+<body>
+  <div class="page-content">
+    <div class="sitemap-wrap">
+      <div class="clearfix title-wrap">
+        <h4 class="title"> 网站地图 </h4>
+      <span class="entitle">WEBSITE MAP</span>
+      </div>
+
+    <div class="sitemap">
+      <div class="column">
+        <dl>
+          <dt> 关于我们  </dt>
+          <dd>
+             <ul class="clearfix">
+               <li> <a href="{:U('Index/article',array('column_id'=>1, 'id'=>1))}"> 公司简介 </a> </li>
+               <li> <a href="{:U('Index/article',array('column_id'=>1, 'id'=>30))}"> 领导致辞 </a> </li>
+               <li> <a href="{:U('Index/article',array('column_id'=>1, 'id'=>31))}"> 组织结构 </a> </li>
+               <li> <a href="{:U('Index/article',array('column_id'=>1, 'id'=>32))}"> 企业文化 </a> </li>
+               <li> <a href="{:U('Index/article',array('column_id'=>1, 'id'=>33))}"> 荣誉资质 </a> </li>
+               <li> <a href="{:U('Index/article',array('column_id'=>1, 'id'=>34))}"> 发展历程 </a> </li>
+            </ul>
+          </dd>
+        </dl>
+      </div>
+
+      <volist name="column_list" id="vi">
+        <in name="vi.id" value="2,3,4,5,6">
+          <div class="column">
+            <dl>
+                <dt>{$vi.name}</dt>
+                <dd>
+                  <ul class="clearfix">
+                  <volist name="column_list" id="vj">
+                    <compare name="vj.pid" value="$vi.id" type="eq">
+
+                    <li class=""><a href="{:U('Index/column',array('column_id'=>$vj['id']))}">
+                      {$vj.name}</a>
+                    </li>
+                  </compare>
+                  </volist>
+                  </ul>
+                </dd>
+            </dl>
+          </div>
+        </in>
+    </volist>
+    <div class="column">
+      <dl>
+        <dt> 联系我们  </dt>
+        <dd>
+           <ul class="clearfix">
+             <li> <a href="{:U('Index/article',array('column_id'=>7, 'id'=>7))}"> 联系我们 </a> </li>
+             <li> <a href="{:U('Index/article',array('column_id'=>7, 'id'=>129))}"> 在线地图 </a> </li>
+          </ul>
+        </dd>
+      </dl>
+    </div>
+
+    </div>
+  </div>
+</body>
+</html>

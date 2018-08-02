@@ -50,19 +50,20 @@
 			<div class="slideBox">
 				<div class="hd" id="hd1">
 					<ul>
-						<li class="">1</li>
-						<li class="on">2</li>
-						<li class="">3</li>
-						<li class="">4</li>
+						<volist name="lunbo_list" id="vo" offset="0" length='4'>
+						<li class=""> {$i}</li>
+					  </volist>
 					</ul>
 				</div>
 
 				<div class="bd">
 					<ul>
-						<li style="display:list-item;"><a href="/" target="_blank"><img src="__PUBLIC__/Home/PC/images/zhonglai/shou_25.jpg"></a></li>
-						<li style="display:none"><a href="/" target="_blank"><img src="__PUBLIC__/Home/PC/images/zhonglai/shou_25.jpg"></a></li>
-						<li style="display: none;"><a href="/" target="_blank"><img src="__PUBLIC__/Home/PC/images/zhonglai/shou_25.jpg"></a></li>
-						<li style="display: none;"><a href="/" target="_blank"><img src="__PUBLIC__/Home/PC/images/zhonglai/shou_25.jpg"></a></li>
+						<volist name="lunbo_list" id="vo" offset="0" length='4'>
+							<li style="<neq name='i' value='1'>display:none</neq>"><a href="{:U('Index/article',array('column_id'=>$vo['column_id'],'id'=>$vo['id'] ))}" target="_blank">
+								<img src="__ROOT__/Uploads/{$vo.thumb}" alt="{$vo.name}"/>
+								</a>
+							</li>
+						</volist>
 					</ul>
 				</div>
 			</div>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<include file="MOB/Public/head" />
+
+</head>
+
+<body>
+	<include file="MOB/Public/nav" />
+
+	<div class="shouji clearfix">
+
+		<div class="neijj-right">
+			<div class="clearfix">
+				<img src="__PUBLIC__/Home/MOB/images/jj_01.jpg" class="shou-gy">
+				<h4>{$column_data['name']}</h4>
+				<span class="entitle">ENTERPRISE INTRODUCTION</span>
+				<div class="shou-mian">
+					<img src="__PUBLIC__/Home/MOB/images/jj_02.jpg" class="shou-jj">
+					<span><a href="/">首页</a>&gt; {$column_parent['name']}&gt;<a href="{:U('Index/column',array('column_id'=>$column_data['column_id']))}">{$column_data['name']}</a></span>
+				</div>
+		  </div>
+			<div style="clear:both"></div>
+			<hr>
+
+				<div class="article_list xinwen1 widget-job-2">
+					<volist name="list" id="vo" key="k">
+
+					<div id="jt{$vo.id}" class="_jt ">
+						<strong> {$vo.title}</strong>
+						<span><!--2018/07/13--></span>
+					</div>
+					<div class="_jc">
+						<div class="_jcon">
+							<p>
+							</p><p style="white-space: normal;"><span style="font-family: 宋体, SimSun; font-size: 18px;">需求人数：{$vo.job_renshu}；</span></p><p style="white-space: normal;"><span style="font-family: 宋体, SimSun; font-size: 18px;">专业：{$vo.job_zhuanye}</span></p><p style="white-space: normal;"><span style="font-family: 宋体, SimSun; font-size: 18px;">具体要求：{$vo.content}</span></p>
+							<p></p>
+							<div style="text-align:center;margin: 1em 0;">
+							<a href="__PUBLIC__/Home/doc/jobform.doc"  class="_btn">应聘职位</a>
+							<a data-id="jt{$vo.id}" href="javascript:void(0)" class="_btn collect" onclick="_addFavoriteJob( {$vo.id})">收藏职位</a>
+						  </div>
+						</div>
+					</div>
+					</volist>
+
+				</div>
+		  <div class="page">{$page}</div>
+
+		</div>
+	</div>
+
+	<include file="MOB/Public/foot" />
+
+</body>
+
+</html>

@@ -105,6 +105,10 @@ class IndexController extends CommonController {
     });
 		$this->assign('chanye_columns',$chanye_columns);
 
+		// 轮播图片
+		$lunbo_list = $Article->where('(column_id in (20,22)) AND LENGTH(thumb)>0')->order('id DESC')->limit(4)->select();
+		$this->assign('lunbo_list',$lunbo_list);
+
 		if($this->isMobile()){
 			$MobSlide     = M('MobSlide');
 			$mob_slide_list = $MobSlide->select();
@@ -178,7 +182,10 @@ class IndexController extends CommonController {
 			}else if( I('column_id')== 17 || I('column_id')== 20 || I('column_id')== 22 ||  I('column_id')== 33|| I('column_id')== 34){
 				//党群工作,集团新闻,在线招聘, 行业动态, 绩效考核, 人才理念, 常见问题, 发展培训
 				$this->display('MOB/Index/column_article_list');
-			}else{
+			}else if( I('column_id') == 30 ){
+				//在线招聘
+				$this->display('MOB/Index/column_zhaopin');
+      }else{
 				$this->display('MOB/Index/column');
 			}
 		}else{
@@ -321,6 +328,23 @@ class IndexController extends CommonController {
 
 		$this->display('PC/Index/search');
   }
+
+	public function sitemap(){
+		$Config  = M('Config');
+		$Column  = M('Column');
+		$Article = M('Article');
+
+		//配置
+		$config_data = $Config->where('id=1')->find();
+
+		$column_list = $Column->select();
+
+		$this->assign('config_data',$config_data);
+		$this->assign('column_list',$column_list);
+		//dump($column_list );
+		$this->display('PC/Index/sitemap');
+
+	}
 
 
 }
