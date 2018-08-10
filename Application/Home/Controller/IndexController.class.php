@@ -73,6 +73,7 @@ class IndexController extends CommonController {
 		$Config     = M('Config');
 		$Article    = M('Article');
 		$Column     = M('Column');
+		$EducationLinks = M('EducationLinks');
 
 		//配置
 		$config_data = $Config->where('id=1')->find();
@@ -108,6 +109,11 @@ class IndexController extends CommonController {
 		// 轮播图片
 		$lunbo_list = $Article->where('(column_id in (20,22)) AND LENGTH(thumb)>0')->order('id DESC')->limit(4)->select();
 		$this->assign('lunbo_list',$lunbo_list);
+
+
+		//友情链接
+		$links_list = $EducationLinks->order('id DESC')->limit(10)->select();
+		$this->assign('links_list',$links_list);
 
 		if($this->isMobile()){
 			$MobSlide     = M('MobSlide');
@@ -268,6 +274,22 @@ class IndexController extends CommonController {
 				$column_map['pid'] = array('eq',$column_data['pid']);
 				$column_list = $Column->where($column_map)->select();
 				$this->assign('column_list',$column_list);
+				$this->display('PC/Index/chanye_article');
+			}else if( I('column_id')==31  || I('column_id')==32 ){
+				// 人才中心
+				$column_parent = $Column->where('id='.$column_data['pid'])->find();
+				$column_parent_name = "";
+				if( !empty($column_parent)){
+					$column_parent_name = $column_parent['name'];
+				}
+				$this->assign('column_parent',$column_parent);
+				$this->assign('column_parent_name',$column_parent_name);
+
+  			//	//绩效考核， 人才理念
+	  		$column_map['pid'] = array('eq',$column_data['pid']);
+		  	$column_list = $Column->where($column_map)->select();
+				$this->assign('column_list',$column_list);
+
 				$this->display('PC/Index/chanye_article');
 			}else{
 

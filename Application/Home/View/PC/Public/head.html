@@ -71,7 +71,16 @@
           <div class="xian">
             <volist name="child_columns" id="vo">
               <eq name="vo.pid" value="6">
-                <a href="{:U('Index/column',array('column_id'=>$vo['id']))}"> {$vo.name}</a>
+                <if condition="$vo.id eq 31">
+                  <a href="{:U('Index/article',array('column_id'=>$vo['id'], 'id'=>134))}">
+                  {$vo.name}</a>
+                <elseif condition="$vo.id eq 32"/>
+                  <a href="{:U('Index/article',array('column_id'=>$vo['id'], 'id'=>135))}">
+                  {$vo.name}</a>
+                <else />
+                  <a href="{:U('Index/column',array('column_id'=>$vo['id']))}">
+                  {$vo.name}</a>
+                </if>
               </eq>
             </volist>
           </div>

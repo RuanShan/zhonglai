@@ -22,7 +22,12 @@
 				<h5>官方微信</h5>
 			<img src="__PUBLIC__/Home/PC/images/zhonglai/shou_52.jpg">
 			</div>
-			<div class="foot-tan">友情链接<div class="tan"><a href="">友情地址名称</a><a href="">友情地址名称</a><a href="">友情地址名称</a></div></div>
+			<div class="foot-tan">友情链接<div class="tan">
+				<volist name="links_list" id="vo">
+						<a href="{$vo.url}"> {$vo.title}</a>
+				</volist>
+
+			</div></div>
 		</div>
 	</div>
 </div>

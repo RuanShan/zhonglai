@@ -629,8 +629,8 @@ color: #e50112!important;
 .hd{height:30px; line-height:30px;padding:0 10px 0 20px;  position:relative;}
 .hd ul{ float:left; position:absolute; left:20px; top:-1px; height:32px;    padding: 0px;}
 .hd ul li{ float:left;padding-right: 15px;cursor:pointer;font-size: 20px;font-weight: bold;  }
-.hd ul li.on{ height:30px;  color: red;}
-.hd ul li:hover{color: red;}
+.hd ul li.on{ height:30px;  color: #b30101;}
+.hd ul li:hover{color: #b30101;}
 .bd li{list-style: none;}
 #hd1{ height: 15px;
     position: absolute;
@@ -691,7 +691,7 @@ color: #e50112!important;
     border-bottom: 1px solid #ddd;
 }
 /*.xian a:hover{
-	color:red!important
+	color:#b30101!important
 }*/
 /*hr{margin:20px 0!important;padding: 0px!important;}*/
 /*手机版开始*/
@@ -794,7 +794,7 @@ color: #e50112!important;
 		width: 100%;
 }
 .sj-y{
-	background: red;
+	background: #b30101;
 	padding: 0 20px;
 	height: 40px;
 	color: #fff;
@@ -853,7 +853,7 @@ color: #e50112!important;
 	height: 318px;
 }
 .sj-jj{
-	background: red;
+	background: #b30101;
 	padding: 0 20px;
 	height: 40px;
 	color: #fff;
@@ -955,13 +955,16 @@ color: #e50112!important;
 	 transition:background 1s;
 }
 .sj-foot{
-	background: red;
-	height: 80px;
+	background: #b30101;
 	color: #fff;
-	font-size: 20px;
-	line-height: 60px;
+	font-size: 14px;
 	text-align: center;
 }
+.sj-foot p{
+	padding: 5px;
+	margin: 0;
+}
+
 .sj-yw3{
 
 }
@@ -1057,7 +1060,7 @@ color: #e50112!important;
 	height: 150px;
 }
 .foot-tan1{
-	background: red;
+	background: #b30101;
     height: 26px;
     line-height: 26px;
     float: right;

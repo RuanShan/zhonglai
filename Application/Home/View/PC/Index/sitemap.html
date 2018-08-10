@@ -46,8 +46,17 @@
                   <volist name="column_list" id="vj">
                     <compare name="vj.pid" value="$vi.id" type="eq">
 
-                    <li class=""><a href="{:U('Index/column',array('column_id'=>$vj['id']))}">
-                      {$vj.name}</a>
+                    <li class="">
+											<if condition="$vo.id eq 31">
+			                  <a href="{:U('Index/article',array('column_id'=>$vj['id'], 'id'=>134))}">
+			                  {$vj.name}</a>
+			                <elseif condition="$vo.id eq 32"/>
+			                  <a href="{:U('Index/article',array('column_id'=>$vj['id'], 'id'=>135))}">
+			                  {$vj.name}</a>
+			                <else />
+			                  <a href="{:U('Index/column',array('column_id'=>$vj['id']))}">
+			                  {$vj.name}</a>
+			                </if>
                     </li>
                   </compare>
                   </volist>
