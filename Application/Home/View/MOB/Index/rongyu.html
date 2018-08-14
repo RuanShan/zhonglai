@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<include file="MOB/Public/head" />
+
+</head>
+
+<body>
+	<include file="MOB/Public/nav" />
+
+	<div class="banner">
+		<img src="__PUBLIC__/Home/MOB/images/shou_09.jpg">
+	</div>
+	<div class="neijj">
+		<div class="neijj-zhong">
+
+			<div class="neijj-right">
+				<img src="__PUBLIC__/Home/MOB/images/jj_01.jpg" class="shou-gy">
+				<h4>{$data['title']}</h4>
+				<span class="entitle">ENTERPRISE INTRODUCTION</span>
+				<div class="shou-mian">
+					<img src="__PUBLIC__/Home/MOB/images/jj_02.jpg" class="shou-jj">
+					<span><a href="/">首页</a>&gt; {$column_data['name']}</span>
+				</div>
+
+				<div style="clear:both"></div>
+				<hr>
+				<div class="neirong">
+					<ul class="article-image-list rongyu-list clearfix">
+						<volist name="rongyu_list" id="vo">
+							<li class="" ><a href="__ROOT__/Uploads/{$vo.pic}" style="background-image:url(__ROOT__/Uploads/{$vo.pic})" data-lightbox="image-rongyu" data-title="{$vo.title}">
+								<p> {$vo.title}</p>
+							</a></li>
+						</volist>
+					</ul>
+					<div class="page">{$page}</div>
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+	<include file="MOB/Public/foot" />
+
+</body>
+
+</html>

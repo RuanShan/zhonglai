@@ -210,6 +210,8 @@ class IndexController extends CommonController {
 		$Config  = M('Config');
 		$Column  = M('Column');
 		$Article = M('Article');
+		// 集团荣誉
+		$ObtainLinks = M('ObtainLinks');
 
 		//配置
 		$config_data = $Config->where('id=1')->find();
@@ -238,7 +240,19 @@ class IndexController extends CommonController {
 		$this->assign('child_columns',$child_columns);
 
 		if($this->isMobile()){
-			if(true){
+			if(I('column_id')==1 && I('id')==33){
+				//集团荣誉
+				$count      = $ObtainLinks->count();
+				$Page       = new \Think\Page($count,24);
+				$page       = $Page->show();
+				$rongyu_list = $ObtainLinks->order('position ASC')->limit($Page->firstRow.','.$Page->listRows)->select();
+
+				$this->assign('page',$page);
+				$this->assign('rongyu_list',$rongyu_list);
+
+				$this->display('MOB/Index/rongyu');
+
+			}else	if(true){
 				$this->display('MOB/Index/article');
 
 			}else{
@@ -254,7 +268,21 @@ class IndexController extends CommonController {
 				$this->display('MOB/Index/news_article');
 			}
 		}else{
-			if(I('column_id')==1 || I('column_id')==7){
+			//集团荣誉
+			if(I('column_id')==1 && I('id')==33){
+				$list = $Article->order('post_time DESC')->where('column_id=1')->select();
+				$this->assign('list',$list);
+
+				$count      = $ObtainLinks->count();
+				$Page       = new \Think\Page($count,24);
+				$page       = $Page->show();
+				$rongyu_list = $ObtainLinks->order('position ASC')->limit($Page->firstRow.','.$Page->listRows)->select();
+
+				$this->assign('page',$page);
+				$this->assign('rongyu_list',$rongyu_list);
+
+				$this->display('PC/Index/rongyu');
+			}else	if(I('column_id')==1 || I('column_id')==7){
 				//关于我们, 联系我们
 				$column_map['column_id'] = array('eq',I('column_id'));
 
@@ -342,13 +370,14 @@ class IndexController extends CommonController {
 
     //$sql = "SELECT * FROM think_article WHERE match(name,title) against('%s') offset %d limit %d;"
 	  $list = $Article->where($where)->order('id DESC')->limit($Page->firstRow.','.$Page->listRows)->select();
-		foreach ($list as &$data) {
+		foreach ($list as $data) {
 		  $data['content'] = stripslashes(htmlspecialchars_decode($data['content']));
     }
 	  $this->assign('list',$list);
 		$this->assign('page',$show);
 
 		$this->display('PC/Index/search');
+
   }
 
 	public function sitemap(){
@@ -367,6 +396,5 @@ class IndexController extends CommonController {
 		$this->display('PC/Index/sitemap');
 
 	}
-
 
 }

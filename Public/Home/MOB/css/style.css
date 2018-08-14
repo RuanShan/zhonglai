@@ -786,6 +786,33 @@ color: #e50112!important;
 	}
 	.shouji .article_list li{ position: relative; }
 	.article_list li a .title{ left: 0; }
+
+	/*荣誉*/
+	.rongyu-list li{
+		height:100px;
+		padding: 5px;
+		position: relative;
+	}
+	.rongyu-list li a{
+		display: block;
+		height: 100%;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: contain;
+	}
+	.rongyu-list li p{
+		opacity: 0.5;
+		background-color: gray;
+		color: #fff;
+		position: absolute;
+		bottom: 5px;
+		left: 5px;
+		right: 5px;
+		margin: 0;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
+	}
 }
 .shouji{
 		padding:0 20px 20px 20px;

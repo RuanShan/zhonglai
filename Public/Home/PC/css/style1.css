@@ -767,6 +767,31 @@ color: #b30101!important;
 		display: block;
 	}
 
+	/*荣誉*/
+	.rongyu-list li{
+		height:240px;
+		padding: 5px;
+		position: relative;
+	}
+	.rongyu-list li a{
+		display: block;
+		height: 100%;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: contain;
+	}
+	.rongyu-list li p{
+		opacity: 0.5;
+		background-color: gray;
+		color: #fff;
+		position: absolute;
+		bottom: 5px;
+		left: 5px;
+		right: 5px;
+		margin: 0;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
 }
 /* 分页样式 */
 .page { clear: both; }
@@ -952,8 +977,8 @@ cursor: pointer; }
 .widget-job-2 ._jt strong { float: left; position: relative; width: 30%;  color: #666666; font-weight: normal; padding-left: 30px;}
 .widget-job-2 ._jt span { float: right;  padding-right: 60px;}
 .widget-job-2 ._jc { display: none; position: relative; }
-.widget-job-2 ._jc ._btn{position: absolute; right: 40px; top: 50%; margin-top: -18px; display: inline-block; width: 126px; height: 32px; line-height: 32px; color: #fff; text-align: center; background: #a50804; border-radius: 5px;}
-.widget-job-2 ._jc ._btn.collect{  right: 190px; top: 50%; }
+.widget-job-2 ._jc ._btn{      margin-top: 12px; display: inline-block; width: 126px; height: 32px; line-height: 32px; color: #fff; text-align: center; background: #a50804; border-radius: 5px;}
+.widget-job-2 ._jc ._btn.collect{   }
 .widget-job-2 ._jc ._btn:hover{ color: #fff!important; }
 .widget-job-2 ._jcon { padding: 40px; border: 1px solid #b30101; }
 .widget-job-2 ._jt_act{ background-color: #b30101;}
@@ -961,7 +986,118 @@ cursor: pointer; }
 .widget-job-2 ._jt_act strong{ color: #fff; font-size: 16px;}
 .widget-job-2 ._jt_act span{ color: #fff; font-size: 16px;}
 
+/*求职表单*/
+.job_form ._items{
+	margin-top: 50px;
+}
+.job_form .error{
+	color:red;
+}
+.job_form span._t{
+	width: auto;
+	font-size: normal;
+	font-weight: bold;
+	font-size: 1.17em;
+}
+.job_form .job_form_row ._t{width: 8em; float: left;}
+.job_form .smal-12{
+	float: left;
+}
+.job_form .row>.span-6{
+width: 48%;
+}
+.job_form .smal-12 input{
+	width: 280px;
+	height: 2.4em;
+	padding: 1px 4px;
+}
+.job_form .smal-12 select{
+	width: 280px;
+}
+.job_form .smal-121 input{
+	width: 280px;
+	padding: 1px 4px;
+}
+.job_form .smal-121 select{
+	width: 280px;
+height: 2.4em;
+}
+.job_form .smal-121{
+	float: right;
+}
+.job_form .long{
+  width: 80%;
 
+}
+.job_form ._textarea{
+	height: 6em;
+	width: 752px;
+}
+.job_form .add_work{
+	float: left;
+	width: 80px;
+	height: 30px;
+	text-align: center;
+	border:1px solid #999;
+	line-height: 30px;
+	border-radius: 5px;
+	margin: 5px
+}
+.job_form .del_work{
+	float: left;
+	width: 80px;
+	height: 30px;
+	text-align: center;
+	border:1px solid #999;
+	line-height: 30px;
+	border-radius: 5px;
+	margin: 5px
+}
+.job_form .job_form_row{
+	margin-bottom: 10px;
+	line-height: 28px;
+}
+.job_form .dib{
+	float: left;
+  width: 290px;
+}
+.job_form .sub{
+	margin:auto;
+	display: inline-block;
+	margin:80px auto;
+	width: 80px;
+	height: 30px;
+	background:#b30101;
+	color: #fff;
+}
+.job_form .res{
+	margin:auto;
+	display: inline-block;
+	margin:80px auto;
+	width: 80px;
+	height: 30px;
+	background:#888;
+	color: #fff;
+}
+.job_form ._act{
+	text-align: center;
+}
+.job_form ._t{
+	float: left;
+	width: 11em;
+  text-align: right;
+  vertical-align: middle;
+	height: 2.4em;
+	line-height: 2.4em;
+}
+.job_form .xian2{
+	width:90%;
+	background: #999;
+	height:1px;
+	float: right;
+	margin-top: 18px;
+	margin-bottom: 40px;
+}
 /*荣誉*/
 .rongyu{
 }
@@ -1033,4 +1169,128 @@ cursor: pointer; }
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
+}
+
+/*---------------------------------------demo css--------------------------------------------*/
+
+.date_selector, .date_selector *{width: auto;height: auto;border: none;background: none;margin: 0;padding: 0;text-align: left;text-decoration: none;}
+
+.date_selector{background:#fbfbfb;border: 1px solid #ccc;padding: 10px;margin:0;margin-top:-1px;position: absolute;z-index:100000;display:none;border-radius: 3px;box-shadow: 0 0 5px #aaa;box-shadow:0 2px 2px #ccc; width:220px;}
+
+.date_selector_ieframe{position: absolute;z-index: 99999;display: none;}
+
+.date_selector .nav{width: 17.5em;}
+
+.date_selector .nav p{clear: none;}
+
+.date_selector .month_nav, .date_selector .year_nav{margin: 0 0 3px 0;padding: 0;display: block;position: relative;text-align: center;}
+
+.date_selector .month_nav{float: left;width: 55%;}
+
+.date_selector .year_nav{float: right;width: 42%;margin-right: -8px;}
+
+.date_selector .month_name, .date_selector .year_name{font-weight: bold;line-height: 20px;}
+
+.date_selector .button{display: block;position: absolute;top: 0;width:18px;height:18px;line-height:16px;font-weight:bold;color:#5985c7;text-align: center;font-size:12px;overflow:hidden;border: 1px solid #ccc;border-radius:2px;}
+
+.date_selector .button:hover, .date_selector .button.hover{background:#5985c7;color: #fff;cursor: pointer;border-color:#3a930d;}
+
+.date_selector .prev{left: 0;}
+
+.date_selector .next{right: 0;}
+
+.date_selector table{border-spacing: 0;border-collapse: collapse;clear: both;margin: 0; width:220px;}
+
+.date_selector th, .date_selector td{width: 2.5em;height: 2em;padding: 0 !important;text-align: center !important;color: #666;font-weight: normal;}
+
+.date_selector th{font-size: 12px;}
+
+.date_selector td{border:1px solid #f1f1f1;line-height: 2em;text-align: center;white-space: nowrap;color:#5985c7;background: #fff;}
+
+.date_selector td.today{background: #eee;}
+
+.date_selector td.unselected_month{color: #ccc;}
+
+.date_selector td.selectable_day{cursor: pointer;}
+
+.date_selector td.selected{background:#2b579a;color: #fff;font-weight: bold;}
+
+.date_selector td.selectable_day:hover, .date_selector td.selectable_day.hover{background:#5985c7;color: #fff;}
+
+/*-----------------------------------------------------------------------------------*/
+.show_applicant{
+	width: 880px; margin: auto;
+}
+.show_applicant .job_form ._textarea{
+	 border-color: rgb(169, 169, 169);
+	 background-color: white;
+		resize: auto;
+		cursor: text;
+		white-space: pre-wrap;
+		word-wrap: break-word;
+		border-width: 1px;
+		border-style: solid;
+		padding: 2px;
+		min-height: 6em;
+		height: auto;
+}
+@media print{
+	.show_applicant{
+		width: 720px;
+	}
+	.job_form .dib {
+    float: left;
+    width: 60%;
+  }
+	.job_form .smal-12 input, .job_form .smal-121 input {
+    width: 100%;
+		box-shadow: none !important;
+		border-color: rgb(169, 169, 169);
+		border-width: 1px;
+		border-style: solid;
+	}
+	.job_form .smal-12 select, .job_form .smal-121 select {
+    width: 100%;
+		box-shadow: none !important;
+	}
+	.job_form .dib ._long{
+		width: 500px;
+	}
+	.job_form ._textarea{
+		 width: 606px;
+		 border-color: rgb(169, 169, 169);
+		 background-color: white;
+			resize: auto;
+			cursor: text;
+			white-space: pre-wrap;
+			word-wrap: break-word;
+			border-width: 1px;
+			border-style: solid;
+			padding: 2px;
+			min-height: 6em;
+			height: auto;
+	}
+}
+/*荣誉*/
+.rongyu-list li{
+	height:240px;
+	padding: 5px;
+	position: relative;
+}
+.rongyu-list li a{
+	display: block;
+	height: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+}
+.rongyu-list li p{
+	opacity: 0.5;
+	background-color: gray;
+	color: #fff;
+	position: absolute;
+	bottom: 0;
+	left: 5px;
+	right: 5px;
+	margin: 0;
 }

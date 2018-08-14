@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{$config_data.name}</title>
+<meta name="keywords" content="{$config_data.keywords}" />
+<meta name="description" content="{$config_data.description}" />
+<include file="PC/Public/assets" />
+
+</head>
+
+<body>
+	<include file="PC/Public/head" />
+  <div class="bodyer">
+  	<div class="other_banner" style="background:url(__ROOT__/Uploads/{$column_data.pc_pic}) no-repeat center; background-size: cover; height: 360px;"></div>
+    <div class="other_content neijj">
+				<div class="neijj-zhong">
+					<div class="neijj-left">
+						<h4>{$column_data.name}</h4>
+						<ul>
+							<volist name="list" id="vo">
+								<li class="<eq name="vo.id" value="$Think.get.id">over</eq>"><a href="{:U('Index/article',array('column_id'=>$vo['column_id'],'id'=>$vo['id']))}">
+									{$vo.title}</a></li>
+  						</volist>
+
+						</ul>
+					</div>
+					<div class="neijj-right">
+						<img src="__PUBLIC__/Home/PC/images/zhonglai/jj_01.jpg" class="shou-gy">
+						<h4>{$data.title}</h4>
+						<span class="entitle">ENTERPRISE INTRODUCTION</span>
+						<div class="shou-mian">
+							<img src="__PUBLIC__/Home/PC/images/zhonglai/jj_02.jpg" class="shou-jj">
+							<span>首页&gt;关于我们&gt;公司简介</span>
+						</div>
+
+						<div style="clear:both"></div>
+						<hr>
+						<div class="neirong">
+							<ul class="article-image-list rongyu-list clearfix">
+								<volist name="rongyu_list" id="vo">
+									<li class="" ><a href="__ROOT__/Uploads/{$vo.pic}" style="background-image:url(__ROOT__/Uploads/{$vo.pic})" data-lightbox="image-rongyu" data-title="{$vo.title}">
+										<p> {$vo.title}</p>
+									</a></li>
+								</volist>
+							</ul>
+							<div class="page">{$page}</div>
+
+						</div>
+
+					</div>
+				</div>
+    </div>
+  </div>
+
+  <include file="PC/Public/foot" />
+</body>
+</html>
