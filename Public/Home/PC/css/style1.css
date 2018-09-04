@@ -991,6 +991,7 @@ cursor: pointer; }
 	margin-top: 50px;
 }
 .job_form .error{
+	display: block;
 	color:red;
 }
 .job_form span._t{
@@ -999,7 +1000,7 @@ cursor: pointer; }
 	font-weight: bold;
 	font-size: 1.17em;
 }
-.job_form .job_form_row ._t{width: 8em; float: left;}
+.job_form .job_form_row ._t{width: 11em; float: left;}
 .job_form .smal-12{
 	float: left;
 }
@@ -1007,20 +1008,20 @@ cursor: pointer; }
 width: 48%;
 }
 .job_form .smal-12 input{
-	width: 280px;
+	width: 260px;
 	height: 2.4em;
 	padding: 1px 4px;
 }
 .job_form .smal-12 select{
-	width: 280px;
+	width: 260px;
 }
 .job_form .smal-121 input{
-	width: 280px;
+	width: 260px;
 	padding: 1px 4px;
 }
-.job_form .smal-121 select{
-	width: 280px;
-height: 2.4em;
+.job_form select{
+	width: 260px;
+  height: 2.4em;
 }
 .job_form .smal-121{
 	float: right;
@@ -1031,7 +1032,7 @@ height: 2.4em;
 }
 .job_form ._textarea{
 	height: 6em;
-	width: 752px;
+	width: 732px;
 }
 .job_form .add_work{
 	float: left;
@@ -1059,7 +1060,7 @@ height: 2.4em;
 }
 .job_form .dib{
 	float: left;
-  width: 290px;
+  /*width: 290px;*/
 }
 .job_form .sub{
 	margin:auto;
@@ -1220,6 +1221,7 @@ height: 2.4em;
 /*-----------------------------------------------------------------------------------*/
 .show_applicant{
 	width: 880px; margin: auto;
+	padding-top: 50px;
 }
 .show_applicant .job_form ._textarea{
 	 border-color: rgb(169, 169, 169);
@@ -1240,7 +1242,7 @@ height: 2.4em;
 	}
 	.job_form .dib {
     float: left;
-    width: 60%;
+    width: 52%;
   }
 	.job_form .smal-12 input, .job_form .smal-121 input {
     width: 100%;
@@ -1257,7 +1259,7 @@ height: 2.4em;
 		width: 500px;
 	}
 	.job_form ._textarea{
-		 width: 606px;
+		 width: 576px;
 		 border-color: rgb(169, 169, 169);
 		 background-color: white;
 			resize: auto;
@@ -1267,7 +1269,7 @@ height: 2.4em;
 			border-width: 1px;
 			border-style: solid;
 			padding: 2px;
-			min-height: 6em;
+			min-height: 4em;
 			height: auto;
 	}
 }
