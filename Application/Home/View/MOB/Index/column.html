@@ -26,6 +26,11 @@
 				<div style="clear:both"></div>
 				<hr>
 				<div class="sj-yw3">
+          <if condition="$column_parent_name eq '产业中心'">
+          <div class="clearfix">
+            <div class="column_description">{$column_data.descriptions}</div>
+          </div>
+          </if>
   				<ul>
   					<volist name="list" id="vo">
   						<li class=""><a href="{:U('Index/article',array('column_id'=>$vo['column_id'],'id'=>$vo['id']))}">
@@ -34,10 +39,13 @@
   						</a></li>
   					</volist>
   				</ul>
-        <div class="page">{$page}</div>
+        <div class="page">
+          {$page}
+        </div>
 
 				</div>
 			</div>
+      <include file="MOB/Public/share" />
 
 		</div>
 

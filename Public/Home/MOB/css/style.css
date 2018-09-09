@@ -1217,3 +1217,137 @@ cursor: pointer; }
 .qrcode{
 	width: 80%;
 }
+
+/*求职表单*/
+
+/*求职表单*/
+.apply_job_btn.selected{
+	color: #b30101
+}
+.list_job_btn.selected{
+	color: #b30101
+}
+.job_form ._items{
+	margin: 2em 0 1em;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+.job_form .error{
+	display: block;
+	color:red;
+}
+.job_form ._t b{
+	color:red;
+}
+.job_form span._t {
+	width: auto;
+	font-size: normal;
+	font-weight: bold;
+	font-size: 1.17em;
+}
+.job_form ._t1{
+	color:red;
+	font-weight: bold;
+	font-size: 1.17em;
+	text-align: center;
+}
+.job_form .job_form_row ._t{width: 7em;  }
+.job_form .smal-12{
+}
+.job_form .row>.span-6{
+
+}
+.job_form .smal-12 input{
+    width: 86%;
+	height: 2.4em;
+	padding: 1px 4px;
+}
+.job_form .smal-12 select{
+	    width: 86%;
+}
+.job_form .smal-121 input{
+	    width: 86%;
+	padding: 1px 4px;
+}
+.job_form select{
+	width: 260px;
+  height: 2.4em;
+}
+.job_form .smal-121{
+}
+.job_form .long{
+  width: 80%;
+
+}
+.job_form ._textarea{
+	height: 6em;
+	width: 86%;
+}
+.job_form ._input{
+	flex-grow:1;
+}
+.job_form .add_work{
+	float: left;
+	width: 80px;
+	height: 30px;
+	text-align: center;
+	border:1px solid #999;
+	line-height: 30px;
+	border-radius: 5px;
+	margin: 5px
+}
+.job_form .del_work{
+	float: left;
+	width: 80px;
+	height: 30px;
+	text-align: center;
+	border:1px solid #999;
+	line-height: 30px;
+	border-radius: 5px;
+	margin: 5px
+}
+.job_form .job_form_row{
+	margin-bottom: 10px;
+	line-height: 28px;
+	display: flex;
+	flex-direction:row;
+}
+.job_form .dib{
+	float: left;
+  /*width: 290px;*/
+}
+.job_form .sub{
+	margin:auto;
+	display: inline-block;
+	margin:2em auto;
+	width: 80px;
+	height: 30px;
+	background:#b30101;
+	color: #fff;
+}
+.job_form .res{
+	margin:auto;
+	display: inline-block;
+	margin:80px auto;
+	width: 80px;
+	height: 30px;
+	background:#888;
+	color: #fff;
+}
+.job_form ._act{
+	text-align: center;
+}
+.job_form ._t{
+	width: 11em;
+  text-align: right;
+  vertical-align: middle;
+	height: 2.4em;
+	line-height: 2.4em;
+}
+.job_form .xian2{
+	flex-grow: 1;
+	background: #999;
+	height:1px;
+
+}

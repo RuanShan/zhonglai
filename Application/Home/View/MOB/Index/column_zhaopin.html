@@ -7,6 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<include file="MOB/Public/head" />
+	<include file="MOB/Public/form_assets" />
 
 </head>
 
@@ -18,43 +19,403 @@
 		<div class="neijj-right">
 			<div class="clearfix">
 				<img src="__PUBLIC__/Home/MOB/images/jj_01.jpg" class="shou-gy">
-				<h4>{$column_data['name']}</h4>
+				<h4><a href="javascript:0" class="list_job_btn tab selected">在线招聘 </a> | <a href="javascript:0" class="apply_job_btn tab">申请职位</a></h4>
+
 				<span class="entitle">ENTERPRISE INTRODUCTION</span>
 				<div class="shou-mian">
 					<img src="__PUBLIC__/Home/MOB/images/jj_02.jpg" class="shou-jj">
 					<span><a href="/">首页</a>&gt; {$column_parent['name']}&gt;<a href="{:U('Index/column',array('column_id'=>$column_data['column_id']))}">{$column_data['name']}</a></span>
 				</div>
-		  </div>
+			</div>
 			<div style="clear:both"></div>
 			<hr>
-
+			<div class="jobs">
 				<div class="article_list xinwen1 widget-job-2">
 					<volist name="list" id="vo" key="k">
 
-					<div id="jt{$vo.id}" class="_jt ">
-						<strong> {$vo.title}</strong>
-						<span><!--2018/07/13--></span>
-					</div>
-					<div class="_jc">
-						<div class="_jcon">
-							<p>
-							</p><p style="white-space: normal;"><span style="font-family: 宋体, SimSun; font-size: 18px;">需求人数：{$vo.job_renshu}；</span></p><p style="white-space: normal;"><span style="font-family: 宋体, SimSun; font-size: 18px;">专业：{$vo.job_zhuanye}</span></p><p style="white-space: normal;"><span style="font-family: 宋体, SimSun; font-size: 18px;">具体要求：{$vo.content}</span></p>
-							<p></p>
-							<div style="text-align:center;margin: 1em 0;">
-							<a href="__PUBLIC__/Home/doc/jobform.doc"  class="_btn">应聘职位</a>
-							<a data-id="jt{$vo.id}" href="javascript:void(0)" class="_btn collect" onclick="_addFavoriteJob( {$vo.id})">收藏职位</a>
-						  </div>
+						<div id="jt{$vo.id}" class="_jt ">
+							<strong> {$vo.title}</strong>
+							<span><!--2018/07/13--></span>
 						</div>
-					</div>
+						<div class="_jc">
+							<div class="_jcon">
+								<p>
+								</p>
+								<p style="white-space: normal;"><span style="font-family: 宋体, SimSun; font-size: 18px;">需求人数：{$vo.job_renshu}；</span></p>
+								<p style="white-space: normal;"><span style="font-family: 宋体, SimSun; font-size: 18px;">专业：{$vo.job_zhuanye}</span></p>
+								<p style="white-space: normal;"><span style="font-family: 宋体, SimSun; font-size: 18px;">具体要求：{$vo.content}</span></p>
+								<p></p>
+								<div style="text-align:center;margin: 1em 0;">
+									<a  href="javascript:0" class="_btn apply_job_btn">应聘职位</a>
+									<a data-id="jt{$vo.id}" href="javascript:void(0)" class="_btn collect" onclick="_addFavoriteJob( {$vo.id})">收藏职位</a>
+								</div>
+							</div>
+						</div>
 					</volist>
 
 				</div>
-		  <div class="page">{$page}</div>
+				<div class="page">{$page}</div>
+			</div>
+
+			<div class="apply_job " style="display:none;">
+				<form id="job_form" class="job_form" method="post" action="{:U('Applicant/post')}" enctype="multipart/form-data">
+
+					<div class="_items">
+						<div><span class="_t">个人信息</span></div>
+						<div class="xian2"></div>
+					</div>
+					<div class="row">
+						<div class="_t1 "> <b>*</b> 红色星号标注项目为必填内容
+						</div>
+						<div class="span-6  smal-12">
+							<div class="job_form_row clearfix">
+								<div class="_t dib">
+									<b>*</b>姓　　名：
+								</div>
+								<div class="_input dib">
+									<input type="text" class="inp" msg="请输入您的姓名!" datatype="*" nullmsg="请输入姓名" maxlength="30" id="linkMan" name="fullname" required>
+								</div>
+							</div>
+							<div class="job_form_row clearfix">
+								<div class="_t dib"> <b>*</b>应聘职位： </div>
+								<div class="_input dib">
+									<input type="text" class="inp" msg="请输入您要应聘的职位!" datatype="*" nullmsg="请输入应聘职位" maxlength="30" id="name" name="position" required>
+								</div>
+							</div>
+							<div class="job_form_row clearfix">
+								<div class="_t dib"> <b>*</b>身份证号： </div>
+								<div class="_input dib">
+									<input type="text" class="inp" datatype="*" nullmsg="请输入身份证号!" minlength="18" maxlength="18" id="idCard" name="id_num" required>
+								</div>
+							</div>
+							<div class="job_form_row clearfix">
+								<div class="_t dib"><b>*</b>身份证住址：</div>
+								<div class="_input dib">
+									<input type="text" class="inp" datatype="*" nullmsg="请输入户口所在地!" maxlength="200" name="id_address" required>
+								</div>
+							</div>
+								<div class="job_form_row clearfix">
+									<div class="_t dib"> <b>*</b>出生日期：</div>
+									<div class="_input dib">
+										<input type="text" class="inp date date-picker" name="birth" required>
+									</div>
+								</div>
+								<div class="job_form_row clearfix">
+									<div class="_t dib"> <b>*</b>性　　别： </div>
+									<div class="_input dib">
+										<select class="_select" datatype="*" nullmsg="请选择性别!" id="sexType" name="gender"> <option value="0">女</option> <option value="1">男</option> </select>
+									</div>
+								</div>
+
+								<div class="job_form_row clearfix">
+									<div class="_t dib"><b>*</b>婚姻状况：</div>
+									<div class="_input dib">
+										<select class="_select" datatype="*" nullmsg="请选择婚姻状况!" id="married" name="married"> <option value="0">未婚</option> <option value="1">已婚</option> </select>
+									</div>
+								</div>
+
+
+								<div class="job_form_row clearfix">
+									<div class="_t dib"> <b>*</b>手　　机： </div>
+									<div class="_input dib">
+										<input type="text" class="inp" maxlength="13" datatype="m" msg="请输入手机号码" name="mobile" required>
+									</div>
+								</div>
+
+ 							<div class="job_form_row clearfix">
+								<div class="_t dib"> <b>*</b> 毕业院校： </div>
+								<div class="_input dib">
+									<input type="text" class="inp" maxlength="200" id="graduated_from" name="graduated_from" required>
+								</div>
+							</div>
+							<div class="job_form_row clearfix">
+								<div class="_t dib"> <b>*</b> 专　　业： </div>
+								<div class="_input dib">
+									<input type="text" class="inp" maxlength="30" id="major" name="major" required>
+								</div>
+							</div>
+							<div class="job_form_row clearfix">
+								<div class="_t dib"> 学　　位：</div>
+								<div class="_input dib">
+									<input type="text" class="inp" maxlength="30" id="degree" name="degree">
+								</div>
+							</div>
+
+							<div class="job_form_row clearfix">
+								<div class="_t dib"> <b>*</b> 毕业时间： </div>
+								<div class="_input dib">
+									<input type="text" class="inp date date-picker" id="graduate_date" name="graduated_at" required>
+								</div>
+							</div>
+
+						</div>
+
+					</div>
+					<div style="clear:both"></div>
+
+
+					<div class="teamW clearfix">
+						<div class="_items">
+							<span class="_t">工作经历</span>
+							<div class="xian2"></div>
+							<div style="clear:both"></div>
+						</div>
+						<div class="teamItems">
+							<div class="teamItemW">
+
+								<div class="row">
+									<div class="span-12">
+										<div class="job_form_row clearfix">
+											<div class="_t" style="font-weight:bold;"> 工作经历&nbsp;&nbsp;&nbsp;&nbsp;</div>
+										</div>
+									</div>
+									<div class="span-6  smal-12">
+										<div class="job_form_row clearfix">
+											<div class="_t dib"> <b>*</b> 开始时间： </div>
+											<div class="_input dib">
+												<input type="text" class="inp date date-picker" name="exp1_start_at" required>
+											</div>
+										</div>
+										<div class="job_form_row clearfix">
+											<div class="_t dib"><b>*</b> 工作单位： </div>
+											<div class="_input dib">
+												<input type="text" class="inp" maxlength="100" name="exp1_company" required>
+											</div>
+										</div>
+									</div>
+									<div class="span-6  smal-121">
+										<div class="job_form_row clearfix">
+											<div class="_t dib"><b>*</b> 结束时间： </div>
+											<div class="_input dib">
+												<input type="text" class="inp date date-picker" name="exp1_end_at" required>
+											</div>
+										</div>
+										<div class="job_form_row clearfix">
+											<div class="_t dib"> <b>*</b> 职　　务： </div>
+											<div class="_input dib">
+												<input type="text" class="inp" maxlength="100" name="exp1_position" required>
+											</div>
+										</div>
+									</div>
+									<div style="clear:both"></div>
+									<div class="span-12">
+										<div class="job_form_row clearfix" style="margin-bottom: 0;">
+											<div class="_t dib"> <b>*</b> 职责描述： </div>
+											<div class="_input dib _long">
+												<textarea class="_textarea" data-max="200" name="exp1_responsibility" required></textarea>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="job_form_row  clearfix ">
+							<input type="hidden" name="maxrows" value="4">
+							<a class="add_btn add_work" href="javascript:0;" style="margin-left:10em;"><i></i>增加</a>
+							<a class="dele_btn del_work" href="javascript:0;"><i></i>删除</a>
+						</div>
+						<script class="template" type="text/x-handlebars-template">
+							<div class="teamItemW">
+								<div class="row">
+									<div class="span-12">
+										<div class="job_form_row clearfix">
+											<div class="_t" style="font-weight:bold;"> 工作经历&nbsp;&nbsp;&nbsp;&nbsp;</div>
+										</div>
+									</div>
+
+									<div class="span-6  smal-12">
+										<div class="job_form_row clearfix">
+											<div class="_t dib"><b>*</b>开始时间： </div>
+											<div class="_input dib">
+												<input type="text" class="inp date date-picker" name="exp{{i}}_start_at" required>
+											</div>
+										</div>
+										<div class="job_form_row clearfix">
+											<div class="_t dib"><b>*</b> 工作单位：</div>
+											<div class="_input dib">
+												<input type="text" class="inp" maxlength="100" name="exp{{i}}_company" required>
+											</div>
+										</div>
+									</div>
+									<div class="span-6  smal-121">
+										<div class="job_form_row clearfix">
+											<div class="_t dib"><b>*</b> 结束时间： </div>
+											<div class="_input dib">
+												<input type="text" class="inp date date-picker" name="exp{{i}}_end_at" required>
+											</div>
+										</div>
+										<div class="job_form_row clearfix">
+											<div class="_t dib"><b>*</b> 职　　务： </div>
+											<div class="_input dib">
+												<input type="text" class="inp" maxlength="100" name="exp{{i}}_position" required>
+											</div>
+										</div>
+									</div>
+									<div style="clear:both"></div>
+									<div class="span-12">
+										<div class="job_form_row clearfix" style="margin-bottom:0;">
+											<div class="_t dib"><b>*</b> 职责描述： </div>
+											<div class="_input dib _long">
+												<textarea class="_textarea" data-max="200" name="exp{{i}}_responsibility" required></textarea>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</script>
+
+					</div>
+
+					<div class="_items">
+						<span class="_t">其他信息</span>
+						<div class="xian2"></div>
+						<div style="clear:both"></div>
+					</div>
+					<div class="row">
+						<div class="span-12">
+
+							<div class="job_form_row clearfix">
+								<div class="_t dib"> 资格证书： </div>
+								<div class="_input dib _long">
+									<textarea class="_textarea" data-max="512" id="qualification" name="qualification"></textarea>
+								</div>
+							</div>
+
+							<div class="job_form_row clearfix">
+								<div class="_t dib" style=""> <b>*</b> 职业规划： </div>
+								<div class="_input dib _long">
+									<textarea class="_textarea" data-max="512" id="self_evaluation" name="self_evaluation" required></textarea>
+								</div>
+							</div>
+
+						</div>
+						<div style="clear:both"></div>
+						<div class="row1">
+							<div class="span-12">
+								<div class="_act">
+									<button class="sub submit" type="button">提交</button>
+									<button class="res reset" type="reset">重置</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<input type="hidden" name="method" value="jobResume">
+				</form>
+
+			</div>
 
 		</div>
 	</div>
 
 	<include file="MOB/Public/foot" />
+	<script type="text/javascript">
+		jQuery(document).ready(function() {
+			$('.date-picker').datepicker({
+				format: 'yyyy-mm-dd',
+				autoclose: true
+			});
+			$('.job_form').fileupload({
+				replaceFileInput: false,
+				autoUpload: false,
+				formAcceptCharset: 'utf-8',
+				processalways: function(e, data) {
+					var index = data.index,
+						preview = data.files[index].preview;
+					$(".image-preview-box").html(preview);
+					console.log(preview, data.files);
+				}
+			});
+
+			var validator = $(".job_form").validate();
+			console.log("validator", validator);
+			$('.job_form .submit').click(function() {
+				if (validator.form()) {
+					let url = $(".job_form").attr('action');
+					let filesList = $('.job_form input[type="file"]').prop('files');
+					console.log("filesList2", filesList);
+					//let jqXHR = $('.job_form').fileupload('send', {
+					//		files: filesList,
+					//		formData: $(".job_form").serializeArray(),
+					//		url: url
+					//	})
+					$.ajax( url, { dataType: 'json', data: $(".job_form").serializeArray(),
+						success: function(result, textStatus, jqXHR) {
+							if (result.ret == 1) {
+								layer.open({
+									title: '在线简历',
+									content: '您的简历已经提交成功！'
+								});
+								validator.reset();
+								document.getElementById("job_form").reset();
+								$(".image-preview-box").html('');
+
+							} else {
+								alert("抱歉，由于系统原因，暂时无法提交，请您稍后再提交！");
+							}
+						}
+					})
+
+				} else {
+					alert('请检查填写表单，按照提示完善内容！')
+				}
+			})
+
+			$('.add_work').on('click', function() {
+				//用jquery获取模板
+				var container = $(this).parents('.teamW');
+				let maxrows = $('input[name="maxrows"]', container).val();
+				var source = $('.template', container).html();
+				var length = $('.teamItemW', container).length;
+				if (length >= maxrows) {
+					return;
+				}
+				//预编译模板
+				var template = Handlebars.compile(source);
+				//模拟json数据
+				var context = {
+					i: length + 1
+				};
+				//匹配json内容
+				var html = template(context);
+				//输入模板
+				$(' .teamItems', container).append(html);
+
+				$('.date-picker', container).datepicker({
+					format: 'yyyy-mm-dd',
+					autoclose: true
+				});
+			})
+			//$('#content').handlebars($('#template'), { name: "Alan" });
+			$('.del_work').on('click', function() {
+				var container = $(this).parents('.teamW');
+				var length = $('.teamItemW', container).length;
+				if (length <= 1) {
+					return;
+				}
+
+				$(' .teamItemW:last', container).remove();
+			})
+			$('  .reset').on('click', function() {
+				validator.reset();
+			})
+
+			$('.list_job_btn').on('click', function() {
+				$('.list_job_btn.tab').addClass('selected');
+				$('.apply_job_btn.tab').removeClass('selected');
+				$('.apply_job').hide();
+				$('.jobs').fadeIn();
+			})
+			$('.apply_job_btn').on('click', function() {
+				$('.apply_job_btn.tab').addClass('selected');
+				$('.list_job_btn.tab').removeClass('selected');
+				$('.jobs').hide();
+				$('.apply_job').addClass('selected').fadeIn();
+			})
+
+		});
+	</script>
 
 </body>
 

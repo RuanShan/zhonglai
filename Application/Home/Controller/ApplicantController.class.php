@@ -124,7 +124,7 @@ class ApplicantController extends CommonController {
 收到新的应聘简历，请查看。查看地址如下：<br>
 <a target="_blank" href="$link"> $link </a>
 ET;
-					$ret = think_send_mail( "david@getstore.cn", "在线应聘", "网站在线应聘简历", $str);
+					$ret = think_send_mail( "sdzljt@163.com", "在线应聘", "网站在线应聘简历", $str);
 				}
 
 				$this->AjaxReturn( array('ret'=>1) );
